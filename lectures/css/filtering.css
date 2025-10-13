@@ -1,0 +1,192 @@
+.filter-sidebar {
+  position: sticky;
+  top: 112px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  padding: 2rem 1.75rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--dashboard-radius-lg);
+  box-shadow: var(--shadow-muted);
+}
+
+.filter-sidebar__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.filter-sidebar__title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.filter-sidebar__reset {
+  border: none;
+  background: var(--color-brand-soft);
+  color: var(--color-brand);
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: var(--transition-base);
+}
+
+.filter-sidebar__reset:hover {
+  background: var(--color-brand-soft-hover);
+}
+
+.filter-sidebar__group {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.filter-sidebar__group-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.filter-sidebar__group--category .filter-sidebar__group-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--color-text-primary);
+}
+
+.filter-sidebar__category-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.filter-sidebar__category-list-wrapper {
+  padding-top: 0.75rem;
+}
+
+.filter-sidebar__category-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.filter-sidebar__category-item {
+  list-style: none;
+}
+
+.filter-sidebar__category {
+  width: 100%;
+  border: none;
+  background: transparent;
+  color: var(--color-text-secondary);
+  font-size: 0.92rem;
+  font-weight: 600;
+  padding: 0.55rem 1rem;
+  text-align: left;
+  cursor: pointer;
+  transition: var(--transition-base);
+}
+
+.filter-sidebar__category:hover,
+.filter-sidebar__category:focus-visible {
+  background: transparent;
+  color: var(--color-brand);
+  outline: none;
+}
+
+.filter-sidebar__category--active,
+.filter-sidebar__category[aria-pressed="true"] {
+  background: transparent;
+  color: var(--color-brand);
+}
+
+.filter-sidebar__option-list {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.filter-sidebar__tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.filter-sidebar__tag {
+  border: none;
+  border-radius: 999px;
+  background: var(--color-surface-muted);
+  color: var(--color-text-secondary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.45rem 0.95rem;
+  cursor: pointer;
+  transition: var(--transition-base);
+}
+
+.filter-sidebar__tag:hover,
+.filter-sidebar__tag:focus-visible {
+  background: var(--color-brand-soft);
+  color: var(--color-brand);
+  outline: none;
+}
+
+.filter-sidebar__tag--active,
+.filter-sidebar__tag[aria-pressed="true"] {
+  background: var(--color-brand-soft-medium);
+  color: var(--color-brand);
+  box-shadow: 0 6px 16px var(--color-brand-soft-strong);
+}
+
+.filter-sidebar__option {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  border-radius: 999px;
+  transition: var(--transition-base);
+}
+
+.filter-sidebar__option-input {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 1.5px solid var(--color-border);
+  border-radius: 6px;
+  transition: var(--transition-base);
+  position: relative;
+}
+
+.filter-sidebar__option-input:checked {
+  border-color: transparent;
+  background: radial-gradient(
+    circle at center,
+    #ffffff 0%,
+    #ffffff 40%,
+    var(--color-brand) 41%,
+    var(--color-brand) 100%
+  );
+  box-shadow: 0 6px 16px rgba(var(--color-brand-rgb), 0.4);
+}
+
+.filter-sidebar__option-label {
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  background: var(--color-surface-muted);
+  transition: var(--transition-base);
+}
+
+.filter-sidebar__option-input:checked + .filter-sidebar__option-label {
+  background: var(--color-brand-soft-medium);
+  color: var(--color-brand);
+}
+
+.filter-sidebar__option:hover .filter-sidebar__option-label {
+  background: var(--color-brand-soft);
+}

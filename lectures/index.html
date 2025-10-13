@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LXP01</title>
+    <link rel="stylesheet" href="./css/courseContainer.css" />
+    <link rel="stylesheet" href="./css/filtering.css" />
+    <link rel="stylesheet" href="../common/css/index.css" />
+  </head>
+
+  <body>
+    <!-- 전체 컨테이너 -->
+    <div class="container">
+      <!-- 헤더 모듈: 로고 · 글로벌 내비게이션 · 검색 -->
+      <header class="header">
+        <div class="header-content">
+          <div class="logo"><a href="/">KILLPO</a></div>
+          <div class="header-controls">
+            <div class="header-category">
+              <button
+                type="button"
+                class="header-category__trigger"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <span class="header-category__trigger-label">모든 강의</span>
+                <span class="header-category__trigger-icon">▾</span>
+              </button>
+              <div class="header-category__panel" role="menu">
+                <!-- 헤더 메가메뉴 모듈 -->
+                <div class="header-mega">
+                  <section
+                    class="header-mega__column"
+                    aria-label="크리에이티브 카테고리"
+                  >
+                    <h3 class="header-mega__column-title">크리에이티브</h3>
+                    <ul class="header-mega__list">
+                      <li>
+                        <button
+                          type="button"
+                          class="header-mega__item"
+                          role="menuitem"
+                        >
+                          디지털 드로잉
+                        </button>
+                      </li>
+                      <li>
+                        <button
+                          type="button"
+                          class="header-mega__item"
+                          role="menuitem"
+                        >
+                          드로잉
+                        </button>
+                      </li>
+                      <li>
+                        <button
+                          type="button"
+                          class="header-mega__item"
+                          role="menuitem"
+                        >
+                          공예
+                        </button>
+                      </li>
+                      <li>
+                        <button
+                          type="button"
+                          class="header-mega__item"
+                          role="menuitem"
+                        >
+                          요리·음료
+                        </button>
+                      </li>
+                      <li>
+                        <button
+                          type="button"
+                          class="header-mega__item"
+                          role="menuitem"
+                        >
+                          베이킹·디저트
+                        </button>
+                      </li>
+                      <li>
+                        <button
+                          type="button"
+                          class="header-mega__item"
+                          role="menuitem"
+                        >
+                          음악
+                        </button>
+                      </li>
+                      <li>
+                        <button
+                          type="button"
+                          class="header-mega__item"
+                          role="menuitem"
+                        >
+                          운동
+                        </button>
+                      </li>
+                      <li>
+                        <button
+                          type="button"
+                          class="header-mega__item"
+                          role="menuitem"
+                        >
+                          라이프스타일
+                        </button>
+                      </li>
+                      <li>
+                        <button
+                          type="button"
+                          class="header-mega__item"
+                          role="menuitem"
+                        >
+                          사진·영상
+                        </button>
+                      </li>
+                    </ul>
+                  </section>
+                  <section
+                    class="header-mega__column"
+                    aria-label="커리어 카테고리"
+                  >
+                    <h3 class="header-mega__column-title">커리어</h3>
+                    <ul class="header-mega__list">
+                      <li>
+                        <button
+                          type="button"
+                          class="header-mega__item"
+                          role="menuitem"
+                        >
+                          금융·재테크
+                        </button>
+                      </li>
+                      <li>
+                        <button
+                          type="button"
+                          class="header-mega__item"
+                          role="menuitem"
+                        >
+                          창업·부업
+                        </button>
+                      </li>
+                      <li>
+                        <button
+                          type="button"
+                          class="header-mega__item"
+                          role="menuitem"
+                        >
+                          성공 마인드
+                        </button>
+                      </li>
+                    </ul>
+                  </section>
+                  <section
+                    class="header-mega__column"
+                    aria-label="테크 카테고리"
+                  >
+                    <h3 class="header-mega__column-title">테크</h3>
+                    <ul class="header-mega__list">
+                      <li>
+                        <button
+                          type="button"
+                          class="header-mega__item"
+                          role="menuitem"
+                        >
+                          AI 스킬업
+                        </button>
+                      </li>
+                      <li>
+                        <button
+                          type="button"
+                          class="header-mega__item header-mega__item--active"
+                          role="menuitem"
+                          aria-pressed="true"
+                        >
+                          프로그래밍
+                        </button>
+                      </li>
+                      <li>
+                        <button
+                          type="button"
+                          class="header-mega__item"
+                          role="menuitem"
+                        >
+                          데이터사이언스
+                        </button>
+                      </li>
+                      <li>
+                        <button
+                          type="button"
+                          class="header-mega__item"
+                          role="menuitem"
+                        >
+                          제품 기획
+                        </button>
+                      </li>
+                      <li>
+                        <button
+                          type="button"
+                          class="header-mega__item"
+                          role="menuitem"
+                        >
+                          비즈니스
+                        </button>
+                      </li>
+                      <li>
+                        <button
+                          type="button"
+                          class="header-mega__item"
+                          role="menuitem"
+                        >
+                          생산성
+                        </button>
+                      </li>
+                      <li>
+                        <button
+                          type="button"
+                          class="header-mega__item"
+                          role="menuitem"
+                        >
+                          마케팅
+                        </button>
+                      </li>
+                      <li>
+                        <button
+                          type="button"
+                          class="header-mega__item"
+                          role="menuitem"
+                        >
+                          디자인
+                        </button>
+                      </li>
+                      <li>
+                        <button
+                          type="button"
+                          class="header-mega__item"
+                          role="menuitem"
+                        >
+                          영상/3D
+                        </button>
+                      </li>
+                    </ul>
+                  </section>
+                  <section
+                    class="header-mega__column"
+                    aria-label="언어 카테고리"
+                  >
+                    <h3 class="header-mega__column-title">언어</h3>
+                    <ul class="header-mega__list">
+                      <li>
+                        <button
+                          type="button"
+                          class="header-mega__item"
+                          role="menuitem"
+                        >
+                          영어
+                        </button>
+                      </li>
+                      <li>
+                        <button
+                          type="button"
+                          class="header-mega__item"
+                          role="menuitem"
+                        >
+                          외국어 시험
+                        </button>
+                      </li>
+                      <li>
+                        <button
+                          type="button"
+                          class="header-mega__item"
+                          role="menuitem"
+                        >
+                          제2 외국어
+                        </button>
+                      </li>
+                    </ul>
+                  </section>
+                  <section
+                    class="header-mega__column"
+                    aria-label="교육 카테고리"
+                  >
+                    <h3 class="header-mega__column-title">교육</h3>
+                    <ul class="header-mega__list">
+                      <li>
+                        <button
+                          type="button"
+                          class="header-mega__item"
+                          role="menuitem"
+                        >
+                          아이 교육
+                        </button>
+                      </li>
+                      <li>
+                        <button
+                          type="button"
+                          class="header-mega__item"
+                          role="menuitem"
+                        >
+                          부모 교육
+                        </button>
+                      </li>
+                    </ul>
+                  </section>
+                </div>
+              </div>
+            </div>
+            <form class="header-search">
+              <input
+                type="text"
+                class="search-input"
+                placeholder="어떤 강의를 찾으시나요?"
+              />
+              <button type="submit" class="search-submit">🔍</button>
+            </form>
+          </div>
+          <nav>
+            <ul class="nav-menu">
+              <li><a href="/mypage">강의 등록하기</a></li>
+              <li>
+                <a href="/mypage" class="avatar-button">SH</a>
+              </li>
+              <li class="nav-menu__item nav-menu__item--profile">
+                <div class="profile-menu">
+                  <!-- <button type="button" class="avatar-button">+</button>
+
+                  <div class="profile-menu__panel">
+                    <a href="#wishlist" class="profile-menu__item"
+                      >위시리스트</a
+                    >
+                    <a href="#courses" class="profile-menu__item"
+                      >수강 중인 강의</a
+                    >
+                    <a href="#messages" class="profile-menu__item">메시지</a>
+                    <a href="#profile" class="profile-menu__item">프로필</a>
+                    <a href="#create-course" class="profile-menu__item"
+                      >강의 등록하기</a
+                    >
+                    <button
+                      type="button"
+                      class="profile-menu__item profile-menu__item--logout"
+                    >
+                      로그아웃
+                    </button>
+                  </div>
+                </div> -->
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <!-- 메인 레이아웃 모듈: 필터 사이드 + 강의 그리드 -->
+      <div class="main-container">
+        <!-- 강의 콘텐츠 래퍼 -->
+        <main class="main-content">
+          <div class="course-dashboard">
+            <!-- 필터 사이드 영역 -->
+            <aside class="filter-sidebar">
+              <!-- 카테고리 모듈: 2차 · 3차 리스트 -->
+              <div
+                class="filter-sidebar__group filter-sidebar__group--category"
+              >
+                <div class="filter-sidebar__category-title">
+                  <h3 class="filter-sidebar__group-title">프로그래밍</h3>
+                </div>
+                <div class="filter-sidebar__category-list-wrapper">
+                  <ul class="filter-sidebar__category-list">
+                    <li class="filter-sidebar__category-item">
+                      <button
+                        type="button"
+                        class="filter-sidebar__category filter-sidebar__category--active"
+                        aria-pressed="true"
+                      >
+                        전체
+                      </button>
+                    </li>
+                    <li class="filter-sidebar__category-item">
+                      <button
+                        type="button"
+                        class="filter-sidebar__category"
+                        aria-pressed="false"
+                      >
+                        IT 교양
+                      </button>
+                    </li>
+                    <li class="filter-sidebar__category-item">
+                      <button
+                        type="button"
+                        class="filter-sidebar__category"
+                        aria-pressed="false"
+                      >
+                        프로그래밍 언어
+                      </button>
+                    </li>
+                    <li class="filter-sidebar__category-item">
+                      <button
+                        type="button"
+                        class="filter-sidebar__category"
+                        aria-pressed="false"
+                      >
+                        Web·프론트엔드
+                      </button>
+                    </li>
+                    <li class="filter-sidebar__category-item">
+                      <button
+                        type="button"
+                        class="filter-sidebar__category"
+                        aria-pressed="false"
+                      >
+                        백엔드
+                      </button>
+                    </li>
+                    <li class="filter-sidebar__category-item">
+                      <button
+                        type="button"
+                        class="filter-sidebar__category"
+                        aria-pressed="false"
+                      >
+                        App
+                      </button>
+                    </li>
+                    <li class="filter-sidebar__category-item">
+                      <button
+                        type="button"
+                        class="filter-sidebar__category"
+                        aria-pressed="false"
+                      >
+                        게임
+                      </button>
+                    </li>
+                    <li class="filter-sidebar__category-item">
+                      <button
+                        type="button"
+                        class="filter-sidebar__category"
+                        aria-pressed="false"
+                      >
+                        보안·네트워크
+                      </button>
+                    </li>
+                    <li class="filter-sidebar__category-item">
+                      <button
+                        type="button"
+                        class="filter-sidebar__category"
+                        aria-pressed="false"
+                      >
+                        시스템·DevOps
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <!-- 필터 모듈: 사용 툴 · 서비스 태그 -->
+              <!-- <div class="filter-sidebar__group">
+                <h3 class="filter-sidebar__group-title">사용하는 툴, 서비스</h3>
+                <div class="filter-sidebar__tag-list">
+                  <button
+                    type="button"
+                    class="filter-sidebar__tag filter-sidebar__tag--active"
+                    aria-pressed="true"
+                  >
+                    JavaScript
+                  </button>
+                  <button
+                    type="button"
+                    class="filter-sidebar__tag"
+                    aria-pressed="false"
+                  >
+                    파이썬
+                  </button>
+                  <button
+                    type="button"
+                    class="filter-sidebar__tag"
+                    aria-pressed="false"
+                  >
+                    HTML
+                  </button>
+                  <button
+                    type="button"
+                    class="filter-sidebar__tag"
+                    aria-pressed="false"
+                  >
+                    React
+                  </button>
+                  <button
+                    type="button"
+                    class="filter-sidebar__tag"
+                    aria-pressed="false"
+                  >
+                    CSS
+                  </button>
+                  <button
+                    type="button"
+                    class="filter-sidebar__tag"
+                    aria-pressed="false"
+                  >
+                    Java
+                  </button>
+                  <button
+                    type="button"
+                    class="filter-sidebar__tag"
+                    aria-pressed="false"
+                  >
+                    C언어
+                  </button>
+                  <button
+                    type="button"
+                    class="filter-sidebar__tag"
+                    aria-pressed="false"
+                  >
+                    jQuery
+                  </button>
+                  <button
+                    type="button"
+                    class="filter-sidebar__tag"
+                    aria-pressed="false"
+                  >
+                    Node.js
+                  </button>
+                  <button
+                    type="button"
+                    class="filter-sidebar__tag"
+                    aria-pressed="false"
+                  >
+                    유니티
+                  </button>
+                </div>
+              </div> -->
+              <div class="filter-sidebar__group">
+                <h3 class="filter-sidebar__group-title">난이도</h3>
+                <ul class="filter-sidebar__option-list">
+                  <li class="filter-sidebar__option-item">
+                    <div
+                      class="filter-sidebar__option filter-sidebar__option--checkbox"
+                    >
+                      <input
+                        class="filter-sidebar__option-input"
+                        type="checkbox"
+                      />
+                      <span class="filter-sidebar__option-label">입문</span>
+                    </div>
+                  </li>
+                  <li class="filter-sidebar__option-item">
+                    <div
+                      class="filter-sidebar__option filter-sidebar__option--checkbox"
+                    >
+                      <input
+                        class="filter-sidebar__option-input"
+                        type="checkbox"
+                      />
+                      <span class="filter-sidebar__option-label">초급</span>
+                    </div>
+                  </li>
+                  <li class="filter-sidebar__option-item">
+                    <div
+                      class="filter-sidebar__option filter-sidebar__option--checkbox"
+                    >
+                      <input
+                        class="filter-sidebar__option-input"
+                        type="checkbox"
+                      />
+                      <span class="filter-sidebar__option-label">중급</span>
+                    </div>
+                  </li>
+                  <li class="filter-sidebar__option-item">
+                    <div
+                      class="filter-sidebar__option filter-sidebar__option--checkbox"
+                    >
+                      <input
+                        class="filter-sidebar__option-input"
+                        type="checkbox"
+                      />
+                      <span class="filter-sidebar__option-label">고급</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </aside>
+            <!-- 강의 카드 리스트 섹션 -->
+            <section class="course-section">
+              <header class="course-section__header">
+                <div>
+                  <span class="course-section__count">
+                    총
+                    <strong class="course-section__count-emphasis">1</strong
+                    >개의 강의
+                  </span>
+                  <h1 class="course-section__title">디자인 강의</h1>
+                </div>
+                <div class="course-section__actions">
+                  <div class="course-section__sort">
+                    <select class="course-section__sort-select">
+                      <option>수강 인원 순</option>
+                      <option>수강평 높은 순</option>
+                      <option>최신 등록 순</option>
+                    </select>
+                  </div>
+                </div>
+              </header>
+              <!-- 강의 카드 그리드 -->
+              <div class="course-grid">
+                <!-- 강의 카드 모듈 -->
+                <article class="course-card">
+                  <div class="course-card__media">
+                    <img
+                      class="course-card__media-image"
+                      src="https://images.unsplash.com/photo-1523475472560-d2df97ec485c?auto=format&fit=crop&w=640&q=80"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="course-card__content">
+                    <p class="course-card__category">컴퓨터 과학</p>
+                    <h2 class="course-card__title">
+                      개발자를 위한 컴퓨터공학 1: 혼자 공부하는 컴퓨터구조 +
+                      운영체제
+                    </h2>
+                    <p class="course-card__instructor">강민철</p>
+                    <div class="course-card__info-row">
+                      <div class="course-card__stats">
+                        <span class="course-card__rating"
+                          ><span class="course-card__rating-icon">★</span>4.9
+                          <span class="course-card__rating-count"
+                            >(336)</span
+                          ></span
+                        >
+                        <span class="course-card__students">👥 18,400+</span>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 강의 상세 오버레이 -->
+                  <div class="course-card__hover-panel">
+                    <!-- 강의 상세 패널 모듈 -->
+                    <div class="course-detail">
+                      <div class="course-detail__header">
+                        <h3 class="course-detail__title">
+                          개발자를 위한 컴퓨터공학 1
+                        </h3>
+                        <!-- <span class="course-detail__count">총 12강</span> -->
+                      </div>
+                      <p class="course-detail__description">
+                        베스트셀러 「혼자 공부하는 컴퓨터 구조 + 운영체제」
+                        저자와 함께 핵심 CS 전공 개념을 빠르게 정리하는 무료
+                        특강입니다.
+                      </p>
+                      <div>
+                        <div>난이도</div>
+                        <div>카테고리[카테고리.length-1]</div>
+                      </div>
+                      <!-- <div class="course-detail__outcomes">
+                        <p class="course-detail__outcomes-title">
+                          이런 걸 배울 수 있어요
+                        </p>
+                        <ul class="course-detail__outcomes-list">
+                          <li class="course-detail__outcomes-item">
+                            컴퓨터공학 로드맵 이해
+                          </li>
+                          <li class="course-detail__outcomes-item">
+                            운영체제 핵심 개념 정리
+                          </li>
+                          <li class="course-detail__outcomes-item">
+                            면접 대비 CS 요약
+                          </li>
+                          <li class="course-detail__outcomes-item">
+                            실무 사례 기반 학습
+                          </li>
+                        </ul>
+                      </div> -->
+                      <div class="course-detail__actions">
+                        <a href="details" class="course-detail__cta">
+                          자세히 보기
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+              <!-- 강의 목록 페이지네이션 -->
+              <nav class="pagination">
+                <button type="button" class="pagination__control" disabled>
+                  ‹ 이전
+                </button>
+                <ol class="pagination__list">
+                  <li>
+                    <button
+                      type="button"
+                      class="pagination__page pagination__page--active"
+                    >
+                      1
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" class="pagination__page">2</button>
+                  </li>
+                  <li>
+                    <button type="button" class="pagination__page">3</button>
+                  </li>
+                  <li>
+                    <button type="button" class="pagination__page">4</button>
+                  </li>
+                </ol>
+                <button type="button" class="pagination__control">
+                  다음 ›
+                </button>
+              </nav>
+            </section>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
