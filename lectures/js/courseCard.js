@@ -54,11 +54,11 @@ function createCourseCard(courseItem) {
       </div>  
        <!-- 강의 상세 오버레이 -->
       <div class="course-card__hover-panel">
-        <div class="course-detail">
-          <div class="course-detail__header">
-            <h3 class="course-detail__title"> ${courseItem.title} </h3>
+        <div class="course-card-detail">
+          <div class="course-card-detail__header">
+            <h3 class="course-card-detail__title"> ${courseItem.title} </h3>
           </div>
-          <p class="course-detail__description">
+          <p class="course-card-detail__description">
           ${courseItem.description}              
           </p>
           <div class="course-tags">
@@ -67,10 +67,10 @@ function createCourseCard(courseItem) {
               .join("")}
             </ul>
           </div>
-          <div class="course-detail__actions">
+          <div class="course-card-detail__actions">
              <a href="details/${
                courseItem.id
-             }" class="course-detail__cta">자세히 보기 </a>
+             }" class="course-card-detail__cta">자세히 보기 </a>
           </div>
         </div>
       </div>
