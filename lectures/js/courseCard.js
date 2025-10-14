@@ -2,7 +2,7 @@ import { store } from "./store.js";
 
 function renderCourses() {
   // 강의 카드들이 들어갈 컨테이너 선택
-  const courseGrid = document.querySelector(".course-grid");
+  const courseCardGrid = document.querySelector(".course-card-grid");
 
   // localstorage 에서 데이터 가져오기
   const courses = getCourses();
@@ -10,10 +10,10 @@ function renderCourses() {
   // 각 강의 데이터를 순회하며 카드 생성
   courses.forEach((courseItem) => {
     // 강의 카드 HTML 생성
-    const courseCard = createCourseCard(courseItem);
+    const courseCard = courseCardList(courseItem);
 
     // 생성된 카드 컨테이너 내부 요소로 추가
-    courseGrid.insertAdjacentHTML("beforeend", courseCard);
+    courseCardGrid.insertAdjacentHTML("beforeend", courseCard);
   });
 }
 
@@ -23,7 +23,7 @@ function getCourses() {
   return courses;
 }
 
-function createCourseCard(courseItem) {
+function courseCardList(courseItem) {
   return `
     <article class="course-card">
       <div class="course-card__media">
@@ -61,9 +61,9 @@ function createCourseCard(courseItem) {
           <p class="course-card-detail__description">
           ${courseItem.description}              
           </p>
-          <div class="course-tags">
+          <div class="course-card-tags">
             <ul> ${courseItem.tags
-              .map((tag) => `<li id="course-tag">${tag}</li>`)
+              .map((tag) => `<li id="course-card-tag">${tag}</li>`)
               .join("")}
             </ul>
           </div>
