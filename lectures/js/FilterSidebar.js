@@ -5,11 +5,21 @@ import {
   icons,
 } from "https://cdn.jsdelivr.net/npm/lucide@latest/+esm";
 
+/**
+ * @class FilterSidebar
+ * @description 강의 목록 페이지의 필터 사이드바를 관리하는 클래스.
+ * 카테고리 선택, 난이도 선택, 초기화 등 필터링 관련 인터랙션을 처리한다.
+ */
 function FilterSidebar() {
+  /** @type {string[]} 현재 선택된 카테고리 경로 */
   this.currentCategory = [];
+
+  /** @type {string[]} 현재 선택된 난이도 목록 */
   this.levelOptionList = [];
 
-  // 초기화
+  /**
+   * @description 초기화 함수 — HTML 템플릿 로드, 아이콘 생성, 이벤트 바인딩 및 기본 상태 설정
+   */
   this.init = () => {
     fetch("/lectures/ui/filterSidebar.html")
       .then((res) => res.text())
@@ -29,7 +39,9 @@ function FilterSidebar() {
       });
   };
 
-  // 이벤트 바인딩 (모든 이벤트 일괄 등록)
+  /**
+   * @description 필터 사이드바의 모든 이벤트를 일괄 등록한다.
+   */
   const bindEvents = () => {
     $(".filter-sidebar__category-list").addEventListener(
       "click",
@@ -43,17 +55,22 @@ function FilterSidebar() {
     $(".filter-sidebar__reset").addEventListener("click", resetFiltering);
   };
 
-  // 카테고리 클릭 핸들러
+  /**
+   * @description 카테고리 클릭 시 경로 및 하위 카테고리를 갱신한다.
+   */
   const handleCategoryClick = (e) => {
     if (!e.target.classList.contains("filter-sidebar__category")) return;
 
     const selected = e.target.innerText;
 
+    // 경로 갱신
     if (this.currentCategory.length < 3) this.currentCategory.push(selected);
     else this.currentCategory[this.currentCategory.length - 1] = selected;
 
+    // 전체 클릭 시 상위 단계로 이동
     if (selected === "전체") this.currentCategory.pop();
 
+    // 렌더링 갱신
     renderCategoryList(getSubCategoryList(this.currentCategory));
     renderPath();
 
@@ -65,7 +82,9 @@ function FilterSidebar() {
     );
   };
 
-  // 경로 클릭 핸들러
+  /**
+   * @description 상단 경로 클릭 시, 클릭한 depth까지만 유지하며 카테고리를 재렌더링한다.
+   */
   const handlePathClick = (e) => {
     if (!e.target.classList.contains("filter-sidebar__category-path")) return;
 
@@ -91,7 +110,9 @@ function FilterSidebar() {
     );
   };
 
-  // 난이도 클릭 핸들러
+  /**
+   * @description 난이도 필터 클릭 시 체크 상태를 반전시키고 내부 상태를 갱신한다.
+   */
   const handleLevelClick = (e) => {
     const option = e.target.closest(".filter-sidebar__option");
     if (!option) return;
@@ -123,7 +144,9 @@ function FilterSidebar() {
     );
   };
 
-  // 초기화 버튼 핸들러
+  /**
+   * @description 모든 필터(카테고리, 난이도)를 초기 상태로 되돌린다.
+   */
   const resetFiltering = () => {
     this.currentCategory = [];
     this.levelOptionList = [];
@@ -145,7 +168,10 @@ function FilterSidebar() {
     );
   };
 
-  // 카테고리 렌더링
+  /**
+   * @description 전달된 카테고리 리스트를 기반으로 사이드바 카테고리를 렌더링한다.
+   * @param {string[]} list 렌더링할 카테고리 리스트
+   */
   const renderCategoryList = (list) => {
     const container = $(".filter-sidebar__category-list");
     if (list.length) container.innerHTML = "";
@@ -169,7 +195,9 @@ function FilterSidebar() {
     });
   };
 
-  // 카테고리 경로 렌더링
+  /**
+   * @description 상단에 현재 선택된 카테고리 경로를 렌더링한다.
+   */
   const renderPath = () => {
     const container = $(".course-section__title");
     container.innerHTML = "";
@@ -197,7 +225,11 @@ function FilterSidebar() {
     });
   };
 
-  // 하위 카테고리 탐색
+  /**
+   * @description 주어진 경로 배열에 따라 하위 카테고리 목록을 반환한다.
+   * @param {string[]} path 현재 카테고리 경로
+   * @returns {string[]} 하위 카테고리 목록
+   */
   const getSubCategoryList = (path) => {
     if (path.length === 1) return Object.keys(CATEGORY[path[0]]);
     if (path.length === 2) return CATEGORY[path[0]][path[1]];
