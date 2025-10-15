@@ -3,11 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LXP01</title>
+    <title>KILLPO</title>
     <link rel="stylesheet" href="./css/courseContainer.css" />
+    <link rel="stylesheet" href="./css/filterSidebar.css" />
     <link rel="stylesheet" href="./css/courseCard.css" />
-    <link rel="stylesheet" href="./css/filtering.css" />
     <link rel="stylesheet" href="../common/css/index.css" />
+    <link href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/variable/woff2/SUIT-Variable.css" rel="stylesheet">
   </head>
 
   <body>
@@ -362,236 +363,18 @@
         <main class="main-content">
           <div class="course-dashboard">
             <!-- 필터 사이드 영역 -->
-            <aside class="filter-sidebar">
-              <!-- 카테고리 모듈: 2차 · 3차 리스트 -->
-              <div
-                class="filter-sidebar__group filter-sidebar__group--category"
-              >
-                <div class="filter-sidebar__category-title">
-                  <h3 class="filter-sidebar__group-title">프로그래밍</h3>
-                </div>
-                <div class="filter-sidebar__category-list-wrapper">
-                  <ul class="filter-sidebar__category-list">
-                    <li class="filter-sidebar__category-item">
-                      <button
-                        type="button"
-                        class="filter-sidebar__category filter-sidebar__category--active"
-                        aria-pressed="true"
-                      >
-                        전체
-                      </button>
-                    </li>
-                    <li class="filter-sidebar__category-item">
-                      <button
-                        type="button"
-                        class="filter-sidebar__category"
-                        aria-pressed="false"
-                      >
-                        IT 교양
-                      </button>
-                    </li>
-                    <li class="filter-sidebar__category-item">
-                      <button
-                        type="button"
-                        class="filter-sidebar__category"
-                        aria-pressed="false"
-                      >
-                        프로그래밍 언어
-                      </button>
-                    </li>
-                    <li class="filter-sidebar__category-item">
-                      <button
-                        type="button"
-                        class="filter-sidebar__category"
-                        aria-pressed="false"
-                      >
-                        Web·프론트엔드
-                      </button>
-                    </li>
-                    <li class="filter-sidebar__category-item">
-                      <button
-                        type="button"
-                        class="filter-sidebar__category"
-                        aria-pressed="false"
-                      >
-                        백엔드
-                      </button>
-                    </li>
-                    <li class="filter-sidebar__category-item">
-                      <button
-                        type="button"
-                        class="filter-sidebar__category"
-                        aria-pressed="false"
-                      >
-                        App
-                      </button>
-                    </li>
-                    <li class="filter-sidebar__category-item">
-                      <button
-                        type="button"
-                        class="filter-sidebar__category"
-                        aria-pressed="false"
-                      >
-                        게임
-                      </button>
-                    </li>
-                    <li class="filter-sidebar__category-item">
-                      <button
-                        type="button"
-                        class="filter-sidebar__category"
-                        aria-pressed="false"
-                      >
-                        보안·네트워크
-                      </button>
-                    </li>
-                    <li class="filter-sidebar__category-item">
-                      <button
-                        type="button"
-                        class="filter-sidebar__category"
-                        aria-pressed="false"
-                      >
-                        시스템·DevOps
-                      </button>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <!-- 필터 모듈: 사용 툴 · 서비스 태그 -->
-              <!-- <div class="filter-sidebar__group">
-                <h3 class="filter-sidebar__group-title">사용하는 툴, 서비스</h3>
-                <div class="filter-sidebar__tag-list">
-                  <button
-                    type="button"
-                    class="filter-sidebar__tag filter-sidebar__tag--active"
-                    aria-pressed="true"
-                  >
-                    JavaScript
-                  </button>
-                  <button
-                    type="button"
-                    class="filter-sidebar__tag"
-                    aria-pressed="false"
-                  >
-                    파이썬
-                  </button>
-                  <button
-                    type="button"
-                    class="filter-sidebar__tag"
-                    aria-pressed="false"
-                  >
-                    HTML
-                  </button>
-                  <button
-                    type="button"
-                    class="filter-sidebar__tag"
-                    aria-pressed="false"
-                  >
-                    React
-                  </button>
-                  <button
-                    type="button"
-                    class="filter-sidebar__tag"
-                    aria-pressed="false"
-                  >
-                    CSS
-                  </button>
-                  <button
-                    type="button"
-                    class="filter-sidebar__tag"
-                    aria-pressed="false"
-                  >
-                    Java
-                  </button>
-                  <button
-                    type="button"
-                    class="filter-sidebar__tag"
-                    aria-pressed="false"
-                  >
-                    C언어
-                  </button>
-                  <button
-                    type="button"
-                    class="filter-sidebar__tag"
-                    aria-pressed="false"
-                  >
-                    jQuery
-                  </button>
-                  <button
-                    type="button"
-                    class="filter-sidebar__tag"
-                    aria-pressed="false"
-                  >
-                    Node.js
-                  </button>
-                  <button
-                    type="button"
-                    class="filter-sidebar__tag"
-                    aria-pressed="false"
-                  >
-                    유니티
-                  </button>
-                </div>
-              </div> -->
-              <div class="filter-sidebar__group">
-                <h3 class="filter-sidebar__group-title">난이도</h3>
-                <ul class="filter-sidebar__option-list">
-                  <li class="filter-sidebar__option-item">
-                    <div
-                      class="filter-sidebar__option filter-sidebar__option--checkbox"
-                    >
-                      <input
-                        class="filter-sidebar__option-input"
-                        type="checkbox"
-                      />
-                      <span class="filter-sidebar__option-label">입문</span>
-                    </div>
-                  </li>
-                  <li class="filter-sidebar__option-item">
-                    <div
-                      class="filter-sidebar__option filter-sidebar__option--checkbox"
-                    >
-                      <input
-                        class="filter-sidebar__option-input"
-                        type="checkbox"
-                      />
-                      <span class="filter-sidebar__option-label">초급</span>
-                    </div>
-                  </li>
-                  <li class="filter-sidebar__option-item">
-                    <div
-                      class="filter-sidebar__option filter-sidebar__option--checkbox"
-                    >
-                      <input
-                        class="filter-sidebar__option-input"
-                        type="checkbox"
-                      />
-                      <span class="filter-sidebar__option-label">중급</span>
-                    </div>
-                  </li>
-                  <li class="filter-sidebar__option-item">
-                    <div
-                      class="filter-sidebar__option filter-sidebar__option--checkbox"
-                    >
-                      <input
-                        class="filter-sidebar__option-input"
-                        type="checkbox"
-                      />
-                      <span class="filter-sidebar__option-label">고급</span>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </aside>
+
             <!-- 강의 카드 리스트 섹션 -->
             <section class="course-section">
               <header class="course-section__header">
-                <div>
+                <div class="course-section__path">
                   <span class="course-section__count">
                     총
                     <strong class="course-section__count-emphasis">1</strong
                     >개의 강의
                   </span>
-                  <h1 class="course-section__title">디자인 강의</h1>
+                  <!-- 카테고리 선택 경로 -->
+                  <h1 class="course-section__title"></h1>
                 </div>
                 <div class="course-section__actions">
                   <div class="course-section__sort">
@@ -642,8 +425,7 @@
       </div>
     </div>
 
-  <script type="module" src="./js/CourseCard.js"></script>  
-
-
+    <script type="module" src="./js/CourseCard.js"></script>  
+    <script type="module" src="./js/index.js" ></script>
   </body>
 </html>
