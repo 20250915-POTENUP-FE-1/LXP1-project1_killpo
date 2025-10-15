@@ -249,11 +249,11 @@
     top: calc(100% + 16px);
     transform: translate3d(-50%, 12px, 0);
   }
-}
 
-.course-card:hover .course-card__hover-panel,
-.course-card:focus-within .course-card__hover-panel {
-  transform: translate3d(-50%, 0, 0);
+  .course-card:hover .course-card__hover-panel,
+  .course-card:focus-within .course-card__hover-panel {
+    transform: translate3d(-50%, 0, 0);
+  }
 }
 
 @media (max-width: 1024px) {
