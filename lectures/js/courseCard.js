@@ -1,18 +1,4 @@
-function renderCourses() {
-  // 강의 카드들이 들어갈 컨테이너 선택
-  const courseGrid = document.querySelector(".course-grid");
-
-  // 각 강의 데이터를 순회하며 카드 생성
-  courses.forEach((courseItem) => {
-    // 강의 카드 HTML 생성
-    const courseCard = courseCardList(courseItem);
-
-    // 생성된 카드 컨테이너 내부 요소로 추가
-    courseGrid.insertAdjacentHTML("beforeend", courseCard);
-  });
-}
-
-function courseCardList(courseItem) {
+function courseCard(courseItem) {
   return `
     <article class="course-card">
       <div class="course-card__media">
@@ -66,4 +52,3 @@ function courseCardList(courseItem) {
     </article>
   `;
 }
-renderCourses();
