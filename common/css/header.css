@@ -141,9 +141,10 @@
   position: relative;
 }
 
-.nav-menu a {
+.nav-menu span {
   color: var(--color-text-primary);
   text-decoration: none;
+  cursor: pointer;
   font-weight: 600;
   padding: 0.5rem 1rem;
   border-radius: 999px;
@@ -171,8 +172,8 @@
     border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.nav-menu a:hover,
-.nav-menu a:focus-visible {
+.nav-menu span:hover,
+.nav-menu span:focus-visible {
   background: rgba(255, 255, 255, 0.92);
   border-color: rgba(210, 214, 220, 0.7);
   box-shadow: 0 10px 22px -16px rgba(15, 23, 42, 0.6);
@@ -444,7 +445,7 @@
     gap: 0.5rem;
   }
 
-  .nav-menu a {
+  .nav-menu span {
     padding: 0.4rem 0.8rem;
   }
 
