@@ -1,4 +1,4 @@
-function courseCard(courseItem) {
+export function courseCard(courseItem) {
   return `
     <article class="course-card">
       <div class="course-card__media">
