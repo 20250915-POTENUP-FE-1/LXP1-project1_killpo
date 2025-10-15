@@ -1,3 +1,4 @@
+import { courseCard } from "../components/CourseCard.js";
 import { filterCourseList } from "../utils/filterCourseList.js";
 
 /**
@@ -18,9 +19,7 @@ export function renderCourseList(courseList, filter) {
   if (!filteredCourseList.length) {
     container.innerHTML = `<p class="course-card-empty-message">조건에 맞는 강의가 없습니다.</p>`;
   } else {
-    filteredCourseList.forEach((course) => {
-      // CourseCard 적용
-    });
+    container.innerHTML = filteredCourseList.map(courseCard).join("");
   }
 
   // 페이지네이션
