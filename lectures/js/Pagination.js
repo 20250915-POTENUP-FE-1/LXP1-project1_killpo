@@ -1,5 +1,4 @@
 import { $ } from "../../common/js/utils/dom.js";
-import { courseList } from "./paginationMockData.js";
 
 export const START_PAGE = 1;
 export const COURSE_PAGE_SIZE = 20;
@@ -104,5 +103,5 @@ function Pagination() {
   };
 }
 
-const pagenation = new Pagination();
-pagenation.init();
+const pagination = new Pagination();
+pagination.init();
