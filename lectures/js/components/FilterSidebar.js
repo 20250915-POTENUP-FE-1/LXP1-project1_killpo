@@ -1,5 +1,9 @@
-import { $ } from "../../common/js/utils/dom.js";
-import { CATEGORY, MAX_CATEGORY_DEPTH, CATEGORY_DEPTH } from "./constants.js";
+import { $ } from "../../../common/js/utils/dom.js";
+import {
+  CATEGORY,
+  MAX_CATEGORY_DEPTH,
+  CATEGORY_DEPTH,
+} from "../constants/category.js";
 import {
   createIcons,
   icons,
@@ -10,7 +14,7 @@ import {
  * @description 강의 목록 페이지의 필터 사이드바를 관리하는 클래스.
  * 카테고리 선택, 난이도 선택, 초기화 등 필터링 관련 인터랙션을 처리한다.
  */
-function FilterSidebar() {
+export function FilterSidebar({ onFilterChange } = {}) {
   /** @type {string[]} 현재 선택된 카테고리 경로 */
   this.currentCategory = [];
 
@@ -55,6 +59,23 @@ function FilterSidebar() {
     $(".filter-sidebar__reset").addEventListener("click", resetFiltering);
   };
 
+  const notifyFilterChange = () => {
+    if (typeof onFilterChange === "function") {
+      onFilterChange({
+        category: this.currentCategory,
+        level: this.levelOptionList,
+      });
+
+      // 테스트용
+      console.log(
+        "카테고리:",
+        this.currentCategory,
+        "난이도:",
+        this.levelOptionList
+      );
+    }
+  };
+
   /**
    * @description 카테고리 클릭 시 경로 및 하위 카테고리를 갱신한다.
    */
@@ -75,12 +96,7 @@ function FilterSidebar() {
     renderCategoryList(getSubCategoryList(this.currentCategory));
     renderPath();
 
-    console.log(
-      "카테고리:",
-      this.currentCategory,
-      "난이도:",
-      this.levelOptionList
-    );
+    notifyFilterChange();
   };
 
   /**
@@ -103,12 +119,7 @@ function FilterSidebar() {
     renderCategoryList(subCategoryList);
     renderPath();
 
-    console.log(
-      "카테고리:",
-      this.currentCategory,
-      "난이도:",
-      this.levelOptionList
-    );
+    notifyFilterChange();
   };
 
   /**
@@ -137,12 +148,7 @@ function FilterSidebar() {
       );
     }
 
-    console.log(
-      "카테고리:",
-      this.currentCategory,
-      "난이도:",
-      this.levelOptionList
-    );
+    notifyFilterChange();
   };
 
   /**
@@ -161,12 +167,7 @@ function FilterSidebar() {
       .querySelectorAll(".filter-sidebar__option-input")
       .forEach((input) => (input.checked = false));
 
-    console.log(
-      "카테고리:",
-      this.currentCategory,
-      "난이도:",
-      this.levelOptionList
-    );
+    notifyFilterChange();
   };
 
   /**
@@ -239,7 +240,3 @@ function FilterSidebar() {
     return [];
   };
 }
-
-// 인스턴스 실행
-const filterSidebar = new FilterSidebar();
-filterSidebar.init();
