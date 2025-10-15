@@ -31,6 +31,9 @@ body {
   padding: 140px 0 120px;
 }
 
+.lecture-hero-empty-message {
+}
+
 .lecture-hero {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(360px, 520px);
@@ -45,6 +48,11 @@ body {
 .lecture-hero__content {
   display: grid;
   gap: 1.4rem;
+}
+
+.lecture-hero__badges {
+  display: flex;
+  gap: 8px;
 }
 
 .lecture-hero__badge {
