@@ -1,4 +1,4 @@
-import { courseList } from "./mockData.js";
+import { courseList } from "../../../lectures/js/mockData.js";
 
 // 저장소 객체
 export const store = {

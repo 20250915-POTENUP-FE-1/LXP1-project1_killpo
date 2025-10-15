@@ -1,11 +1,6 @@
-import { store } from "./store.js";
-
 function renderCourses() {
   // 강의 카드들이 들어갈 컨테이너 선택
-  const courseCardGrid = document.querySelector(".course-card-grid");
-
-  // localstorage 에서 데이터 가져오기
-  const courses = getCourses();
+  const courseGrid = document.querySelector(".course-grid");
 
   // 각 강의 데이터를 순회하며 카드 생성
   courses.forEach((courseItem) => {
@@ -13,14 +8,8 @@ function renderCourses() {
     const courseCard = courseCardList(courseItem);
 
     // 생성된 카드 컨테이너 내부 요소로 추가
-    courseCardGrid.insertAdjacentHTML("beforeend", courseCard);
+    courseGrid.insertAdjacentHTML("beforeend", courseCard);
   });
-}
-
-// store.js에 기록된 localStorage에서 강의 목록을 가져오는 함수
-function getCourses() {
-  let courses = store.getLocalStorage("courseList");
-  return courses;
 }
 
 function courseCardList(courseItem) {
@@ -77,5 +66,4 @@ function courseCardList(courseItem) {
     </article>
   `;
 }
-
 renderCourses();
