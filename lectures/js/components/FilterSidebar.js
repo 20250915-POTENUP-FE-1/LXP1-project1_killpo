@@ -59,6 +59,9 @@ export function FilterSidebar({ onFilterChange } = {}) {
     $(".filter-sidebar__reset").addEventListener("click", resetFiltering);
   };
 
+  /**
+   * @description 필터 변경 이벤트를 상위 컨트롤러(index.js)에 전달한다.
+   */
   const notifyFilterChange = () => {
     if (typeof onFilterChange === "function") {
       onFilterChange({
