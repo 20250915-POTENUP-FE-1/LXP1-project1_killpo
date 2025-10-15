@@ -1,6 +1,3 @@
-@import "./ui/index.css";
-@import "./ui/module/filtering.css";
-
 .container {
   margin: 0 auto;
 }
@@ -22,6 +19,10 @@
   align-items: flex-end;
   justify-content: space-between;
   gap: 1.5rem;
+}
+
+.course-section__path {
+  height: 40px;
 }
 
 .course-section__actions {
@@ -66,9 +67,10 @@
 }
 
 .course-section__title {
-  font-size: 2rem;
-  font-weight: 800;
-  color: var(--color-text-primary);
+  font-family: "SUIT Variable", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-tertiary);
 }
 
 .course-section__meta {
