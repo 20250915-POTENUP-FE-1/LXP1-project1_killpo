@@ -16,7 +16,7 @@ export function renderCourseList(courseList, filter) {
 
   // 강의 리스트 렌더링
   if (!filteredCourseList.length) {
-    container.innerHTML = "<p>조건에 맞는 강의가 없습니다.</p>";
+    container.innerHTML = `<p class="course-card-empty-message">조건에 맞는 강의가 없습니다.</p>`;
   } else {
     filteredCourseList.forEach((course) => {
       // CourseCard 적용
