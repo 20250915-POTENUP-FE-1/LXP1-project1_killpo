@@ -1,5 +1,5 @@
 import { $ } from "../../common/js/utils/dom.js";
-import { CATEGORY } from "./constants.js";
+import { CATEGORY, MAX_CATEGORY_DEPTH, CATEGORY_DEPTH } from "./constants.js";
 import {
   createIcons,
   icons,
@@ -64,7 +64,8 @@ function FilterSidebar() {
     const selected = e.target.innerText;
 
     // 경로 갱신
-    if (this.currentCategory.length < 3) this.currentCategory.push(selected);
+    if (this.currentCategory.length < MAX_CATEGORY_DEPTH)
+      this.currentCategory.push(selected);
     else this.currentCategory[this.currentCategory.length - 1] = selected;
 
     // 전체 클릭 시 상위 단계로 이동
@@ -231,8 +232,10 @@ function FilterSidebar() {
    * @returns {string[]} 하위 카테고리 목록
    */
   const getSubCategoryList = (path) => {
-    if (path.length === 1) return Object.keys(CATEGORY[path[0]]);
-    if (path.length === 2) return CATEGORY[path[0]][path[1]];
+    if (path.length === CATEGORY_DEPTH.first)
+      return Object.keys(CATEGORY[path[0]]);
+    if (path.length === CATEGORY_DEPTH.second)
+      return CATEGORY[path[0]][path[1]];
     return [];
   };
 }

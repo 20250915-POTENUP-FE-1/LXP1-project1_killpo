@@ -44,3 +44,11 @@ export const CATEGORY = {
     "부모 교육": ["부모 코칭", "심리 상담", "부모 관계"],
   },
 };
+
+export const CATEGORY_DEPTH = {
+  first: 1,
+  second: 2,
+  third: 3,
+};
+
+export const MAX_CATEGORY_DEPTH = CATEGORY_DEPTH.third;
