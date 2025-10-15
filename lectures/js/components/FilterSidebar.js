@@ -68,14 +68,6 @@ export function FilterSidebar({ onFilterChange } = {}) {
         category: this.currentCategory,
         level: this.levelOptionList,
       });
-
-      // 테스트용
-      console.log(
-        "카테고리:",
-        this.currentCategory,
-        "난이도:",
-        this.levelOptionList
-      );
     }
   };
 
