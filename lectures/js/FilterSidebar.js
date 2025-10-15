@@ -9,6 +9,7 @@ function FilterSidebar() {
   this.currentCategory = [];
   this.levelOptionList = [];
 
+  // 초기화
   this.init = () => {
     fetch("/lectures/ui/filterSidebar.html")
       .then((res) => res.text())
@@ -17,160 +18,112 @@ function FilterSidebar() {
           .querySelector(".course-dashboard")
           .insertAdjacentHTML("afterbegin", resText);
 
-        // 아이콘 불러오기
+        // 아이콘 초기화
         createIcons({ icons });
 
         // 필터 초기화
         resetFiltering();
 
-        // 카테고리 클릭 이벤트 등록
-        $(".filter-sidebar__category-list").addEventListener("click", (e) => {
-          if (!e.target.classList.contains("filter-sidebar__category")) return;
-
-          const selected = e.target.innerText;
-
-          // 현재 카테고리 경로 갱신
-          if (this.currentCategory.length < 3) {
-            this.currentCategory.push(selected);
-          } else {
-            this.currentCategory[this.currentCategory.length - 1] = selected;
-          }
-
-          if (selected === "전체") this.currentCategory.pop();
-
-          // 하위 카테고리 가져오기
-          const subCategoryList = getSubCategoryList(this.currentCategory);
-          renderCategoryList(subCategoryList);
-
-          // 경로 표시 업데이트
-          renderPath();
-
-          console.log("카테고리:", this.currentCategory);
-        });
-
-        // 경로 클릭 이벤트 등록
-        $(".course-section__title").addEventListener("click", (e) => {
-          if (!e.target.classList.contains("filter-sidebar__category-path"))
-            return;
-
-          if (e.target.dataset.index) {
-            const clickedIndex = parseInt(e.target.dataset.index, 10);
-            // 해당 depth까지만 유지 (ex. index 0 클릭 → ['테크'])
-            this.currentCategory = this.currentCategory.slice(
-              0,
-              clickedIndex + 1
-            );
-          } else {
-            this.currentCategory = [];
-          }
-
-          // 해당 depth의 하위 카테고리 다시 렌더링
-          const subCategoryList = e.target.dataset.index
-            ? getSubCategoryList(this.currentCategory)
-            : Object.keys(CATEGORY);
-          renderCategoryList(subCategoryList);
-
-          // 경로도 다시 렌더링
-          renderPath();
-
-          console.log("카테고리:", this.currentCategory);
-        });
-
-        // 난이도 클릭 이벤트 등록
-        $(".filter-sidebar__option-list").addEventListener("click", (e) => {
-          const option = e.target.closest(".filter-sidebar__option");
-          if (!option) return;
-
-          const input = option.querySelector(".filter-sidebar__option-input");
-          const label = option.querySelector(
-            ".filter-sidebar__option-label"
-          ).innerText;
-
-          // 체크 상태 반전
-          input.checked = !input.checked;
-
-          // 체크 상태 반영
-          if (input.checked) {
-            if (!this.levelOptionList.includes(label)) {
-              this.levelOptionList.push(label);
-            }
-          } else {
-            this.levelOptionList = this.levelOptionList.filter(
-              (level) => level !== label
-            );
-          }
-
-          console.log("난이도:", this.levelOptionList);
-        });
-
-        // 필터 초기화 클릭 이벤트 등록
-        $(".filter-sidebar__reset").addEventListener("click", (e) => {
-          resetFiltering();
-
-          console.log("카테고리:", this.currentCategory);
-          console.log("난이도:", this.levelOptionList);
-        });
+        // 이벤트 등록
+        bindEvents();
       });
   };
 
-  // 카테고리 렌더링 함수
-  const renderCategoryList = (list) => {
-    const container = $(".filter-sidebar__category-list");
-    if (list.length) container.innerHTML = ""; // 하위 카테고리가 존재하는 경우에 초기화
-
-    list.forEach((item) => {
-      const li = document.createElement("li");
-      li.className = "filter-sidebar__category";
-      li.innerText = item;
-      container.appendChild(li);
-    });
-
-    // active 상태 표시
-    document.querySelectorAll(".filter-sidebar__category").forEach((btn) => {
-      const isCurrent =
-        btn.innerText === this.currentCategory[this.currentCategory.length - 1];
-
-      // 전체는 currentCategory가 비었을 때만 active
-      const isDefaultAll = btn.innerText === "전체";
-
-      btn.classList.toggle(
-        "filter-sidebar__category--active",
-        isCurrent || isDefaultAll
-      );
-    });
+  // 이벤트 바인딩 (모든 이벤트 일괄 등록)
+  const bindEvents = () => {
+    $(".filter-sidebar__category-list").addEventListener(
+      "click",
+      handleCategoryClick
+    );
+    $(".course-section__title").addEventListener("click", handlePathClick);
+    $(".filter-sidebar__option-list").addEventListener(
+      "click",
+      handleLevelClick
+    );
+    $(".filter-sidebar__reset").addEventListener("click", resetFiltering);
   };
 
-  // 현재 경로 렌더링
-  const renderPath = () => {
-    const container = $(".course-section__title");
-    container.innerHTML = ""; // 초기화
+  // 카테고리 클릭 핸들러
+  const handleCategoryClick = (e) => {
+    if (!e.target.classList.contains("filter-sidebar__category")) return;
 
-    // "All" 버튼 생성
-    if (this.currentCategory.length) {
-      const allSpan = document.createElement("span");
-      allSpan.className = "filter-sidebar__category-path";
-      allSpan.innerText = "All";
-      container.appendChild(allSpan);
+    const selected = e.target.innerText;
+
+    if (this.currentCategory.length < 3) this.currentCategory.push(selected);
+    else this.currentCategory[this.currentCategory.length - 1] = selected;
+
+    if (selected === "전체") this.currentCategory.pop();
+
+    renderCategoryList(getSubCategoryList(this.currentCategory));
+    renderPath();
+
+    console.log(
+      "카테고리:",
+      this.currentCategory,
+      "난이도:",
+      this.levelOptionList
+    );
+  };
+
+  // 경로 클릭 핸들러
+  const handlePathClick = (e) => {
+    if (!e.target.classList.contains("filter-sidebar__category-path")) return;
+
+    if (e.target.dataset.index) {
+      const clickedIndex = parseInt(e.target.dataset.index, 10);
+      this.currentCategory = this.currentCategory.slice(0, clickedIndex + 1);
+    } else {
+      this.currentCategory = [];
     }
 
-    this.currentCategory.forEach((category, index) => {
-      // 카테고리
-      const span = document.createElement("span");
-      span.className = "filter-sidebar__category-path";
-      span.dataset.index = index;
-      span.innerText = category;
+    const subCategoryList = e.target.dataset.index
+      ? getSubCategoryList(this.currentCategory)
+      : Object.keys(CATEGORY);
 
-      // 중간 구분자(>)
-      const divider = document.createElement("span");
-      divider.className = "filter-sidebar__category-path-divider";
-      divider.innerText = " > ";
+    renderCategoryList(subCategoryList);
+    renderPath();
 
-      container.appendChild(divider);
-      container.appendChild(span);
-    });
+    console.log(
+      "카테고리:",
+      this.currentCategory,
+      "난이도:",
+      this.levelOptionList
+    );
   };
 
-  // 필터링 초기화
+  // 난이도 클릭 핸들러
+  const handleLevelClick = (e) => {
+    const option = e.target.closest(".filter-sidebar__option");
+    if (!option) return;
+
+    const input = option.querySelector(".filter-sidebar__option-input");
+    const label = option.querySelector(
+      ".filter-sidebar__option-label"
+    ).innerText;
+
+    // 체크 상태 반전
+    input.checked = !input.checked;
+
+    // 상태 반영
+    if (input.checked) {
+      if (!this.levelOptionList.includes(label)) {
+        this.levelOptionList.push(label);
+      }
+    } else {
+      this.levelOptionList = this.levelOptionList.filter(
+        (level) => level !== label
+      );
+    }
+
+    console.log(
+      "카테고리:",
+      this.currentCategory,
+      "난이도:",
+      this.levelOptionList
+    );
+  };
+
+  // 초기화 버튼 핸들러
   const resetFiltering = () => {
     this.currentCategory = [];
     this.levelOptionList = [];
@@ -183,19 +136,75 @@ function FilterSidebar() {
     document
       .querySelectorAll(".filter-sidebar__option-input")
       .forEach((input) => (input.checked = false));
+
+    console.log(
+      "카테고리:",
+      this.currentCategory,
+      "난이도:",
+      this.levelOptionList
+    );
   };
 
-  // 하위 카테고리 탐색 로직
+  // 카테고리 렌더링
+  const renderCategoryList = (list) => {
+    const container = $(".filter-sidebar__category-list");
+    if (list.length) container.innerHTML = "";
+
+    list.forEach((item) => {
+      const li = document.createElement("li");
+      li.className = "filter-sidebar__category";
+      li.innerText = item;
+      container.appendChild(li);
+    });
+
+    // active 상태 적용
+    document.querySelectorAll(".filter-sidebar__category").forEach((btn) => {
+      const isCurrent =
+        btn.innerText === this.currentCategory[this.currentCategory.length - 1];
+      const isDefaultAll = btn.innerText === "전체";
+      btn.classList.toggle(
+        "filter-sidebar__category--active",
+        isCurrent || isDefaultAll
+      );
+    });
+  };
+
+  // 카테고리 경로 렌더링
+  const renderPath = () => {
+    const container = $(".course-section__title");
+    container.innerHTML = "";
+
+    // All 버튼 추가
+    if (this.currentCategory.length) {
+      const allSpan = document.createElement("span");
+      allSpan.className = "filter-sidebar__category-path";
+      allSpan.innerText = "All";
+      container.appendChild(allSpan);
+    }
+
+    this.currentCategory.forEach((category, index) => {
+      const divider = document.createElement("span");
+      divider.className = "filter-sidebar__category-path-divider";
+      divider.innerText = " > ";
+
+      const span = document.createElement("span");
+      span.className = "filter-sidebar__category-path";
+      span.dataset.index = index;
+      span.innerText = category;
+
+      container.appendChild(divider);
+      container.appendChild(span);
+    });
+  };
+
+  // 하위 카테고리 탐색
   const getSubCategoryList = (path) => {
-    if (path.length === 1) {
-      return Object.keys(CATEGORY[path[0]]);
-    }
-    if (path.length === 2) {
-      return CATEGORY[path[0]][path[1]];
-    }
+    if (path.length === 1) return Object.keys(CATEGORY[path[0]]);
+    if (path.length === 2) return CATEGORY[path[0]][path[1]];
     return [];
   };
 }
 
+// 인스턴스 실행
 const filterSidebar = new FilterSidebar();
 filterSidebar.init();
