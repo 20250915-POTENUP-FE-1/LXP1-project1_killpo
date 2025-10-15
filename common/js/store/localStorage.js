@@ -3,6 +3,10 @@ export const store = {
     localStorage.setItem(key, JSON.stringify(value));
   },
   getLocalStorage(key) {
-    return JSON.parse(localStorage.getItem(key));
+    const data = localStorage.getItem(key);
+    if (data === null || data === undefined) {
+      return null;
+    }
+    return JSON.parse(data);
   },
 };
