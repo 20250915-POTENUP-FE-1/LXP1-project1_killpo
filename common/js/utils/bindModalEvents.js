@@ -14,6 +14,12 @@ export function bindModalEvents() {
         // 텍스트 mode에 맞게 업데이트
         updateModalText(modal, modalMode);
         modal.style.display = "flex";
+
+        // 첫 번째 입력 창 포커스
+        setTimeout(() => {
+          const titleInput = modal.querySelector("input");
+          if (titleInput) titleInput.focus();
+        }, 50);
         return;
       }
     }

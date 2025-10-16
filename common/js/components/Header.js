@@ -2,7 +2,7 @@ import { $ } from "../utils/dom.js";
 
 export function Header() {
   this.init = () => {
-    fetch("/common/ui/header.html")
+    fetch("../common/ui/header.html")
       .then((response) => response.text())
       .then((responseText) => {
         $(".container").insertAdjacentHTML("afterbegin", responseText);
