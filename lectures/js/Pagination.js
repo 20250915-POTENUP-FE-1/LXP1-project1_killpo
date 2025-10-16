@@ -1,13 +1,14 @@
 import { $ } from "../../common/js/utils/dom.js";
+import {
+  START_PAGE,
+  COURSE_PAGE_SIZE,
+  PAGINATION_LIMIT,
+} from "./constants/pagination.js";
 
-export const START_PAGE = 1;
-export const COURSE_PAGE_SIZE = 20;
-export const PAGINATION_LIMIT = 9;
-
-function Pagination() {
+export function Pagination({ onPageChange } = {}) {
   this.courses = [];
-  this.pageNumber;
-  this.lastPage;
+  this.pageNumber = START_PAGE;
+  this.lastPage = START_PAGE;
 
   this.init = () => {
     fetch("/lectures/ui/pagination.html")
@@ -16,31 +17,56 @@ function Pagination() {
         document
           .querySelector(".course-section")
           .insertAdjacentHTML("beforeend", resText);
+
+        bindEvents();
+        renderPagination();
       });
-
-    this.courses = courseList;
-    this.pageNumber = START_PAGE;
-    this.lastPage = Math.ceil(this.courses.length / COURSE_PAGE_SIZE);
-
-    renderCourseItem();
-    renderPagination();
-    bindEvents();
   };
 
-  // courseCard 함수의 단순화 버전
-  // 강의 순서를 알 수 있도록 course 객체의 id값을 표시
-  const renderCourseItem = () => {
-    const startIndex = (this.pageNumber - 1) * COURSE_PAGE_SIZE;
-    const endIndex = this.pageNumber * COURSE_PAGE_SIZE;
+  /**
+   * @description 외부에서 필터링된 강의 리스트를 전달받아 Pagination 내부 상태 갱신
+   */
+  this.updateCourseList = (courseList) => {
+    this.courses = courseList;
+    this.lastPage = Math.max(
+      1,
+      Math.ceil(this.courses.length / COURSE_PAGE_SIZE)
+    );
+    this.pageNumber = START_PAGE;
+    renderPagination();
+  };
 
-    const slicedItems = this.courses.slice(startIndex, endIndex);
+  const bindEvents = () => {
+    $(".pagination").addEventListener("click", (e) => {
+      // 다음 버튼 클릭
+      if (
+        e.target.classList.contains("pagination__next") &&
+        this.pageNumber < this.lastPage
+      ) {
+        this.pageNumber++;
+      }
 
-    const courseItems = slicedItems
-      .map((item) => {
-        return `<article class="course-card">${item.id}</article>`;
-      })
-      .join("");
-    $(".course-grid").innerHTML = courseItems;
+      // 이전 버튼 클릭
+      if (
+        e.target.classList.contains("pagination__prev") &&
+        this.pageNumber > START_PAGE
+      ) {
+        this.pageNumber--;
+      }
+
+      // 숫자 버튼 클릭
+      if (e.target.classList.contains("pagination__page")) {
+        this.pageNumber = Number(e.target.textContent);
+      }
+
+      renderPagination();
+    });
+  };
+
+  const notifyPageChange = () => {
+    if (typeof onPageChange === "function") {
+      onPageChange(this.pageNumber);
+    }
   };
 
   const renderPagination = () => {
@@ -67,41 +93,11 @@ function Pagination() {
 
       paginationList.appendChild(button);
     }
-  };
 
-  const bindEvents = () => {
-    const bindEvents = () => {
-      $(".pagination").addEventListener("click", (e) => {
-        // 다음 버튼 클릭
-        if (
-          e.target.classList.contains("pagination__next") &&
-          this.pageNumber < this.lastPage
-        ) {
-          this.pageNumber++;
-        }
+    // 이전/다음 비활성화
+    $(".pagination__prev").disabled = this.pageNumber === START_PAGE;
+    $(".pagination__next").disabled = this.pageNumber === this.lastPage;
 
-        // 이전 버튼 클릭
-        if (
-          e.target.classList.contains("pagination__prev") &&
-          this.pageNumber > START_PAGE
-        ) {
-          this.pageNumber--;
-        }
-
-        // 숫자 버튼 클릭
-        if (e.target.classList.contains("pagination__page")) {
-          this.pageNumber = Number(target.textContent);
-        }
-
-        $(".pagination__prev").disabled = this.pageNumber === START_PAGE;
-        $(".pagination__next").disabled = this.pageNumber === this.lastPage;
-
-        renderCourseItem();
-        renderPagination();
-      });
-    };
+    notifyPageChange();
   };
 }
-
-const pagination = new Pagination();
-pagination.init();
