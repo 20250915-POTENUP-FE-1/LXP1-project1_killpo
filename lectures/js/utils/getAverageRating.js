@@ -9,12 +9,13 @@ export const getAverageRating = (reviews) => {
     return "--";
   }
 
-  let totalRatingSum = 0;
+  let initailValue = 0;
 
-  for (let i = 0; i < reviews.length; i++) {
-    totalRatingSum += reviews[i].rating;
-  }
+  const totalRatingSum = reviews.reduce(function (accumulator, review) {
+    return accumulator + review.rating;
+  }, initailValue);
 
   const average = totalRatingSum / reviews.length;
+
   return average;
 };
