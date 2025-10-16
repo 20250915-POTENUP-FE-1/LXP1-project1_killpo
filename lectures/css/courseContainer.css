@@ -7,11 +7,18 @@
   grid-template-columns: 280px 1fr;
   gap: 2rem;
   align-items: start;
+  min-height: 100%;
+}
+
+.course-grid__container {
+  flex-grow: 1;
 }
 
 .course-section {
-  display: grid;
-  gap: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.75rem;
+  min-height: 100%;
 }
 
 .course-section__header {
@@ -129,6 +136,7 @@
 }
 
 .course-grid {
+  flex-grow: 1;
   display: grid;
   grid-template-columns: repeat(4, minmax(220px, 1fr));
   gap: 1.8rem;
