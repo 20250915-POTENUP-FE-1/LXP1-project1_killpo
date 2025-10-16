@@ -8,7 +8,7 @@ export const modalTexts = {
     },
     edit: {
       eyebrow: "강의 정보 수정",
-      title: "수정할 내용을 입력하세요.",
+      title: "세부 정보를 업데이트하세요.",
       subtitle:
         "완성된 강의는 언제든 공개할 수 있습니다. 수정 후 저장 버튼을 클릭하세요.",
     },
