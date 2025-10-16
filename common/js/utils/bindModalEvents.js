@@ -1,5 +1,5 @@
 import { $ } from "../utils/dom.js";
-import { updateModalText } from "../components/CourseModal.js";
+import { updateModalText } from "./updateModalText.js";
 
 export function bindModalEvents() {
   $(".container").addEventListener("click", (e) => {
@@ -7,7 +7,7 @@ export function bindModalEvents() {
     const openBtn = e.target.closest(".modal-toggle-btn");
     if (openBtn) {
       const modalId = openBtn.dataset.modalTarget;
-      // 모달 mode 속성 가져기
+      // 모달 mode 속성 찾기
       const modalMode = openBtn.dataset.modalMode || "create";
       const modal = document.getElementById(modalId);
       if (modal) {
