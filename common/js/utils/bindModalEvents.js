@@ -1,4 +1,5 @@
 import { $ } from "../utils/dom.js";
+import { updateModalText } from "../components/CourseModal.js";
 
 export function bindModalEvents() {
   $(".container").addEventListener("click", (e) => {
@@ -6,9 +7,15 @@ export function bindModalEvents() {
     const openBtn = e.target.closest(".modal-toggle-btn");
     if (openBtn) {
       const modalId = openBtn.dataset.modalTarget;
+      // 모달 mode 속성 가져기
+      const modalMode = openBtn.dataset.modalMode || "create";
       const modal = document.getElementById(modalId);
-      if (modal) modal.style.display = "flex";
-      return;
+      if (modal) {
+        // 텍스트 mode에 맞게 업데이트
+        updateModalText(modal, modalMode);
+        modal.style.display = "flex";
+        return;
+      }
     }
 
     // 닫기
