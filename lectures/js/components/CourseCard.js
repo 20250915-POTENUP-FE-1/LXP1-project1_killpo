@@ -1,4 +1,8 @@
+import { getAverageRating } from "../utils/getAverageRating.js";
+
 export function courseCard(courseItem) {
+  const averageRating = getAverageRating(courseItem.reviews);
+
   return `
     <article class="course-card">
       <div class="course-card__media">
@@ -13,9 +17,7 @@ export function courseCard(courseItem) {
         <div class="course-card__info-row">
           <div class="course-card__stats">
             <span class="course-card__rating">
-              <span class="course-card__rating-icon">★</span>${
-                courseItem.rating
-              }
+              <span class="course-card__rating-icon">★</span>${averageRating}
               <span class="course-card__rating-count">(${
                 courseItem.reviews.length
               })
@@ -43,7 +45,7 @@ export function courseCard(courseItem) {
             </ul>
           </div>
           <div class="course-card-detail__actions">
-             <a href="details/${
+             <a href="details?id=${
                courseItem.id
              }" class="course-card-detail__cta">자세히 보기 </a>
           </div>
