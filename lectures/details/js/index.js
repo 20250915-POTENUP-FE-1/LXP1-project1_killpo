@@ -4,11 +4,13 @@ import { courseList as mockCourseList } from "../../js/mockData.js";
 
 // 초기 상태
 const courseList = store.getLocalStorage("courseList") || mockCourseList; // []
-// url에서 강의 id 추출하기
-// id로 course 데이터 찾기
 
-const selectedCourse = courseList.find((course) => course.id == 2);
-console.log(selectedCourse);
+// URL에서 강의 ID 가져오기
+const path = window.location.search;
+const COURSE_ID = path.split("=")[1];
+
+// 강의 리스트에서 강의 ID로 찾기
+const selectedCourse = courseList.find((course) => course.id == COURSE_ID);
 
 // 강의 상세 렌더링
 renderDetailsPage(selectedCourse);
