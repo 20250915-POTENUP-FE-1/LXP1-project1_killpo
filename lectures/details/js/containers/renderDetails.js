@@ -1,10 +1,10 @@
-import { detailsPage } from "../components/DetailsPage.js";
+import { detailsSection } from "../components/DetailsSection.js";
 
 /**
  * @param {Array<Object>} courseItem /lectures에서 선택한 강의 객체
  */
 
-export function renderDetailsPage(courseItem) {
+export function renderDetails(courseItem) {
   const container = document.querySelector(".lecture-detail");
   container.innerHTML = "";
 
@@ -12,6 +12,6 @@ export function renderDetailsPage(courseItem) {
   if (!courseItem) {
     container.innerHTML = `<p class="lecture-hero-empty-message">강의를 불러들이는데 오류가 발생했습니다.</p>`;
   } else {
-    container.innerHTML = detailsPage(courseItem);
+    container.innerHTML = detailsSection(courseItem);
   }
 }

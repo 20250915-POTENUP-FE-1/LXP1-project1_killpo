@@ -1,4 +1,8 @@
-export function detailsPage(courseItem) {
+import { getAverageRating } from "../../../js/utils/getAverageRating.js";
+
+export function detailsSection(courseItem) {
+  const averageRating = getAverageRating(courseItem.reviews);
+
   return `
         <!-- 강의 소개 히어로 섹션 -->
         <section class="lecture-hero">
@@ -18,7 +22,7 @@ export function detailsPage(courseItem) {
                 <p class="lecture-meta__name">${courseItem.instructor}</p>
               </div>
               <div class="lecture-meta__stats">
-                <span class="lecture-meta__rating">★ ${courseItem.rating}</span>
+                <span class="lecture-meta__rating">★ ${averageRating}</span>
                 <span class="lecture-meta__divider">·</span>
                 <span class="lecture-meta__count">수강평 ${
                   courseItem.reviews.length
