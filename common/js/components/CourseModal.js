@@ -15,5 +15,3 @@ export function CourseModal() {
     // 강의 등록 이벤트
   };
 }
-const courseModal = new CourseModal();
-courseModal.init();

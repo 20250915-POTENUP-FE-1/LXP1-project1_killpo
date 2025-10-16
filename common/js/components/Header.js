@@ -14,6 +14,3 @@ export function Header() {
     // 모달, 프로필 사진 클릭 시 헤더 내 인터랙션 처리
   };
 }
-
-const header = new Header();
-header.init();
