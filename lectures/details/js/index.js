@@ -10,7 +10,7 @@ const path = window.location.search;
 const COURSE_ID = path.split("=")[1];
 
 // 강의 리스트에서 강의 ID로 찾기
-const selectedCourse = courseList.find((course) => course.id == COURSE_ID);
+const selectedCourse = courseList.find((course) => course.id === COURSE_ID);
 
 // 강의 상세 렌더링
 renderDetailsPage(selectedCourse);
