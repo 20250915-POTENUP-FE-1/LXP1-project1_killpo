@@ -1,0 +1,146 @@
+<!-- 모달 모듈: 강의 등록 -->
+<div class="modal" id="course-create">
+  <div class="modal__dialog">
+    <header class="modal__header">
+      <div>
+        <p class="modal__eyebrow">새 강의 등록</p>
+        <h2 class="modal__title" id="course-create-title">
+          기본 정보를 입력하세요
+        </h2>
+        <p class="modal__subtitle">
+          등록 후에는 비공개 상태로 저장되며, 세부 정보를 추가하면 공개로 전환할
+          수 있어요.
+        </p>
+      </div>
+      <button type="button" class="modal__close modal-close">×</button>
+    </header>
+    <form id="course-create-form" class="modal__form">
+      <section class="modal__body">
+        <!-- 강의 등록 폼: 기본 정보 입력 그리드 -->
+        <div class="form-grid">
+          <div class="form-field">
+            <div class="form-field__title">강의 제목</div>
+            <input
+              id="create-course-title"
+              name="title"
+              type="text"
+              class="form-control"
+              placeholder="예: 파이썬 데이터 분석 완성"
+              required
+            />
+          </div>
+          <div class="form-field">
+            <div class="form-field__title">한 줄 요약</div>
+            <input
+              id="create-course-summary"
+              name="summary"
+              type="text"
+              class="form-control"
+              placeholder="수강생이 한눈에 이해할 수 있는 짧은 설명"
+              maxlength="120"
+              required
+            />
+          </div>
+          <div class="form-field form-field--full">
+            <div class="form-field__title">카테고리</div>
+            <div class="category-selects">
+              <select
+                id="create-course-category-primary"
+                name="categoryPrimary"
+                class="form-control"
+                required
+              >
+                <option value="">1차 카테고리 선택</option>
+                <option value="creative">크리에이티브</option>
+                <option value="career">커리어</option>
+                <option value="tech">테크</option>
+                <option value="language">언어</option>
+                <option value="education">교육</option>
+              </select>
+              <select
+                id="create-course-category-secondary"
+                name="categorySecondary"
+                class="form-control"
+                required
+              >
+                <option value="">2차 카테고리 선택</option>
+                <option value="digital-drawing">디지털 드로잉</option>
+                <option value="drawing">드로잉</option>
+                <option value="craft">공예</option>
+                <option value="food">요리·음료</option>
+                <option value="baking">베이킹·디저트</option>
+                <option value="music">음악</option>
+                <option value="fitness">운동</option>
+                <option value="lifestyle">라이프스타일</option>
+                <option value="photo-video">사진·영상</option>
+              </select>
+              <select
+                id="create-course-category-tertiary"
+                name="categoryTertiary"
+                class="form-control"
+              >
+                <option value="">3차 카테고리 선택 (옵션)</option>
+                <optgroup label="프로그래밍">
+                  <option value="all">전체</option>
+                  <option value="it-literacy">IT 교양</option>
+                  <option value="programming-language">프로그래밍 언어</option>
+                  <option value="web-frontend">Web·프론트엔드</option>
+                  <option value="backend">백엔드</option>
+                  <option value="app">App</option>
+                  <option value="game">게임</option>
+                  <option value="security-network">보안·네트워크</option>
+                  <option value="system-devops">시스템·DevOps</option>
+                </optgroup>
+              </select>
+            </div>
+          </div>
+          <div class="form-field">
+            <div class="form-field__title">난이도</div>
+            <select
+              id="edit-course-difficulty"
+              name="difficulty"
+              class="form-control"
+              required
+            >
+              <option value="">선택</option>
+              <option value="초급">초급</option>
+              <option value="중급">중급</option>
+              <option value="고급">고급</option>
+            </select>
+          </div>
+          <div class="form-field form-field--full">
+            <div class="form-field__title">상세 설명</div>
+            <textarea
+              id="edit-course-description"
+              name="description"
+              class="form-control"
+              rows="4"
+              placeholder="강의 소개와 수강생에게 전하고 싶은 메시지를 작성하세요."
+              required
+            ></textarea>
+          </div>
+          <div class="form-field form-field--full">
+            <div class="form-field__title">썸네일 이미지</div>
+            <input
+              id="create-thumbnail-file"
+              name="thumbnailFile"
+              type="file"
+              class="form-control"
+              accept="image/*"
+              required
+            />
+            <p class="form-field__hint">
+              1200 × 675px 이상의 이미지를 권장합니다.
+            </p>
+          </div>
+        </div>
+      </section>
+      <footer class="modal__footer">
+        <button type="button" class="button button--ghost cancel-btn">
+          취소
+        </button>
+        <button type="submit" class="button button--primary">저장</button>
+      </footer>
+    </form>
+  </div>
+</div>
