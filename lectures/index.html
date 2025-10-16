@@ -30,7 +30,7 @@
                 aria-haspopup="true"
                 aria-expanded="false"
               >
-                <span class="header-category__trigger-label">모든 강의</span>
+                <span class="header-category__trigger-label">카테고리</span>
                 <span class="header-category__trigger-icon">▾</span>
               </button>
               <div class="header-category__panel" role="menu">
@@ -381,15 +381,16 @@
                 <div class="course-section__actions">
                   <div class="course-section__sort">
                     <select class="course-section__sort-select">
+                      <option>최신 등록 순</option>
                       <option>수강 인원 순</option>
                       <option>수강평 높은 순</option>
-                      <option>최신 등록 순</option>
                     </select>
                   </div>
                 </div>
               </header>
               <!-- 강의 카드 그리드 -->
-              <div class="course-grid">
+              <div class="course-grid__container">
+                <div class="course-grid"></div>
                 <!-- 강의 카드 모듈 -->
               </div>
               <!-- 강의 목록 페이지네이션 -->
