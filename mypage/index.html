@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>마이페이지</title>
     <link rel="stylesheet" href="../common/css/index.css" />
+    <link rel="stylesheet" href="./css/courseTable.css" />
     <link rel="stylesheet" href="./css/mypage.css" />
     <link rel="stylesheet" href="./css/tabMenu.css" />
   </head>
@@ -55,13 +56,15 @@
 
           <!-- 메인 콘텐츠 모듈: 등록 강의 관리 -->
           <section class="mypage-content" id="dashboard">
+            <!-- 마이페이지 헤더 모듈 -->
             <header class="mypage-content__header">
               <div>
-                <p class="mypage-content__count">총 8개 강의</p>
+                <p class="mypage-content__count">
+                  총 <span class="mypage-content__total"></span>개 강의
+                </p>
                 <h1 class="mypage-content__title">내가 등록한 강의</h1>
-              </div>              
+              </div>
             </header>
-
             <!-- 강의 목록 테이블 모듈 -->
             <section class="course-table">
               <table>
@@ -77,112 +80,13 @@
                     <th scope="col" class="visually-hidden">관리</th>
                   </tr>
                 </thead>
-                <tbody class="course-table__body">
-                  <tr class="course-row">
-                    <td>
-                      <div class="table-thumb">
-                        <img
-                          src="https://images.unsplash.com/photo-1526481280695-3c4696001f81?auto=format&fit=crop&w=640&q=80"
-                        />
-                      </div>
-                    </td>
-                    <td>
-                      <div class="table-title">
-                        <strong>Python 데이터 분석 완성</strong>
-                        <!-- <span>최근 업데이트 · 2023.10.03</span> -->
-                      </div>
-                    </td>
-                    <!-- <td><span class="badge badge--live">공개</span></td> -->
-                    <td>데이터 사이언스</td>
-                    <td class="table-actions">
-                      <button
-                        type="button"
-                        class="button button--secondary modal-toggle-btn"
-                        data-modal-target="course-create"
-                        data-modal-mode="edit"
-                      >
-                        수정하기
-                      </button>
-                      <button
-                        type="button"
-                        class="button button--ghost button--danger"
-                      >
-                        삭제하기
-                      </button>
-                    </td>
-                  </tr>
-                  <tr class="course-row">
-                    <td>
-                      <div class="table-thumb">
-                        <img
-                          src="https://images.unsplash.com/photo-1526481280695-3c4696001f81?auto=format&fit=crop&w=640&q=80"
-                        />
-                      </div>
-                    </td>
-                    <td>
-                      <div class="table-title">
-                        <strong>UX/UI 디자인 워크샵</strong>
-                        <!-- <span>비공개 전환 · 2023.10.01</span> -->
-                      </div>
-                    </td>
-                    <!-- <td><span class="badge badge--private">비공개</span></td> -->
-                    <td>디자인</td>
-                    <td class="table-actions">
-                      <button
-                        type="button"
-                        class="button button--secondary modal-toggle-btn"
-                        data-modal-target="course-create"
-                        data-modal-mode="edit"
-                      >
-                        수정하기
-                      </button>
-                      <button
-                        type="button"
-                        class="button button--ghost button--danger"
-                      >
-                        삭제하기
-                      </button>
-                    </td>
-                  </tr>
-                  <tr class="course-row">
-                    <td>
-                      <div class="table-thumb">
-                        <img
-                          src="https://images.unsplash.com/photo-1526481280695-3c4696001f81?auto=format&fit=crop&w=640&q=80"
-                        />
-                      </div>
-                    </td>
-                    <td>
-                      <div class="table-title">
-                        <strong>JavaScript 실전 프로젝트</strong>
-                        <!-- <span>일시 중지 · 2023.09.20</span> -->
-                      </div>
-                    </td>
-                    <!-- <td><span class="badge badge--private">비공개</span></td> -->
-                    <td>프로그래밍</td>
-                    <td class="table-actions">
-                      <button
-                        type="button"
-                        class="button button--secondary modal-toggle-btn"
-                        data-modal-target="course-create"
-                        data-modal-mode="edit"
-                      >
-                        수정하기
-                      </button>
-                      <button
-                        type="button"
-                        class="button button--ghost button--danger"
-                      >
-                        삭제하기
-                      </button>
-                    </td>
-                  </tr>
-                </tbody>
+                <tbody class="course-table__body"></tbody>
               </table>
             </section>
           </section>
         </div>
       </main>
+    </div>
 
     <script type="module" src="./js/index.js"></script>
   </body>

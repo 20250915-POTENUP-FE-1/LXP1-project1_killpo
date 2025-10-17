@@ -1,4 +1,4 @@
-import { courseCard } from "../components/CourseCard.js";
+import { CourseCard } from "../components/CourseCard.js";
 import { COURSE_PAGE_SIZE } from "../constants/pagination.js";
 import { filterCourseList } from "../utils/filterCourseList.js";
 
@@ -26,6 +26,8 @@ export function renderCourseList(courseList, filter, pageNumber) {
   if (!paginatedCourseList.length) {
     container.innerHTML = `<p class="course-card-empty-message">조건에 맞는 강의가 없습니다.</p>`;
   } else {
-    container.innerHTML = paginatedCourseList.map(courseCard).join("");
+    container.innerHTML = paginatedCourseList
+      .map((courseItem) => CourseCard(courseItem))
+      .join("")
   }
 }
