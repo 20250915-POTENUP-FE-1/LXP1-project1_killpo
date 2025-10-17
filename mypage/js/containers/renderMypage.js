@@ -1,38 +1,35 @@
 import { $ } from "../../../../common/js/utils/dom.js";
-import { mypageHeader } from "../components/MypageHeader.js";
-import { courseTable } from "../components/CourseTable.js";
-import { courseRow } from "../components/CourseRow.js";
+import { courseItem } from "../components/CourseItem.js";
 
 /**
  * @param {Array<Object>} courseList 전체 강의 목록
  */
 
 export function renderMypage(courseList) {
-  const headerContainer = $(".mypage-content__header");
-  const tableContainer = $(".course-table");
-
-  // 마이페이지 헤더 렌더링
-  headerContainer.innerHTML = mypageHeader(courseList.length);
-
-  // 강의 테이블 렌더링
-  tableContainer.innerHTML = courseTable();
-
-  const tbodyContainer = $(".course-table__body");
-  tbodyContainer.container = "";
+  const courseCountElement = $(".mypage-content__total");
+  const courseTableBody = $(".course-table__body");
 
   // 강의 테이블 로우 렌더링
   if (!courseList) {
-    tbodyContainer.innerHTML = `<p class="course-table-empty-message">등록한 강의가 없어요.</p>`;
+    courseCountElement.innerHTML = 0;
+    courseTableBody.innerHTML = `<p class="course-table-empty-message">등록한 강의가 없어요.</p>`;
   } else {
-    tbodyContainer.innerHTML = courseList.map(courseRow).join("");
-    bindEvents();
+    // 총 강의 개수 표시
+    courseCountElement.innerHTML = courseList.length;
+    courseTableBody.innerHTML = courseList.map(courseItem).join("");
   }
-}
 
-// 이벤트 헨들러 함수 (수강신청 클릭 시)
-const bindEvents = () => {
-  $(".delete-course-btn").addEventListener("click", (e) => {
-    alert("강의를 삭제하시겠어요? 삭제 후 복구가 불가능해요 🥲");
-    // 식제 관련 함수
+  // 테이블에 이벤트 핸들러 위임
+  tbodyContainer.addEventListener("click", (e) => {
+    const targetElement = e.target;
+
+    // "삭제하기" 클릭 시
+    if (targetElement.classList.contains("delete-course-btn")) {
+      // 삭제하기 로직 구현 후 유틸 함수로 분리 예정
+      const courseRow = targetElement.closest(".course-row");
+      const courseId = courseRow.dataset.courseId;
+      console.log(courseId);
+      alert("강의를 삭제하시겠어요? 삭제 후 복구가 불가능해요 🥲");
+    }
   });
-};
+}

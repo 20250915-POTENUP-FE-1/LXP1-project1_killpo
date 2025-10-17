@@ -57,9 +57,32 @@
           <!-- 메인 콘텐츠 모듈: 등록 강의 관리 -->
           <section class="mypage-content" id="dashboard">
             <!-- 마이페이지 헤더 모듈 -->
-            <header class="mypage-content__header"></header>
+            <header class="mypage-content__header">
+              <div>
+                <p class="mypage-content__count">
+                  총 <span class="mypage-content__total"></span>개 강의
+                </p>
+                <h1 class="mypage-content__title">내가 등록한 강의</h1>
+              </div>
+            </header>
             <!-- 강의 목록 테이블 모듈 -->
-            <section class="course-table"></section>
+            <section class="course-table">
+              <table>
+                <caption class="visually-hidden">
+                  썸네일, 제목, 노출 여부, 카테고리, 강의 관리 버튼
+                </caption>
+                <thead>
+                  <tr>
+                    <th scope="col">썸네일</th>
+                    <th scope="col">제목</th>
+                    <!-- <th scope="col">노출 여부</th> -->
+                    <th scope="col">카테고리</th>
+                    <th scope="col" class="visually-hidden">관리</th>
+                  </tr>
+                </thead>
+                <tbody class="course-table__body"></tbody>
+              </table>
+            </section>
           </section>
         </div>
       </main>

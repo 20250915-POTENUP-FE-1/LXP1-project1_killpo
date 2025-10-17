@@ -417,6 +417,9 @@ textarea.form-control {
     gap: 12px;
   }
 
+  .mypage-content__total {
+  }
+
   .mypage-content__header > .button {
     width: 100%;
   }
