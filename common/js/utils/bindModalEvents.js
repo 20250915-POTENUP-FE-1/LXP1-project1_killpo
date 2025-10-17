@@ -9,7 +9,6 @@ export function bindModalEvents() {
       // 모달 mode 속성 찾기
       const modalMode = openBtn.dataset.modalMode;
       const modal = $(".modal");
-      console.log(modalMode);
       if (modal) {
         // 텍스트 mode에 맞게 업데이트
         updateModalText(modal, modalMode);
