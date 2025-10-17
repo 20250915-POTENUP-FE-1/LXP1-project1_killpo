@@ -1,4 +1,8 @@
 import { $ } from "../utils/dom.js";
+import {
+  createIcons,
+  icons,
+} from "https://cdn.jsdelivr.net/npm/lucide@latest/+esm";
 
 export function Header() {
   this.init = () => {
@@ -6,6 +10,9 @@ export function Header() {
       .then((response) => response.text())
       .then((responseText) => {
         $(".container").insertAdjacentHTML("afterbegin", responseText);
+        // 아이콘 로드
+        createIcons({ icons });
+
         bindEvent();
       });
   };

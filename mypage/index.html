@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>마이페이지</title>
     <link rel="stylesheet" href="../common/css/index.css" />
+    <link rel="stylesheet" href="./css/courseTable.css" />
     <link rel="stylesheet" href="./css/mypage.css" />
     <link rel="stylesheet" href="./css/tabMenu.css" />
   </head>
@@ -21,9 +22,9 @@
           <!-- 사이드바 모듈: 사용자 프로필 · 네비게이션 -->
           <aside class="asidebar">
             <div class="asidebar__profile">
-              <div class="asidebar__avatar">SH</div>
+              <div class="asidebar__avatar"><i data-lucide="user"></i></div>
               <div>
-                <p class="asidebar__name">성훈</p>
+                <p class="asidebar__name">USER</p>
                 <p class="asidebar__role">강사</p>
               </div>
             </div>
@@ -55,13 +56,15 @@
 
           <!-- 메인 콘텐츠 모듈: 등록 강의 관리 -->
           <section class="mypage-content" id="dashboard">
+            <!-- 마이페이지 헤더 모듈 -->
             <header class="mypage-content__header">
               <div>
-                <p class="mypage-content__count">총 8개 강의</p>
+                <p class="mypage-content__count">
+                  총 <span class="mypage-content__total"></span>개 강의
+                </p>
                 <h1 class="mypage-content__title">내가 등록한 강의</h1>
-              </div>              
+              </div>
             </header>
-
             <!-- 강의 목록 테이블 모듈 -->
             <section class="course-table">
               <table>
@@ -177,6 +180,7 @@
           </section>
         </div>
       </main>
+    </div>
 
     <script type="module" src="./js/index.js"></script>
   </body>
