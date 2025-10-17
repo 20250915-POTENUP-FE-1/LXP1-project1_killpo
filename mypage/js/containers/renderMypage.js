@@ -32,7 +32,7 @@ const bindEvents = () => {
     }
 
     if (e.target.closest(".edit-course-btn")) {
-      edutCourse(target);
+      editCourse(target);
       return;
     }
   });
