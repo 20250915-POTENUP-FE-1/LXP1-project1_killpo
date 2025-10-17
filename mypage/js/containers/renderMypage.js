@@ -20,7 +20,7 @@ export function renderMypage(courseList) {
   }
 
   // 테이블에 이벤트 핸들러 위임
-  tbodyContainer.addEventListener("click", (e) => {
+  courseTableBody.addEventListener("click", (e) => {
     const targetElement = e.target;
 
     // "삭제하기" 클릭 시
