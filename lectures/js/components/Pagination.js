@@ -24,7 +24,7 @@ export function Pagination({ onPageChange } = {}) {
   };
 
   /**
-   * @description 외부에서 필터링된 강의 리스트를 전달받아 Pagination 내부 상태 갱신
+   * @description 외부에서 필터링된 강좌 리스트를 전달받아 Pagination 내부 상태 갱신
    */
   this.updateCourseList = (courseList) => {
     this.courses = courseList;

@@ -11,7 +11,7 @@ function readFileAsDataURL(file) {
   });
 }
 
-// 강의 등록 모달
+// 강좌 등록 모달
 export async function submitRegisterCourseForm() {
   // 1) html에서 요소를 찾고 value 가져오기 + 공백 제거, null값이면 "" 사용
   const courseTitle = ($("#create-course-title")?.value || "").trim();
@@ -41,9 +41,9 @@ export async function submitRegisterCourseForm() {
     thumbnailUrl = "";
   }
 
-  // 4) 새 강의 생성
+  // 4) 새 강좌 생성
   const courseList = store.getLocalStorage("courseList") || [];
-  // 강의 id를 생성일시를 추가해 유니크하게 만들기
+  // 강좌 id를 생성일시를 추가해 유니크하게 만들기
   const createdAt = new Date().toISOString();
   const newId = `${Date.now()}-${createdAt.replace(/[:.]/g, "-")}`;
   // 로컬스토리지에서 등록된 id 검토 후 마지막 id +1

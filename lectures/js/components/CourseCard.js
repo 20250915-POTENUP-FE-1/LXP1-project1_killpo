@@ -29,7 +29,7 @@ export function CourseCard(courseItem) {
           </div>
         </div>
       </div>  
-       <!-- 강의 상세 오버레이 -->
+       <!-- 강좌 상세 오버레이 -->
       <div class="course-card__hover-panel">
         <div class="course-card-detail">
           <div class="course-card-detail__header">

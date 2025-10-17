@@ -4,7 +4,7 @@ export function detailsSection(courseItem) {
   const averageRating = getAverageRating(courseItem.reviews);
 
   return `
-        <!-- 강의 소개 히어로 섹션 -->
+        <!-- 강좌 소개 히어로 섹션 -->
         <section class="lecture-hero">
           <div class="lecture-hero__content">
             <div class="lecture-hero__badges">
@@ -45,10 +45,10 @@ export function detailsSection(courseItem) {
         <!-- 커리큘럼과 상세 설명 -->
         <div class="lecture-body">
           <div class="lecture-body__content">
-            <!-- 강의 상세 설명 -->
+            <!-- 강좌 상세 설명 -->
             <section class="lecture-description" id="description">
               <header class="section-header">
-                <h2>강의 상세 설명</h2>
+                <h2>강좌 상세 설명</h2>
               </header>
               <div class="description-body">
                 <p>

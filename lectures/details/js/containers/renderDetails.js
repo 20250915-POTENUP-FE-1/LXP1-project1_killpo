@@ -2,16 +2,16 @@ import { $ } from "../../../../common/js/utils/dom.js";
 import { detailsSection } from "../components/DetailsSection.js";
 
 /**
- * @param {Array<Object>} courseItem /lectures에서 선택한 강의 객체
+ * @param {Array<Object>} courseItem /lectures에서 선택한 강좌 객체
  */
 
 export function renderDetails(courseItem) {
   const container = $(".lecture-detail");
   container.innerHTML = "";
 
-  // 강의 리스트 렌더링
+  // 강좌 리스트 렌더링
   if (!courseItem) {
-    container.innerHTML = `<p class="lecture-hero-empty-message">강의를 불러들이는데 오류가 발생했습니다.</p>`;
+    container.innerHTML = `<p class="lecture-hero-empty-message">강좌를 불러들이는데 오류가 발생했습니다.</p>`;
   } else {
     container.innerHTML = detailsSection(courseItem);
     bindEvents();

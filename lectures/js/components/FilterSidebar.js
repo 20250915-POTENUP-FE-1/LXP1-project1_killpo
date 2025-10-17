@@ -11,7 +11,7 @@ import {
 
 /**
  * @class FilterSidebar
- * @description 강의 목록 페이지의 필터 사이드바를 관리하는 클래스.
+ * @description 강좌 목록 페이지의 필터 사이드바를 관리하는 클래스.
  * 카테고리 선택, 난이도 선택, 초기화 등 필터링 관련 인터랙션을 처리한다.
  */
 export function FilterSidebar({ onFilterChange } = {}) {
