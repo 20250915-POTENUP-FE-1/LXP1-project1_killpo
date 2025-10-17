@@ -7,21 +7,21 @@ import { $ } from "./dom.js";
 
 // 카테고리 select 초기화
 export function bindCategorySelect() {
-  const primarySelect = $("#create-course-category-primary");
-  const secondarySelect = $("#create-course-category-secondary");
-  const tertiarySelect = $("#create-course-category-tertiary");
+  const firstSelect = $("#create-course-category-primary");
+  const secondSelect = $("#create-course-category-secondary");
+  const thirdSelect = $("#create-course-category-tertiary");
 
   // 1차 카테고리 옵션 생성
-  if (primarySelect) {
+  if (firstSelect) {
     const firstCategory = getFirstCategory();
     const options = firstCategory
       .map((cate) => `<option value="${cate}">${cate}</option>`)
       .join("");
-    primarySelect.innerHTML = `<option value="">1차 카테고리 선택</option>${options}`;
+    firstSelect.innerHTML = `<option value="">1차 카테고리 선택</option>${options}`;
   }
 
   // 1차 카테고리 변경 이벤트
-  primarySelect?.addEventListener("change", (e) => {
+  firstSelect?.addEventListener("change", (e) => {
     const selectedFirst = e.target.value;
     const secondCategory = getSecondCategory(selectedFirst);
 
@@ -29,19 +29,19 @@ export function bindCategorySelect() {
       .map((cate) => `<option value="${cate}">${cate}</option>`)
       .join("");
 
-    if (secondarySelect) {
-      secondarySelect.innerHTML = `<option value="">2차 카테고리 선택</option>${options}`;
+    if (secondSelect) {
+      secondSelect.innerHTML = `<option value="">2차 카테고리 선택</option>${options}`;
     }
 
-    if (tertiarySelect) {
-      tertiarySelect.innerHTML =
+    if (thirdSelect) {
+      thirdSelect.innerHTML =
         '<option value="">3차 카테고리 선택 (옵션)</option>';
     }
   });
 
   // 2차 카테고리 변경 이벤트
-  secondarySelect?.addEventListener("change", (e) => {
-    const selectedFirst = primarySelect.value;
+  secondSelect?.addEventListener("change", (e) => {
+    const selectedFirst = firstSelect.value;
     const selectedSecond = e.target.value;
     const thirdCategory = getThirdCategory(selectedFirst, selectedSecond);
 
@@ -49,8 +49,8 @@ export function bindCategorySelect() {
       .map((cate) => `<option value="${cate}">${cate}</option>`)
       .join("");
 
-    if (tertiarySelect) {
-      tertiarySelect.innerHTML = `<option value="">3차 카테고리 선택 (옵션)</option>${options}`;
+    if (thirdSelect) {
+      thirdSelect.innerHTML = `<option value="">3차 카테고리 선택 (옵션)</option>${options}`;
     }
   });
 }
