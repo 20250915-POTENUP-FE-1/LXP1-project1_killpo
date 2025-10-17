@@ -1,6 +1,6 @@
 import { getAverageRating } from "../utils/getAverageRating.js";
 
-export function courseCard(courseItem) {
+export function CourseCard(courseItem) {
   const averageRating = getAverageRating(courseItem.reviews);
 
   return `
