@@ -12,7 +12,7 @@ function readFileAsDataURL(file) {
 }
 
 // 강의 등록 모달
-export async function RegisterCourseModal() {
+export async function submitRegisterCourseForm() {
   // 1) html에서 요소를 찾고 value 가져오기 + 공백 제거, null값이면 "" 사용
   const courseTitle = ($("#create-course-title")?.value || "").trim();
   const courseSummary = ($("#create-course-summary")?.value || "").trim();

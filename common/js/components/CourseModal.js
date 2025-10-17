@@ -1,6 +1,6 @@
 import { $ } from "../utils/dom.js";
 import { bindModalEvents } from "../utils/bindModalEvents.js";
-import { RegisterCourseModal } from "../utils/registerCourseModal.js";
+import { submitRegisterCourseForm } from "../utils/submitRegisterCourseForm.js";
 import { bindCategorySelect } from "../utils/bindCategorySelect.js";
 import { validateRegisterCourseForm } from "../utils/validateRegisterCourseForm.js";
 
@@ -22,7 +22,7 @@ export function CourseModal() {
       e.preventDefault();
 
       if (!validateRegisterCourseForm()) return;
-      RegisterCourseModal();
+      submitRegisterCourseForm();
     });
 
     // 카테고리 셀렉트 초기화
