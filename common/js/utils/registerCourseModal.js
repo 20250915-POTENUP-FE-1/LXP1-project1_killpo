@@ -1,7 +1,7 @@
 import { $ } from "./dom.js";
 import { store } from "../store/localStorage.js";
 
-// 썸네일 파일을 dataURL(Base64)로 읽
+// 썸네일 파일을 dataURL(Base64)로 읽기
 function readFileAsDataURL(file) {
   return new Promise((resolve, reject) => {
     const fr = new FileReader();
@@ -24,14 +24,20 @@ export async function RegisterCourseModal() {
   // ?.files 선택된 파일 목록 불러오기, ?.[0] 첫번째 이미지만 사용
   // ?. >> 값이 없었을때 오류 방지
 
-  // 카테고리(1/2/3차) 선택
+  // 2) 사용자가 선택한 카테고리(1/2/3차)
+  // 카테고리 값 가져오기
+  const categoryFirst = $("#create-course-category-primary")?.value || "";
+  const categorySecond = $("#create-course-category-secondary")?.value || "";
+  const categoryThird = $("#create-course-category-tertiary")?.value || "";
+  // 카테고리 값 문자열로
+  const categoryPath = [categoryFirst, categorySecond, categoryThird];
 
   // 3) 썸네일 Base64 변환 (비동기)
   let thumbnailUrl = "";
   try {
     thumbnailUrl = await readFileAsDataURL(thumbnailFile);
-  } catch (error) {
-    console.error(error);
+  } catch (err) {
+    console.error(err);
     thumbnailUrl = "";
   }
 
@@ -51,10 +57,10 @@ export async function RegisterCourseModal() {
     title: courseTitle,
     description: courseSummary,
     content: courseDescription,
-    instructor: ["김조이"], // 강사명 고정값으로 설정
+    instructor: "김조이", // 강사명 고정값으로 설정
     level: courseLevel,
-    // category,
-    //tags,
+    category: categoryPath,
+    tags: [categoryPath[categoryPath.length - 1], courseLevel],
     thumbnailUrl, // Base64변환
     createdAt,
   };
@@ -72,6 +78,8 @@ export async function RegisterCourseModal() {
     // 성공했다면 모달창 닫기
     const modal = $("#course-create");
     if (modal) modal.style.display = "none";
+    // mypage 로 이동
+    window.location.replace("/mypage");
     return true;
     // 반환값이 false 일때 메세지
   } else {
@@ -79,33 +87,3 @@ export async function RegisterCourseModal() {
     return false;
   }
 }
-
-/*
-//  검증
-  if (!courseTitle) {
-    alert("강의 제목을 입력해주세요.");
-    $("#create-course-title").focus();
-    return false;
-  }
-  if (!courseSummary) {
-    alert("한 줄 요약을 입력해주세요.");
-    $("#create-course-summary").focus();
-    return false;
-  }
-
-  if (!courseLevel) {
-    alert("난이도를 선택해주세요.");
-    $("#create-course-difficulty").focus();
-    return false;
-  }
-  if (!courseDescription) {
-    alert("상세 설명을 입력해주세요.");
-    $("#create-course-description").focus();
-    return false;
-  }
-  if (!thumbnailFile) {
-    alert("썸네일 이미지를 선택해주세요.");
-    $("#create-thumbnail-file").focus();
-    return false;
-  }
-*/

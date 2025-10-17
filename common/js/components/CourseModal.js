@@ -1,6 +1,8 @@
 import { $ } from "../utils/dom.js";
 import { bindModalEvents } from "../utils/bindModalEvents.js";
 import { RegisterCourseModal } from "../utils/registerCourseModal.js";
+import { bindCategorySelect } from "../utils/bindCategorySelect.js";
+import { checkValidation } from "../utils/checkValidation.js";
 
 export function CourseModal() {
   this.init = () => {
@@ -16,20 +18,15 @@ export function CourseModal() {
     // 강의 등록 이벤트 인터랙트
     // 강의 등록 제출
     const createCourseForm = $("#course-create-form");
-    if (!createCourseForm) return;
 
     createCourseForm.addEventListener("submit", (e) => {
       e.preventDefault();
+
+      if (checkValidation()) return;
       RegisterCourseModal();
     });
-  };
 
-  //   const createCourseForm = $("#course-create-form");
-  //   if (createCourseForm) {
-  //     createCourseForm.addEventListener("submit", (e) => {
-  //       e.preventDefault();
-  //       RegisterCourseModal();
-  //     });
-  //   }
-  // };
+    // 카테고리 셀렉트 초기화
+    bindCategorySelect();
+  };
 }
