@@ -2,7 +2,7 @@ import { $ } from "../utils/dom.js";
 import { bindModalEvents } from "../utils/bindModalEvents.js";
 import { RegisterCourseModal } from "../utils/registerCourseModal.js";
 import { bindCategorySelect } from "../utils/bindCategorySelect.js";
-import { checkValidation } from "../utils/checkValidation.js";
+import { validateRegisterCourseForm } from "../utils/validateRegisterCourseForm.js";
 
 export function CourseModal() {
   this.init = () => {
@@ -21,7 +21,7 @@ export function CourseModal() {
     createCourseForm.addEventListener("submit", (e) => {
       e.preventDefault();
 
-      if (checkValidation()) return;
+      if (!validateRegisterCourseForm()) return;
       RegisterCourseModal();
     });
 
