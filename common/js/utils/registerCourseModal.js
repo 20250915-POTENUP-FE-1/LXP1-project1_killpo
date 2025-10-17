@@ -57,11 +57,13 @@ export async function RegisterCourseModal() {
     title: courseTitle,
     description: courseSummary,
     content: courseDescription,
-    instructor: "김조이", // 강사명 고정값으로 설정
-    level: courseLevel,
-    category: categoryPath,
-    tags: [categoryPath[categoryPath.length - 1], courseLevel],
     thumbnailUrl, // Base64변환
+    instructor: "김조이", // 강사명 고정값으로 설정
+    category: categoryPath,
+    level: courseLevel,
+    tags: [categoryPath[categoryPath.length - 1], courseLevel],
+    reviews: [],
+    studentCount: 0,
     createdAt,
   };
 

@@ -15,7 +15,6 @@ export function CourseModal() {
   };
   const bindEvents = () => {
     bindModalEvents();
-    // 강의 등록 이벤트 인터랙트
     // 강의 등록 제출
     const createCourseForm = $("#course-create-form");
 
