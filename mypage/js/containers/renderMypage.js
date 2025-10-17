@@ -24,5 +24,16 @@ export function renderMypage(courseList) {
 }
 
 const bindEvents = () => {
-  $(".course-table__body").addEventListener("click", deleteCourse);
+  $(".course-table__body").addEventListener("click", (e) => {
+    const target = e.target;
+
+    if (e.target.closest(".delete-course-btn")) {
+      deleteCourse(target);
+    }
+
+    if (e.target.closest(".edit-course-btn")) {
+      edutCourse(target);
+      return;
+    }
+  });
 };

@@ -1,9 +1,9 @@
 import { store } from "../../../common/js/store/localStorage.js";
+import { $ } from "../../../common/js/utils/dom.js";
 import { courseList as mockCourseList } from "../../../lectures/js/mockData.js";
 import { CourseItem } from "../components/CourseItem.js";
 
-export const deleteCourse = (e) => {
-  const target = e.target;
+export const deleteCourse = (target) => {
   if (target.classList.contains("delete-course-btn")) {
     // 삭제하기 로직 구현 후 유틸 함수로 분리 예정
     const courseRow = target.closest(".course-row");
@@ -21,7 +21,8 @@ export const deleteCourse = (e) => {
       store.setLocalStorage("courseList", newList);
 
       // 강의 목록 렌더링
-      target.closest(".course-table__body").innerHTML = newList
+      $(".mypage-content__total").innerHTML = newList.length;
+      $(".course-table__body").innerHTML = newList
         .map((courseItem) => CourseItem(courseItem))
         .join("");
     }
