@@ -52,7 +52,7 @@ export function detailsSection(courseItem) {
               </header>
               <div class="description-body">
                 <p>
-                ${courseItem.contents}
+                ${courseItem.content}
                 </p>
               </div>
             </section>
