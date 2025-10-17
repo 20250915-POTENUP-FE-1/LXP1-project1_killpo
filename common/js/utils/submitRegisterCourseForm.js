@@ -74,7 +74,7 @@ export async function submitRegisterCourseForm() {
   // 로컬스토리지에 저장 후 저장완료 반환값 불러오기
   // 7) 반환 값이 true 일때 저장 성공 메세지
   if (courseSaved) {
-    alert("강의가 저장되었습니다.");
+    alert("강좌가 등록되었습니다.");
     $("#course-create-form")?.reset();
 
     // 성공했다면 모달창 닫기
@@ -85,7 +85,7 @@ export async function submitRegisterCourseForm() {
     return true;
     // 반환값이 false 일때 메세지
   } else {
-    alert("강의 저장에 실패했습니다. 다시 시도해주세요.");
+    alert("강좌 등록에 실패했습니다. 다시 시도해주세요.");
     return false;
   }
 }
