@@ -15,10 +15,10 @@ export function bindModalEvents() {
         modal.style.display = "flex";
 
         // 첫 번째 입력 창 포커스
-        setTimeout(() => {
+        requestAnimationFrame(() => {
           const titleInput = modal.querySelector("input");
           if (titleInput) titleInput.focus();
-        }, 50);
+        });
         return;
       }
     }
