@@ -6,7 +6,7 @@ import { detailsSection } from "../components/DetailsSection.js";
  */
 
 export function renderDetails(courseItem) {
-  const container = document.querySelector(".lecture-detail");
+  const container = $(".lecture-detail");
   container.innerHTML = "";
 
   // 강의 리스트 렌더링

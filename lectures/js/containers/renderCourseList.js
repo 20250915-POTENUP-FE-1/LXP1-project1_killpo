@@ -1,3 +1,4 @@
+import { $ } from "../../../common/js/utils/dom.js";
 import { CourseCard } from "../components/CourseCard.js";
 import { COURSE_PAGE_SIZE } from "../constants/pagination.js";
 import { filterCourseList } from "../utils/filterCourseList.js";
@@ -11,7 +12,7 @@ import { sortCourseList } from "../utils/sortCourseList.js";
  * @param {string} sortOption 정렬 옵션
  */
 export function renderCourseList(courseList, filter, pageNumber, sortOption) {
-  const container = document.querySelector(".course-grid");
+  const container = $(".course-grid");
   container.innerHTML = "";
 
   // 필터링
