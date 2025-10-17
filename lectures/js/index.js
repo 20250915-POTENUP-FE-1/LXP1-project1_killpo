@@ -3,10 +3,10 @@ import { FilterSidebar } from "./components/FilterSidebar.js";
 import { START_PAGE } from "./constants/pagination.js";
 import { renderCourseList } from "./containers/renderCourseList.js";
 import { courseList as mockCourseList } from "./mockData.js";
-import { Pagination } from "./Pagination.js";
 import { filterCourseList } from "./utils/filterCourseList.js";
 import { Header } from "../../common/js/components/Header.js";
 import { CourseModal } from "../../common/js/components/CourseModal.js";
+import { Pagination } from "./components/Pagination.js";
 
 // 초기 상태 (강좌 리스트, 필터링, 페이지 정보)
 const courseList = store.getLocalStorage("courseList") || mockCourseList; // []
