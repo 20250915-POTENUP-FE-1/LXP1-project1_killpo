@@ -14,7 +14,7 @@
       </div>
       <button type="button" class="modal__close modal-close">×</button>
     </header>
-    <form id="course-create-form" class="modal__form">
+    <form id="course-create-form" class="modal__form" novalidate>
       <section class="modal__body">
         <!-- 강의 등록 폼: 기본 정보 입력 그리드 -->
         <div class="form-grid">
@@ -98,7 +98,7 @@
           <div class="form-field">
             <div class="form-field__title">난이도</div>
             <select
-              id="edit-course-difficulty"
+              id="create-course-difficulty"
               name="difficulty"
               class="form-control"
               required
@@ -112,7 +112,7 @@
           <div class="form-field form-field--full">
             <div class="form-field__title">상세 설명</div>
             <textarea
-              id="edit-course-description"
+              id="create-course-description"
               name="description"
               class="form-control"
               rows="4"
