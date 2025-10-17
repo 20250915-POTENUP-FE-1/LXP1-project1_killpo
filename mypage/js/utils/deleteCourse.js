@@ -17,7 +17,7 @@ export const deleteCourse = (target) => {
     // 확인 버튼 클릭 시 삭제
     if (
       confirm(
-        `"${selectedCourse.title}" 강의를 삭제하시겠어요? 삭제 후 복구가 불가능해요 🥲`
+        `"${selectedCourse.title}" 강의를 삭제하시겠어요?\n삭제 후 복구가 불가능해요 🥲`
       )
     ) {
       // 강의 목록 업데이트
