@@ -10,7 +10,6 @@ export function bindModalEvents() {
       const modalMode = openBtn.dataset.modalMode;
       const modal = $(".modal");
       if (modal) {
-        // 텍스트 mode에 맞게 업데이트
         updateModalText(modal, modalMode);
         modal.style.display = "flex";
 

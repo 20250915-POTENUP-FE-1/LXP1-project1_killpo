@@ -2,7 +2,7 @@ import {
   getFirstCategory,
   getSecondCategory,
   getThirdCategory,
-} from "./CourseCategory.js";
+} from "./getCategoryList.js";
 import { $ } from "./dom.js";
 
 // 카테고리 select 초기화
