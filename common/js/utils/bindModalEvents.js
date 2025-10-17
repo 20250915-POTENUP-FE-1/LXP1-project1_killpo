@@ -6,10 +6,10 @@ export function bindModalEvents() {
     // 열기
     const openBtn = e.target.closest(".modal-toggle-btn");
     if (openBtn) {
-      const modalId = openBtn.dataset.modalTarget;
       // 모달 mode 속성 찾기
-      const modalMode = openBtn.dataset.modalMode || "create";
-      const modal = document.getElementById(modalId);
+      const modalMode = openBtn.dataset.modalMode;
+      const modal = $(".modal");
+      console.log(modalMode);
       if (modal) {
         // 텍스트 mode에 맞게 업데이트
         updateModalText(modal, modalMode);
@@ -43,16 +43,12 @@ function closeModal(modal) {
   modal.style.display = "none";
 }
 
-export function updateModalText(modal, mode) {
-  const modalId = modal.id;
+export function updateModalText(modal, modalMode) {
   // 모달 id에 텍스트 객체 가져오기
-  const textConfig = modalTexts[modalId];
+  const textConfig = modalTexts[modalMode];
 
   // 모달 mode 를 확인
-  if (!textConfig || !textConfig[mode]) return;
-
-  //현재 모드에 맞는 텍스트 가져오기
-  const config = textConfig[mode];
+  if (!textConfig) return;
 
   // 모달 내부에서 상단작은제목, 제목, 서브타이틀 선택
   const eyebrowElement = modal.querySelector(".modal__eyebrow");
@@ -60,7 +56,7 @@ export function updateModalText(modal, mode) {
   const subtitleElement = modal.querySelector(".modal__subtitle");
 
   // 요소가 있다면 텍스트 불러오기
-  if (eyebrowElement) eyebrowElement.textContent = config.eyebrow;
-  if (titleElement) titleElement.textContent = config.title;
-  if (subtitleElement) subtitleElement.textContent = config.subtitle;
+  if (eyebrowElement) eyebrowElement.textContent = textConfig.eyebrow;
+  if (titleElement) titleElement.textContent = textConfig.title;
+  if (subtitleElement) subtitleElement.textContent = textConfig.subtitle;
 }
