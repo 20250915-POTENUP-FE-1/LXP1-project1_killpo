@@ -1,19 +1,19 @@
-export function courseItem(item) {
+export function CourseItem(courseItem) {
   return `
-          <tr class="course-row" data-course-id=${item.id}>
+          <tr class="course-row" data-course-id=${courseItem.id}>
             <td>
               <div class="table-thumb">
                 <img
-                  src="${item.thumbnailUrl}"
+                  src="${courseItem.thumbnailUrl}"
                 />
               </div>
             </td>
             <td>
               <div class="table-title">
-                <strong>${item.title}</strong>
+                <strong>${courseItem.title}</strong>
               </div>
             </td>
-            <td>${item.tags[0]}</td>
+            <td>${courseItem.tags[0]}</td>
             <td class="table-actions">
               <button
                 type="button"
