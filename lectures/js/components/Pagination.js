@@ -1,9 +1,9 @@
-import { $ } from "../../common/js/utils/dom.js";
+import { $ } from "../../../common/js/utils/dom.js";
 import {
   START_PAGE,
   COURSE_PAGE_SIZE,
   PAGINATION_LIMIT,
-} from "./constants/pagination.js";
+} from "../constants/pagination.js";
 
 export function Pagination({ onPageChange } = {}) {
   this.courses = [];
