@@ -26,6 +26,8 @@ export function renderCourseList(courseList, filter, pageNumber) {
   if (!paginatedCourseList.length) {
     container.innerHTML = `<p class="course-card-empty-message">조건에 맞는 강의가 없습니다.</p>`;
   } else {
-    container.innerHTML = paginatedCourseList.map(CourseCard).join("");
+    container.innerHTML = paginatedCourseList
+      .map((courseItem) => CourseCard(courseItem))
+      .join("")
   }
 }
