@@ -16,5 +16,5 @@ export const getAverageRating = (reviews) => {
 
   const average = totalRatingSum / reviews.length;
 
-  return average;
+  return parseFloat(average.toFixed(1));
 };
