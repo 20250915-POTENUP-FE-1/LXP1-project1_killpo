@@ -5,39 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>마이페이지</title>
     <link rel="stylesheet" href="../common/css/index.css" />
+    <link rel="stylesheet" href="./css/courseTable.css" />
     <link rel="stylesheet" href="./css/mypage.css" />
     <link rel="stylesheet" href="./css/tabMenu.css" />
-    <script src="../common/js/components/modal.js" defer></script>
   </head>
 
   <body>
     <!-- 마이페이지 전체 컨테이너 -->
     <div class="container">
       <!-- 헤더 모듈: 마이페이지 로고 · 사용자 바로가기 -->
-      <header class="header">
-        <div class="header-content">
-          <div class="logo"><a href="/">KILLPO</a></div>
-          <nav class="header-nav">
-            <ul class="nav-menu">
-              <li><a href="/mypage">강의 등록하기</a></li>
-              <li>
-                <a href="/mypage" class="avatar-button">SH</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </header>
 
       <!-- 마이페이지 본문 레이아웃 -->
       <main class="mypage">
-        <!-- 좌측 사이드바 + 등록 강의 영역 -->
+        <!-- 좌측 사이드바 + 등록 강좌 영역 -->
         <div class="mypage-layout">
           <!-- 사이드바 모듈: 사용자 프로필 · 네비게이션 -->
           <aside class="asidebar">
             <div class="asidebar__profile">
-              <div class="asidebar__avatar">SH</div>
+              <div class="asidebar__avatar"><i data-lucide="user"></i></div>
               <div>
-                <p class="asidebar__name">성훈</p>
+                <p class="asidebar__name">USER</p>
                 <p class="asidebar__role">강사</p>
               </div>
             </div>
@@ -51,11 +38,11 @@
                     href="#dashboard"
                     class="asidebar__link asidebar__link--active"
                   >
-                    등록한 강의 목록
+                    등록한 강좌 목록
                   </a>
                 </li>
                 <li class="asidebar__item">
-                  <a href="#courses" class="asidebar__link">수강 중인 강의</a>
+                  <a href="#courses" class="asidebar__link">수강 중인 강좌</a>
                 </li>
                 <li class="asidebar__item">
                   <a href="#wishlist" class="asidebar__link">위시리스트</a>
@@ -67,27 +54,22 @@
             </nav>
           </aside>
 
-          <!-- 메인 콘텐츠 모듈: 등록 강의 관리 -->
+          <!-- 메인 콘텐츠 모듈: 등록 강좌 관리 -->
           <section class="mypage-content" id="dashboard">
+            <!-- 마이페이지 헤더 모듈 -->
             <header class="mypage-content__header">
               <div>
-                <p class="mypage-content__count">총 8개 강의</p>
-                <h1 class="mypage-content__title">내가 등록한 강의</h1>
+                <p class="mypage-content__count">
+                  총 <span class="mypage-content__total"></span>개 강좌
+                </p>
+                <h1 class="mypage-content__title">내가 등록한 강좌</h1>
               </div>
-              <button
-                type="button"
-                class="button button--primary modal-toggle-btn"
-                data-modal-target="course-create"
-              >
-                강의 등록하기
-              </button>
             </header>
-
-            <!-- 강의 목록 테이블 모듈 -->
+            <!-- 강좌 목록 테이블 모듈 -->
             <section class="course-table">
               <table>
                 <caption class="visually-hidden">
-                  썸네일, 제목, 노출 여부, 카테고리, 강의 관리 버튼
+                  썸네일, 제목, 노출 여부, 카테고리, 강좌 관리 버튼
                 </caption>
                 <thead>
                   <tr>
@@ -98,523 +80,14 @@
                     <th scope="col" class="visually-hidden">관리</th>
                   </tr>
                 </thead>
-                <tbody class="course-table__body">
-                  <tr class="course-row">
-                    <td>
-                      <div class="table-thumb">
-                        <img
-                          src="https://images.unsplash.com/photo-1526481280695-3c4696001f81?auto=format&fit=crop&w=640&q=80"
-                        />
-                      </div>
-                    </td>
-                    <td>
-                      <div class="table-title">
-                        <strong>Python 데이터 분석 완성</strong>
-                        <!-- <span>최근 업데이트 · 2023.10.03</span> -->
-                      </div>
-                    </td>
-                    <!-- <td><span class="badge badge--live">공개</span></td> -->
-                    <td>데이터 사이언스</td>
-                    <td class="table-actions">
-                      <button
-                        type="button"
-                        class="button button--secondary modal-toggle-btn"
-                        data-modal-target="course-edit"
-                      >
-                        수정하기
-                      </button>
-                      <button
-                        type="button"
-                        class="button button--ghost button--danger"
-                      >
-                        삭제하기
-                      </button>
-                    </td>
-                  </tr>
-                  <tr class="course-row">
-                    <td>
-                      <div class="table-thumb">
-                        <img
-                          src="https://images.unsplash.com/photo-1526481280695-3c4696001f81?auto=format&fit=crop&w=640&q=80"
-                        />
-                      </div>
-                    </td>
-                    <td>
-                      <div class="table-title">
-                        <strong>UX/UI 디자인 워크샵</strong>
-                        <!-- <span>비공개 전환 · 2023.10.01</span> -->
-                      </div>
-                    </td>
-                    <!-- <td><span class="badge badge--private">비공개</span></td> -->
-                    <td>디자인</td>
-                    <td class="table-actions">
-                      <button
-                        type="button"
-                        class="button button--secondary modal-toggle-btn"
-                        data-modal-target="course-edit"
-                      >
-                        수정하기
-                      </button>
-                      <button
-                        type="button"
-                        class="button button--ghost button--danger"
-                      >
-                        삭제하기
-                      </button>
-                    </td>
-                  </tr>
-                  <tr class="course-row">
-                    <td>
-                      <div class="table-thumb">
-                        <img
-                          src="https://images.unsplash.com/photo-1526481280695-3c4696001f81?auto=format&fit=crop&w=640&q=80"
-                        />
-                      </div>
-                    </td>
-                    <td>
-                      <div class="table-title">
-                        <strong>JavaScript 실전 프로젝트</strong>
-                        <!-- <span>일시 중지 · 2023.09.20</span> -->
-                      </div>
-                    </td>
-                    <!-- <td><span class="badge badge--private">비공개</span></td> -->
-                    <td>프로그래밍</td>
-                    <td class="table-actions">
-                      <button
-                        type="button"
-                        class="button button--secondary modal-toggle-btn"
-                        data-modal-target="course-edit"
-                      >
-                        수정하기
-                      </button>
-                      <button
-                        type="button"
-                        class="button button--ghost button--danger"
-                      >
-                        삭제하기
-                      </button>
-                    </td>
-                  </tr>
-                </tbody>
+                <tbody class="course-table__body"></tbody>
               </table>
             </section>
           </section>
         </div>
       </main>
-
-      <!-- 모달 모듈: 강의 등록 -->
-      <div class="modal" id="course-create">
-        <div class="modal__dialog">
-          <header class="modal__header">
-            <div>
-              <p class="modal__eyebrow">새 강의 등록</p>
-              <h2 class="modal__title" id="course-create-title">
-                기본 정보를 입력하세요
-              </h2>
-              <p class="modal__subtitle">
-                등록 후에는 비공개 상태로 저장되며, 세부 정보를 추가하면 공개로
-                전환할 수 있어요.
-              </p>
-            </div>
-            <button type="button" class="modal__close modal-close">×</button>
-          </header>
-          <form id="course-create-form" class="modal__form">
-            <section class="modal__body">
-              <!-- 강의 등록 폼: 기본 정보 입력 그리드 -->
-              <div class="form-grid">
-                <div class="form-field">
-                  <div class="form-field__title">강의 제목</div>
-                  <input
-                    id="create-course-title"
-                    name="title"
-                    type="text"
-                    class="form-control"
-                    placeholder="예: 파이썬 데이터 분석 완성"
-                    required
-                  />
-                </div>
-                <div class="form-field">
-                  <div class="form-field__title">한 줄 요약</div>
-                  <input
-                    id="create-course-summary"
-                    name="summary"
-                    type="text"
-                    class="form-control"
-                    placeholder="수강생이 한눈에 이해할 수 있는 짧은 설명"
-                    maxlength="120"
-                    required
-                  />
-                </div>
-                <div class="form-field form-field--full">
-                  <div class="form-field__title">카테고리</div>
-                  <div class="category-selects">
-                    <select
-                      id="create-course-category-primary"
-                      name="categoryPrimary"
-                      class="form-control"
-                      required
-                    >
-                      <option value="">1차 카테고리 선택</option>
-                      <option value="creative">크리에이티브</option>
-                      <option value="career">커리어</option>
-                      <option value="tech">테크</option>
-                      <option value="language">언어</option>
-                      <option value="education">교육</option>
-                    </select>
-                    <select
-                      id="create-course-category-secondary"
-                      name="categorySecondary"
-                      class="form-control"
-                      required
-                    >
-                      <option value="">2차 카테고리 선택</option>
-                      <option value="digital-drawing">디지털 드로잉</option>
-                      <option value="drawing">드로잉</option>
-                      <option value="craft">공예</option>
-                      <option value="food">요리·음료</option>
-                      <option value="baking">베이킹·디저트</option>
-                      <option value="music">음악</option>
-                      <option value="fitness">운동</option>
-                      <option value="lifestyle">라이프스타일</option>
-                      <option value="photo-video">사진·영상</option>
-                    </select>
-                    <select
-                      id="create-course-category-tertiary"
-                      name="categoryTertiary"
-                      class="form-control"
-                    >
-                      <option value="">3차 카테고리 선택 (옵션)</option>
-                      <optgroup label="프로그래밍">
-                        <option value="all">전체</option>
-                        <option value="it-literacy">IT 교양</option>
-                        <option value="programming-language">
-                          프로그래밍 언어
-                        </option>
-                        <option value="web-frontend">Web·프론트엔드</option>
-                        <option value="backend">백엔드</option>
-                        <option value="app">App</option>
-                        <option value="game">게임</option>
-                        <option value="security-network">보안·네트워크</option>
-                        <option value="system-devops">시스템·DevOps</option>
-                      </optgroup>
-                    </select>
-                  </div>
-                </div>
-                <!-- <div class="form-field form-field--full">
-                  <div class="form-field__title">이런 걸 배울 수 있어요</div>
-                  <p class="form-field__hint">
-                    학습 포인트를 항목별로 입력하세요. (최소 1개)
-                  </p>
-                  <div class="learning-points">
-                    <div class="learning-points__item">
-                      <input
-                        type="text"
-                        name="learningPoints[]"
-                        class="form-control"
-                        placeholder="예: 실무 데이터 전처리"
-                      />
-                    </div>
-                    <div class="learning-points__item">
-                      <input
-                        type="text"
-                        name="learningPoints[]"
-                        class="form-control"
-                        placeholder="예: 시각화 리포트 제작"
-                      />
-                    </div>
-                    <div class="learning-points__item">
-                      <input
-                        type="text"
-                        name="learningPoints[]"
-                        class="form-control"
-                        placeholder="예: 자동화 워크플로 설계"
-                      />
-                    </div>
-                  </div>
-                  <button type="button" class="chip-add-btn">
-                    + 항목 추가
-                  </button>
-                </div> -->
-                <div class="form-field form-field--full">
-                  <div class="form-field__title">썸네일 이미지</div>
-                  <input
-                    id="create-thumbnail-file"
-                    name="thumbnailFile"
-                    type="file"
-                    class="form-control"
-                    accept="image/*"
-                    required
-                  />
-                  <p class="form-field__hint">
-                    1200 × 675px 이상의 이미지를 권장합니다.
-                  </p>
-                </div>
-              </div>
-            </section>
-            <footer class="modal__footer">
-              <button type="button" class="button button--ghost cancel-btn">
-                취소
-              </button>
-              <button type="submit" class="button button--primary">저장</button>
-            </footer>
-          </form>
-        </div>
-      </div>
-
-      <!-- 강의 수정 모달 -->
-      <!-- 모달 모듈: 강의 수정 -->
-      <div class="modal" id="course-edit" data-modal-id="course-edit">
-        <div class="modal__dialog">
-          <header class="modal__header">
-            <div>
-              <p class="modal__eyebrow">강의 수정</p>
-              <h2 class="modal__title" id="course-edit-title">
-                세부 정보를 업데이트하세요
-              </h2>
-              <p class="modal__subtitle">
-                공개 전 필수 정보를 모두 입력하고 저장하세요.
-              </p>
-            </div>
-            <button
-              type="button"
-              class="modal__close modal-close"
-              data-modal-close
-            >
-              ×
-            </button>
-          </header>
-          <form id="course-edit-form" class="modal__form">
-            <section class="modal__body">
-              <!-- 강의 수정 폼: 입력 필드 그리드 -->
-              <div class="form-grid">
-                <div class="form-field form-field--full">
-                  <div class="form-field__title">강의 제목</div>
-                  <input
-                    id="edit-course-title"
-                    name="title"
-                    type="text"
-                    class="form-control"
-                    required
-                  />
-                </div>
-                <div class="form-field form-field--full">
-                  <div class="form-field__title">한 줄 요약</div>
-                  <input
-                    id="edit-course-summary"
-                    name="summary"
-                    type="text"
-                    class="form-control"
-                    maxlength="120"
-                    required
-                  />
-                </div>
-                <div class="form-field form-field--full">
-                  <div class="form-field__title">카테고리</div>
-                  <div class="category-selects">
-                    <select
-                      id="edit-course-category-primary"
-                      name="categoryPrimary"
-                      class="form-control"
-                      required
-                    >
-                      <option value="">1차 카테고리 선택</option>
-                      <option value="creative">크리에이티브</option>
-                      <option value="career">커리어</option>
-                      <option value="tech">테크</option>
-                      <option value="language">언어</option>
-                      <option value="education">교육</option>
-                    </select>
-                    <select
-                      id="edit-course-category-secondary"
-                      name="categorySecondary"
-                      class="form-control"
-                      required
-                    >
-                      <option value="">2차 카테고리 선택</option>
-                      <option value="digital-drawing">디지털 드로잉</option>
-                      <option value="drawing">드로잉</option>
-                      <option value="craft">공예</option>
-                      <option value="food">요리·음료</option>
-                      <option value="baking">베이킹·디저트</option>
-                      <option value="music">음악</option>
-                      <option value="fitness">운동</option>
-                      <option value="lifestyle">라이프스타일</option>
-                      <option value="photo-video">사진·영상</option>
-                    </select>
-                    <select
-                      id="edit-course-category-tertiary"
-                      name="categoryTertiary"
-                      class="form-control"
-                    >
-                      <option value="">3차 카테고리 선택 (옵션)</option>
-                      <optgroup label="프로그래밍">
-                        <option value="all">전체</option>
-                        <option value="it-literacy">IT 교양</option>
-                        <option value="programming-language">
-                          프로그래밍 언어
-                        </option>
-                        <option value="web-frontend">Web·프론트엔드</option>
-                        <option value="backend">백엔드</option>
-                        <option value="app">App</option>
-                        <option value="game">게임</option>
-                        <option value="security-network">보안·네트워크</option>
-                        <option value="system-devops">시스템·DevOps</option>
-                      </optgroup>
-                    </select>
-                  </div>
-                </div>
-                <div class="form-field">
-                  <div class="form-field__title">난이도</div>
-                  <select
-                    id="edit-course-difficulty"
-                    name="difficulty"
-                    class="form-control"
-                    required
-                  >
-                    <option value="">선택</option>
-                    <option value="초급">초급</option>
-                    <option value="중급">중급</option>
-                    <option value="고급">고급</option>
-                  </select>
-                </div>
-                <div class="form-field form-field--full">
-                  <div class="form-field__title">상세 설명</div>
-                  <textarea
-                    id="edit-course-description"
-                    name="description"
-                    class="form-control"
-                    rows="4"
-                    placeholder="강의 소개와 수강생에게 전하고 싶은 메시지를 작성하세요."
-                    required
-                  ></textarea>
-                </div>
-                <!-- <div class="form-field form-field--full">
-                  <div class="form-field__title">이런 걸 배울 수 있어요</div>
-                  <div class="learning-points">
-                    <div class="learning-points__item">
-                      <input
-                        type="text"
-                        name="learningPoints[]"
-                        class="form-control"
-                        placeholder="예: 프로젝트 설계 프로세스"
-                      />
-                    </div>
-                    <div class="learning-points__item">
-                      <input
-                        type="text"
-                        name="learningPoints[]"
-                        class="form-control"
-                        placeholder="예: 팀 협업을 위한 커뮤니케이션"
-                      />
-                    </div>
-                    <div class="learning-points__item">
-                      <input
-                        type="text"
-                        name="learningPoints[]"
-                        class="form-control"
-                        placeholder="예: 실전 피드백 수집"
-                      />
-                    </div>
-                  </div>
-                  <button type="button" class="chip-add-btn">
-                    + 항목 추가
-                  </button>
-                </div> -->
-                <!-- <div class="form-field form-field--full">
-                  <div class="form-field__title">커리큘럼</div>
-                  <div class="curriculum-editor">
-                    <div class="curriculum-section">
-                      <div class="curriculum-section__title">
-                        <span>섹션 제목</span>
-                        <input
-                          type="text"
-                          name="sections[0][title]"
-                          class="form-control"
-                          placeholder="예: 섹션 1 - 오리엔테이션"
-                        />
-                      </div>
-                      <div class="curriculum-section__lectures">
-                        <span>강의 목록</span>
-                        <input
-                          type="text"
-                          name="sections[0][lectures][]"
-                          class="form-control"
-                          placeholder="예: 강의 1 - 과정 소개"
-                        />
-                        <input
-                          type="text"
-                          name="sections[0][lectures][]"
-                          class="form-control"
-                          placeholder="예: 강의 2 - 학습 목표"
-                        />
-                      </div>
-                      <button
-                        type="button"
-                        class="chip-add-btn chip-add-btn--ghost"
-                      >
-                        + 강의 추가
-                      </button>
-                    </div>
-                    <button
-                      type="button"
-                      class="chip-add-btn curriculum-editor__add-section"
-                    >
-                      + 섹션 추가
-                    </button>
-                  </div>
-                </div> -->
-                <!-- <div class="form-field">
-                  <div class="form-field__title">노출 상태</div>
-                  <div class="radio-group">
-                    <div class="radio-option">
-                      <input type="radio" name="visibility" value="public" />
-                      <span>공개</span>
-                    </div>
-                    <div class="radio-option">
-                      <input
-                        type="radio"
-                        name="visibility"
-                        value="private"
-                        required
-                      />
-                      <span>비공개</span>
-                    </div>
-                  </div> 
-                </div> -->
-                <div class="form-field">
-                  <div class="form-field__title">썸네일 이미지</div>
-                  <input
-                    id="edit-course-thumbnail-file"
-                    name="thumbnailFile"
-                    type="file"
-                    class="form-control"
-                    accept="image/*"
-                  />
-                </div>
-              </div>
-            </section>
-            <footer class="modal__footer">
-              <button
-                type="button"
-                class="button button--ghost cancel-btn"
-                data-modal-close
-              >
-                취소
-              </button>
-              <!-- <button type="submit" class="button button--secondary">
-                임시 저장
-              </button> -->
-              <button
-                type="submit"
-                class="button button--primary"
-                data-submit-public
-              >
-                저장
-              </button>
-            </footer>
-          </form>
-        </div>
-      </div>
     </div>
+
+    <script type="module" src="./js/index.js"></script>
   </body>
 </html>

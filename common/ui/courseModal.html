@@ -1,0 +1,118 @@
+<!-- 모달 모듈: 강좌 등록 -->
+<div class="modal">
+  <div class="modal__dialog">
+    <header class="modal__header">
+      <div>
+        <p class="modal__eyebrow"></p>
+        <h2 class="modal__title" id="course-create-title"></h2>
+        <p class="modal__subtitle"></p>
+      </div>
+      <button type="button" class="modal__close modal-close">×</button>
+    </header>
+    <form id="course-create-form" class="modal__form" novalidate>
+      <section class="modal__body">
+        <!-- 강좌 등록 폼: 기본 정보 입력 그리드 -->
+        <div class="form-grid">
+          <div class="form-field">
+            <div class="form-field__title">강좌 제목</div>
+            <input
+              id="create-course-title"
+              name="title"
+              type="text"
+              class="form-control"
+              placeholder="예: 파이썬 데이터 분석 완성"
+              maxlength="25"
+              required
+            />
+          </div>
+          <div class="form-field">
+            <div class="form-field__title">한 줄 요약</div>
+            <input
+              id="create-course-summary"
+              name="summary"
+              type="text"
+              class="form-control"
+              placeholder="수강생이 한눈에 이해할 수 있는 짧은 설명"
+              maxlength="120"
+              required
+            />
+          </div>
+          <div class="form-field form-field--full">
+            <div class="form-field__title">카테고리</div>
+            <div class="category-selects">
+              <select
+                id="create-course-category-primary"
+                name="categoryPrimary"
+                class="form-control"
+                required
+              >
+                <option value="">1차 카테고리 선택</option>
+              </select>
+              <select
+                id="create-course-category-secondary"
+                name="categorySecondary"
+                class="form-control"
+                required
+              >
+                <option value="">2차 카테고리 선택</option>
+              </select>
+              <select
+                id="create-course-category-tertiary"
+                name="categoryTertiary"
+                class="form-control"
+              >
+                <option value="">3차 카테고리 선택 (옵션)</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-field">
+            <div class="form-field__title">난이도</div>
+            <select
+              id="create-course-difficulty"
+              name="difficulty"
+              class="form-control"
+              required
+            >
+              <option value="">선택</option>
+              <option value="입문">입문</option>
+              <option value="초급">초급</option>
+              <option value="중급">중급</option>
+              <option value="고급">고급</option>
+            </select>
+          </div>
+          <div class="form-field form-field--full">
+            <div class="form-field__title">상세 설명</div>
+            <textarea
+              id="create-course-description"
+              name="description"
+              class="form-control"
+              rows="4"
+              placeholder="강좌 소개와 수강생에게 전하고 싶은 메시지를 작성하세요."
+              required
+            ></textarea>
+          </div>
+          <div class="form-field form-field--full">
+            <div class="form-field__title">썸네일 이미지</div>
+            <input
+              id="create-thumbnail-file"
+              name="thumbnailFile"
+              type="file"
+              class="form-control"
+              accept="image/*"
+              required
+            />
+            <p class="form-field__hint">
+              1200 × 675px 이상의 이미지를 권장합니다.
+            </p>
+          </div>
+        </div>
+      </section>
+      <footer class="modal__footer">
+        <button type="button" class="button button--ghost cancel-btn">
+          취소
+        </button>
+        <button type="submit" class="button button--primary">저장</button>
+      </footer>
+    </form>
+  </div>
+</div>

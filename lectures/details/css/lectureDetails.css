@@ -31,6 +31,9 @@ body {
   padding: 140px 0 120px;
 }
 
+.lecture-hero-empty-message {
+}
+
 .lecture-hero {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(360px, 520px);
@@ -45,6 +48,11 @@ body {
 .lecture-hero__content {
   display: grid;
   gap: 1.4rem;
+}
+
+.lecture-hero__badges {
+  display: flex;
+  gap: 8px;
 }
 
 .lecture-hero__badge {
@@ -331,85 +339,49 @@ body {
   font-size: 1rem;
 }
 
-@media (max-width: 1200px) {
-  :root {
-    --container-gutter: 2rem;
-  }
-
-  .lecture-hero {
-    grid-template-columns: 1fr;
-  }
-
-  .lecture-hero__media {
-    order: -1;
-  }
-
-  .lecture-body {
-    grid-template-columns: 1fr;
-  }
-
-  .lecture-body__sidebar {
-    position: static;
-  }
-
-  .lecture-hero,
-  .lecture-body {
-    padding-block: 2.75rem;
-  }
+/* 버튼 관련 */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  padding: 12px 24px;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
-@media (max-width: 768px) {
-  :root {
-    --container-gutter: 1.5rem;
-  }
-
-  .lecture-detail {
-    padding-top: 120px;
-  }
-
-  .lecture-curriculum,
-  .lecture-outcomes,
-  .lecture-description {
-    padding: 2rem 0;
-  }
-
-  .lecture-hero,
-  .lecture-body {
-    padding-block: 2.25rem;
-  }
+.button:focus {
+  outline: 3px solid rgba(var(--color-brand-rgb), 0.32);
+  outline-offset: 2px;
 }
 
-@media (max-width: 540px) {
-  :root {
-    --container-gutter: 1.25rem;
-  }
+.button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(var(--color-brand-rgb), 0.18);
+}
 
-  .lecture-hero,
-  .lecture-body {
-    padding-block: 2rem;
-  }
+.button--primary {
+  background: linear-gradient(135deg, var(--color-brand), var(--primary-300));
+  color: #ffffff;
+}
 
-  .lecture-hero__title {
-    font-size: 2rem;
-  }
+.button--secondary {
+  background: var(--color-brand-soft);
+  color: var(--color-brand);
+  border: 1px solid var(--color-brand-soft-strong);
+}
 
-  .lecture-hero__content {
-    gap: 1rem;
-  }
+.button--ghost {
+  background: transparent;
+  color: var(--color-text-secondary);
+  border: 1px solid rgba(var(--color-brand-rgb), 0.25);
+  box-shadow: none;
+}
 
-  .lecture-meta {
-    align-items: flex-start;
-    gap: 1rem;
-  }
-
-  .lecture-meta__stats {
-    flex-wrap: wrap;
-    gap: 0.4rem 0.75rem;
-  }
-
-  .lecture-curriculum,
-  .lecture-outcomes,
-  .lecture-description {
-    padding: 1.6rem 0;
-  }
+.button--ghost:hover {
+  box-shadow: 0 10px 18px rgba(var(--color-brand-rgb), 0.2);
+  border-color: rgba(var(--color-brand-rgb), 0.4);
 }

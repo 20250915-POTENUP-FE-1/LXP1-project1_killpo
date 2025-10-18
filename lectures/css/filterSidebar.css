@@ -25,19 +25,10 @@
 }
 
 .filter-sidebar__reset {
-  border: none;
-  background: var(--color-brand-soft);
-  color: var(--color-brand);
-  font-weight: 600;
-  font-size: 0.85rem;
-  padding: 0.4rem 0.9rem;
-  border-radius: 999px;
+  width: 16px;
+  height: 16px;
+  stroke-width: 1.5px;
   cursor: pointer;
-  transition: var(--transition-base);
-}
-
-.filter-sidebar__reset:hover {
-  background: var(--color-brand-soft-hover);
 }
 
 .filter-sidebar__group {
@@ -51,7 +42,7 @@
   color: var(--color-text-primary);
 }
 
-.filter-sidebar__group--category .filter-sidebar__group-title {
+.filter-sidebar__category-title .filter-sidebar__group-title {
   font-size: 1.1rem;
   font-weight: 800;
   color: var(--color-text-primary);
@@ -63,20 +54,12 @@
   justify-content: space-between;
 }
 
-.filter-sidebar__category-list-wrapper {
-  padding-top: 0.75rem;
-}
-
 .filter-sidebar__category-list {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
   gap: 0.5rem;
-}
-
-.filter-sidebar__category-item {
-  list-style: none;
 }
 
 .filter-sidebar__category {
@@ -114,6 +97,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.55rem;
+  list-style: none;
 }
 
 .filter-sidebar__tag {
@@ -154,6 +138,7 @@
 }
 
 .filter-sidebar__option-input {
+  display: none;
   appearance: none;
   width: 18px;
   height: 18px;
@@ -189,4 +174,15 @@
 
 .filter-sidebar__option:hover .filter-sidebar__option-label {
   background: var(--color-brand-soft);
+}
+
+.filter-sidebar__category-path {
+  color: var(--primary-500);
+  cursor: pointer;
+}
+
+.filter-sidebar__category-path-divider {
+  font-weight: 400;
+  color: var(--color-text-tertiary);
+  cursor: pointer;
 }
