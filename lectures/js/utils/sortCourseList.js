@@ -1,6 +1,6 @@
 import { getAverageRating } from "./getAverageRating.js";
 
-export function sortCourseList(courseList, sortOption) {
+export const sortCourseList = (courseList, sortOption) => {
   const sortedCourseList = [...courseList];
 
   switch (sortOption) {
@@ -32,4 +32,4 @@ export function sortCourseList(courseList, sortOption) {
   }
 
   return sortedCourseList;
-}
+};

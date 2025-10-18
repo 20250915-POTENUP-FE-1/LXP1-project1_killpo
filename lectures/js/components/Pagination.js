@@ -14,9 +14,7 @@ export function Pagination({ onPageChange } = {}) {
     fetch("/lectures/ui/pagination.html")
       .then((res) => res.text())
       .then((resText) => {
-        document
-          .querySelector(".course-section")
-          .insertAdjacentHTML("beforeend", resText);
+        $(".course-section").insertAdjacentHTML("beforeend", resText);
 
         bindEvents();
         renderPagination();
