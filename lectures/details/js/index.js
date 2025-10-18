@@ -1,6 +1,8 @@
 import { store } from "../../../common/js/store/localStorage.js";
 import { renderDetails } from "./containers/renderDetails.js";
 import { courseList as mockCourseList } from "../../js/mockData.js";
+import { CourseModal } from "../../../common/js/components/CourseModal.js";
+import { Header } from "../../../common/js/components/Header.js";
 
 // 초기 상태
 const courseList = store.getLocalStorage("courseList") || mockCourseList; // []
@@ -14,3 +16,9 @@ const selectedCourse = courseList.find((course) => course.id === courseId);
 
 // 강좌 상세 렌더링
 renderDetails(selectedCourse);
+
+const courseModal = new CourseModal();
+courseModal.init();
+
+const header = new Header();
+header.init();
