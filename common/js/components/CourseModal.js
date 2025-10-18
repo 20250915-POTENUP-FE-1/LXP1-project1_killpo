@@ -32,7 +32,7 @@ const bindEvents = () => {
   $("#course-create-form").addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    let modalMode = $(".modal").dataset.mode;
+    const modalMode = $(".modal").dataset.mode;
 
     if (!validateRegisterCourseForm()) return;
 
@@ -42,6 +42,6 @@ const bindEvents = () => {
     const ok = await submitHandler();
 
     // 모달 HTML 요소 초기화
-    closeModal(modalMode);
+    closeModal();
   });
 };
