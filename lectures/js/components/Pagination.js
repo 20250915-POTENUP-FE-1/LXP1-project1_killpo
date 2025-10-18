@@ -11,7 +11,7 @@ export function Pagination({ onPageChange } = {}) {
   this.lastPage = START_PAGE;
 
   this.init = () => {
-    fetch("/lectures/ui/pagination.html")
+    fetch("../../../lectures/ui/pagination.html")
       .then((res) => res.text())
       .then((resText) => {
         $(".course-section").insertAdjacentHTML("beforeend", resText);

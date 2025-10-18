@@ -8,7 +8,7 @@ import { setThumbnailPreview } from "../utils/setupThumbnailPreview.js";
 
 export function CourseModal() {
   this.init = () => {
-    fetch("/common/ui/courseModal.html")
+    fetch("../../../common/ui/courseModal.html")
       .then((res) => res.text())
       .then((resText) => {
         $(".container").insertAdjacentHTML("afterbegin", resText);
