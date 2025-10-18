@@ -65,6 +65,7 @@ export const editCourse = (target) => {
     $("#create-course-description").value = selectedCourse.content;
 
     // 썸네일 미리보기
+    $("#current-thumbnail-img").style.display = "block";
     $("#current-thumbnail-img").src = selectedCourse.thumbnailUrl;
   }
 };

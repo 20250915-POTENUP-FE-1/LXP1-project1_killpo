@@ -222,13 +222,15 @@ textarea.form-control {
   background-color: var(--color-surface-muted);
   border-radius: var(--dashboard-radius-md);
   aspect-ratio: 16 / 11;
+  width: 100%;
 }
 
 #current-thumbnail-img {
   width: 100%;
-  height: 100%;
   object-fit: cover;
+  object-position: center;
   border-radius: inherit;
+  aspect-ratio: inherit;
 }
 
 @media (max-width: 768px) {
@@ -452,3 +454,4 @@ textarea.form-control {
     padding: 0.875rem 1.5rem;
   }
 }
+*/
