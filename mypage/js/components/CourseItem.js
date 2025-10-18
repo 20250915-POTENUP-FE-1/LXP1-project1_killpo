@@ -17,9 +17,8 @@ export function CourseItem(courseItem) {
             <td class="table-actions">
               <button
                 type="button"
-                class="button button--secondary modal-toggle-btn"
-                data-modal-target="course-edit"
-                data-modal-mode="edit"
+                class="button button--secondary modal-toggle-btn edit-course-btn"
+                data-modal-mode="course-edit"
               >
                 수정하기
               </button>
