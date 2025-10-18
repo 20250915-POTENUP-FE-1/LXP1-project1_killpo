@@ -4,7 +4,7 @@ export function SortSelect({ onSortChange }) {
   this.sortOption = "최신 등록 순";
 
   this.init = () => {
-    fetch("/lectures/ui/sortSelect.html")
+    fetch("../../../lectures/ui/sortSelect.html")
       .then((res) => res.text())
       .then((resText) => {
         $(".course-section__actions").insertAdjacentHTML("beforeend", resText);

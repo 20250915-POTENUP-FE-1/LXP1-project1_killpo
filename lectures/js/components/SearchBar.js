@@ -8,7 +8,7 @@ export function SearchBar({ onSearchChange }) {
   this.keyword = "";
 
   this.init = () => {
-    fetch("/lectures/ui/searchBar.html")
+    fetch("../../../lectures/ui/searchBar.html")
       .then((res) => res.text())
       .then((resText) => {
         $(".header-controls").insertAdjacentHTML("beforeend", resText);

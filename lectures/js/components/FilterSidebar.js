@@ -25,7 +25,7 @@ export function FilterSidebar({ onFilterChange } = {}) {
    * @description 초기화 함수 — HTML 템플릿 로드, 아이콘 생성, 이벤트 바인딩 및 기본 상태 설정
    */
   this.init = () => {
-    fetch("/lectures/ui/filterSidebar.html")
+    fetch("../../../lectures/ui/filterSidebar.html")
       .then((res) => res.text())
       .then((resText) => {
         document
