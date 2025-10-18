@@ -9,25 +9,36 @@ import { Header } from "../../common/js/components/Header.js";
 import { CourseModal } from "../../common/js/components/CourseModal.js";
 import { Pagination } from "./components/Pagination.js";
 import { SortSelect } from "./components/SortSelect.js";
+import { SearchBar } from "./components/SearchBar.js";
+import { searchCourseList } from "./utils/searchCourseList.js";
 
 // 전역 상태
 const courseList = store.getLocalStorage("courseList") || mockCourseList;
 let filter = { category: [], level: [] }; // 필터 상태
 let pageNumber = START_PAGE; // 현재 페이지 번호
 let sortOption = "최신 등록 순"; // 현재 정렬 옵션
+let searchKeyword = ""; // 검색 키워드
 
 const updateView = ({ skipPaginationUpdate = false } = {}) => {
+  // 1. 필터
   const filteredCourseList = filterCourseList(courseList, filter);
 
-  // 무한 루프 방지: 페이지네이션 상태는 필요할 때만 갱신
+  // 2. 검색
+  const searchedCourseList = searchCourseList(
+    filteredCourseList,
+    searchKeyword
+  );
+
+  // 3. 페이지네이션 상태 갱신
   if (!skipPaginationUpdate) {
-    pagination.updateCourseList(filteredCourseList);
+    pagination.updateCourseList(searchedCourseList);
   }
 
-  renderCourseList(courseList, filter, pageNumber, sortOption);
+  // 4. 정렬 + 렌더링
+  renderCourseList(searchedCourseList, filter, pageNumber, sortOption);
 
-  // 필터링된 총 개수 갱신
-  $(".course-section__count-emphasis").textContent = filteredCourseList.length;
+  // 5. 결과 개수 업데이트
+  $(".course-section__count-emphasis").textContent = searchedCourseList.length;
 };
 
 // Pagination 초기화
@@ -68,3 +79,13 @@ courseModal.init();
 
 const header = new Header();
 header.init();
+
+// SearchBar 초기화
+const searchBar = new SearchBar({
+  onSearchChange: (newKeyword) => {
+    searchKeyword = newKeyword; // 전역 상태 갱신
+    pageNumber = START_PAGE; // 키워드 변경 시 1페이지로 이동
+    updateView(); // 페이지네이션도 갱신
+  },
+});
+searchBar.init();
