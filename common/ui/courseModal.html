@@ -1,5 +1,5 @@
 <!-- 모달 모듈: 강좌 등록 -->
-<div class="modal">
+<div class="modal" data-mode="">
   <div class="modal__dialog">
     <header class="modal__header">
       <div>
@@ -91,8 +91,8 @@
               required
             ></textarea>
           </div>
-          <div class="form-field form-field--full">
-            <div class="form-field__title">썸네일 이미지</div>
+          <div class="form-field">
+            <p class="form-field__title modal__thumbnail"></p>
             <input
               id="create-thumbnail-file"
               name="thumbnailFile"
@@ -104,6 +104,12 @@
             <p class="form-field__hint">
               1200 × 675px 이상의 이미지를 권장합니다.
             </p>
+          </div>
+          <div class="form-field">
+            <p class="form-field__title modal__image"></p>
+            <div class="current-thumbnail-display">
+              <img src="" id="current-thumbnail-img" />
+            </div>
           </div>
         </div>
       </section>
