@@ -6,7 +6,7 @@ import { validateRegisterCourseForm } from "../utils/validateRegisterCourseForm.
 
 export function CourseModal() {
   this.init = () => {
-    fetch("../common/ui/courseModal.html")
+    fetch("/common/ui/courseModal.html")
       .then((res) => res.text())
       .then((resText) => {
         $(".container").insertAdjacentHTML("afterbegin", resText);
