@@ -40,14 +40,18 @@ export function bindModalEvents() {
   });
 }
 
-function closeModal(modal) {
-  const mode = modal.dataset.mode;
-  modal.style.display = "none";
+export function closeModal(modalMode) {
+  $(".modal").style.display = "none";
+  // 썸네일 미리보기 초기화 및 숨기기
+  $("#current-thumbnail-img").style.display = "none";
+  $("#current-thumbnail-img").src = "";
 
-  // 수정 모달의 경우 input value 초기화
-  if (mode === "course-edit") {
+  // 수정 모달의 경우 form 초기화
+  if (modalMode === "course-edit") {
     $("#course-create-form").reset();
   }
+
+  $(".modal").dataset.mode = "";
 }
 
 export function updateModalText(modal, modalMode) {

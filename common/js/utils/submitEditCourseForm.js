@@ -87,8 +87,5 @@ export async function submitEditCourseForm() {
 
   alert("강의 수정이 완료되었습니다.");
 
-  const modal = $(".modal");
-  if (modal) modal.style.display = "none";
-
   return true;
 }

@@ -1,9 +1,10 @@
 import { $ } from "../utils/dom.js";
-import { bindModalEvents } from "../utils/bindModalEvents.js";
+import { bindModalEvents, closeModal } from "../utils/bindModalEvents.js";
 import { bindCategorySelect } from "../utils/bindCategorySelect.js";
 import { validateRegisterCourseForm } from "../utils/validateRegisterCourseForm.js";
 import { submitRegisterCourseForm } from "../utils/submitRegisterCourseForm.js";
 import { submitEditCourseForm } from "../utils/submitEditCourseForm.js";
+import { setThumbnailPreview } from "../utils/setupThumbnailPreview.js";
 
 export function CourseModal() {
   this.init = () => {
@@ -12,6 +13,8 @@ export function CourseModal() {
       .then((resText) => {
         $(".container").insertAdjacentHTML("afterbegin", resText);
         bindEvents();
+        // 썸네일 변경 핸들러 등록
+        setThumbnailPreview();
       });
   };
 }
@@ -38,9 +41,7 @@ const bindEvents = () => {
 
     const ok = await submitHandler();
 
-    // 모달 HTML 요소의 data-mode 초기화
-    if (ok) {
-      modalMode = "";
-    }
+    // 모달 HTML 요소 초기화
+    closeModal();
   });
 };

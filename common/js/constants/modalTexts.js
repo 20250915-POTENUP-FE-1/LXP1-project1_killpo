@@ -5,7 +5,7 @@ export const modalTexts = {
     subtitle:
       "등록 후에는 비공개 상태로 저장되며, 세부 정보를 추가하면 공개로 전환할 수 있어요.",
     thumbnail: "썸네일 등록하기",
-    image: "미리 보기",
+    image: "등록한 썸네일",
   },
   "course-edit": {
     eyebrow: "강좌 정보 수정",
