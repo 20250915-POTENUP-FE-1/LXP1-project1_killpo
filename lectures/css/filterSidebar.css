@@ -78,14 +78,14 @@
 .filter-sidebar__category:hover,
 .filter-sidebar__category:focus-visible {
   background: transparent;
-  color: var(--color-brand);
+  color: var(--color-accent);
   outline: none;
 }
 
 .filter-sidebar__category--active,
 .filter-sidebar__category[aria-pressed="true"] {
   background: transparent;
-  color: var(--color-brand);
+  color: var(--color-accent);
 }
 
 .filter-sidebar__option-list {
@@ -163,7 +163,7 @@
 .filter-sidebar__option-label {
   padding: 0.5rem 0.9rem;
   border-radius: 999px;
-  background: var(--color-surface-muted);
+  background: var(---secondary-bg);
   transition: var(--transition-base);
 }
 

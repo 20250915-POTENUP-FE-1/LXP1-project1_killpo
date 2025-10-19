@@ -35,7 +35,7 @@
 .modal__eyebrow {
   font-size: 13px;
   font-weight: 700;
-  color: #6366f1;
+  color: var(--color-accent);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-bottom: 8px;
@@ -143,8 +143,8 @@
 
 .form-control:focus {
   outline: none;
-  border-color: #6366f1;
-  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.18);
+  border-color: #555555;
+  /*box-shadow: 0 0 0 4px rgba(145, 145, 145, 0.18);*/
 }
 
 .form-control::placeholder {
@@ -196,14 +196,20 @@ textarea.form-control {
 }
 
 .button--primary {
-  background: linear-gradient(135deg, var(--color-brand), var(--primary-300));
+  /*background: linear-gradient(135deg, var(--color-brand), var(--primary-300));*/
+  background: var(--primary-500);
   color: #ffffff;
 }
 
 .button--secondary {
-  background: var(--color-brand-soft);
-  color: var(--color-brand);
-  border: 1px solid var(--color-brand-soft-strong);
+  background: #ffffff;
+  color: #1a1a1a;
+  border: 1px solid #1a1a1a;
+}
+
+.button--secondary:hover {
+  color: var(--color-accent);
+  border: 1px solid var(--color-accent);
 }
 
 .button--ghost {
@@ -365,9 +371,10 @@ textarea.form-control {
   box-sizing: border-box;
 }
 
+
 .form-input:focus {
   outline: none;
-  border-color: #6366f1;
+  border-color: #5b5b5b;
   box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
   transform: translateY(-1px);
 }

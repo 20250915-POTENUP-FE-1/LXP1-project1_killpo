@@ -1,16 +1,16 @@
 :root {
-  --color-background: #f7f8fa;
-  --color-surface: #ffffff;
+  --color-background: #f4f4f4;
+  --color-surface: #fafafa;
   --color-hero-surface: #eff2f7;
-  --color-text-primary: #111827;
-  --color-text-secondary: #4b5563;
+  --color-text-primary: #1a1a1a;
+  --color-text-secondary: #6a6a6a;
   --color-brand: var(--primary-500);
   --color-border: #e5e7eb;
   --container-gutter: 3rem;
   --radius-lg: 28px;
   --radius-md: 18px;
-  --shadow-soft: 0 22px 50px rgba(15, 23, 42, 0.12);
-  --shadow-muted: 0 12px 30px rgba(15, 23, 42, 0.08);
+  --shadow-soft: 0 22px 50px rgba(41, 41, 41, 0.12);
+  --shadow-muted: 0 12px 30px rgba(27, 27, 27, 0.08);
 }
 
 body {
@@ -32,6 +32,7 @@ body {
 }
 
 .lecture-hero-empty-message {
+  text-decoration: none;
 }
 
 .lecture-hero {
@@ -41,7 +42,7 @@ body {
   align-items: end;
   margin-inline: calc(var(--container-gutter) * -1);
   padding: 3.5rem var(--container-gutter);
-  background: var(--color-hero-surface);
+  background: var(--tertiary-bg);
   border-radius: var(--radius-lg);
 }
 
@@ -182,7 +183,8 @@ body {
   border: none;
   border-radius: 16px;
   padding: 0.95rem 1.2rem;
-  background: linear-gradient(135deg, var(--color-brand), var(--primary-300));
+  /*background: linear-gradient(135deg, var(--color-brand), var(--primary-300));*/
+  background: var(--color-accent);
   color: #fff;
   font-weight: 700;
   cursor: pointer;

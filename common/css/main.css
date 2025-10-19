@@ -7,8 +7,8 @@
 .main-content {
   flex: 1;
   padding: 2rem;
-  background-color: #ffffff;
-  border: 1px solid #e5e7eb;
+  background-color: var(--secondary-bg);
+  /*border: 1px solid #e5e7eb;*/
 }
 
 @media (max-width: 1024px) {

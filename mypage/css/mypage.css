@@ -147,13 +147,13 @@
 }
 
 .button--danger {
-  color: #dc2626;
-  border-color: rgba(220, 38, 38, 0.32);
+  color: #707070;
+  border-color: rgba(116, 116, 116, 0.32);
 }
 
 .button--danger:hover {
-  border-color: #dc2626;
-  color: #b91c1c;
+  border-color: #666666;
+  color: #383838;
 }
 
 .visually-hidden {
