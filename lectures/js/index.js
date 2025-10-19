@@ -78,7 +78,6 @@ const courseModal = new CourseModal();
 courseModal.init();
 
 const header = new Header();
-header.init();
 
 // SearchBar 초기화
 const searchBar = new SearchBar({
@@ -88,4 +87,7 @@ const searchBar = new SearchBar({
     updateView(); // 페이지네이션도 갱신
   },
 });
-searchBar.init();
+
+header.init().then(() => {
+  searchBar.init();
+});
