@@ -8,6 +8,16 @@
     <link rel="stylesheet" href="./css/courseTable.css" />
     <link rel="stylesheet" href="./css/mypage.css" />
     <link rel="stylesheet" href="./css/tabMenu.css" />
+    <link rel="icon" href="../assets/favicon/favicon.ico" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="../assets/favicon/favicon.ico"
+      type="image/x-icon"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="../assets/favicon/apple-touch-icon.png"
+    />
   </head>
 
   <body>
@@ -89,5 +99,16 @@
     </div>
 
     <script type="module" src="./js/index.js"></script>
+    <script>
+      const links = document.querySelectorAll(
+        ".asidebar__link:not(.asidebar__link--active)"
+      );
+      links.forEach((link) => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          alert("죄송합니다. 현재 서비스를 준비 중입니다. 🥲");
+        });
+      });
+    </script>
   </body>
 </html>
