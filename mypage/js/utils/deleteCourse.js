@@ -22,16 +22,19 @@ export const deleteCourse = (target) => {
       )
     ) {
       // 강좌 목록 업데이트
-      const updatedCourse = courseList.filter(
+      const updatedCourseList = courseList.filter(
         (course) => course.id !== selectedId
       );
-      store.setLocalStorage("courseList", updatedCourse);
+      store.setLocalStorage("courseList", updatedCourseList);
 
       // 강의 목록 최신 순으로 정렬 후 랜더링
-      const sortUpdatedCourse = sortCourseList(updatedCourse, "최신 등록 순");
+      const sortedCourseList = sortCourseList(
+        updatedCourseList,
+        "최신 등록 순"
+      );
 
-      $(".mypage-content__total").innerHTML = sortUpdatedCourse.length;
-      $(".course-table__body").innerHTML = sortUpdatedCourse
+      $(".mypage-content__total").innerHTML = sortedCourseList.length;
+      $(".course-table__body").innerHTML = sortedCourseList
         .map((courseItem) => CourseItem(courseItem))
         .join("");
     }
