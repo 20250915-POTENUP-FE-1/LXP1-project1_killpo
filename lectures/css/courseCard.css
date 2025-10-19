@@ -105,6 +105,12 @@
   color: var(--color-text-secondary);
 }
 
+.course-card__students-icon {
+  width: 18px;
+}
+.course-card__students-count {
+  padding-top: 2px;
+}
 .course-card__hover-panel {
   position: absolute;
   transform-origin: -50% -50%;

@@ -24,9 +24,11 @@ export function CourseCard(courseItem) {
               })
               </span>
             </span>
-            <span class="course-card__students">👥 ${
+            <span class="course-card__students"> 
+            <i data-lucide="users" class="course-card__students-icon"></i> 
+            <span class="course-card__students-count"> ${
               courseItem.studentCount
-            }</span>
+            }</span></span>
           </div>
         </div>
       </div>  
