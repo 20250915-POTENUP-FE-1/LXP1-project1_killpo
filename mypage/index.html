@@ -96,5 +96,16 @@
     </div>
 
     <script type="module" src="./js/index.js"></script>
+    <script>
+      const links = document.querySelectorAll(
+        ".asidebar__link:not(.asidebar__link--active)"
+      );
+      links.forEach((link) => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          alert("죄송합니다. 현재 서비스를 준비 중입니다. 🥲");
+        });
+      });
+    </script>
   </body>
 </html>
