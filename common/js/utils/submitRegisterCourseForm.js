@@ -1,6 +1,7 @@
 import { $ } from "./dom.js";
 import { store } from "../store/localStorage.js";
 import { buildUrl } from "./buildUrl.js";
+import { validateRegisterCourseForm } from "./validateRegisterCourseForm.js";
 
 // 썸네일 파일을 dataURL(Base64)로 읽기
 function readFileAsDataURL(file) {
@@ -14,6 +15,8 @@ function readFileAsDataURL(file) {
 
 // 강좌 등록 모달
 export async function submitRegisterCourseForm() {
+  if (!validateRegisterCourseForm()) return false;
+
   // 1) html에서 요소를 찾고 value 가져오기 + 공백 제거, null값이면 "" 사용
   const courseTitle = ($("#create-course-title")?.value || "").trim();
   const courseSummary = ($("#create-course-summary")?.value || "").trim();

@@ -1,7 +1,7 @@
 import { $ } from "./dom.js";
 import { store } from "../store/localStorage.js";
-import { CourseItem } from "../../../mypage/js/components/CourseItem.js";
 import { courseList as mockCourseList } from "../../../lectures/js/mockData.js";
+import { validateEditCourseForm } from "./validateEditCourseForm.js";
 
 // Convert a file input into a Base64 data URL
 function readFileAsDataURL(file) {
@@ -14,6 +14,8 @@ function readFileAsDataURL(file) {
 }
 
 export async function submitEditCourseForm() {
+  if (!validateEditCourseForm()) return false;
+
   // 1. 현재 목록에서 선택된 강의 정보 찾기
   const courseList = store.getLocalStorage("courseList") || mockCourseList;
 

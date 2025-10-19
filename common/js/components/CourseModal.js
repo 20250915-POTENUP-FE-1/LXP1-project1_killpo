@@ -35,8 +35,6 @@ const bindEvents = () => {
 
     const modalMode = $(".modal").dataset.mode;
 
-    if (!validateRegisterCourseForm()) return;
-
     const submitHandler = submitByMode[modalMode];
     if (!submitHandler) return;
 
