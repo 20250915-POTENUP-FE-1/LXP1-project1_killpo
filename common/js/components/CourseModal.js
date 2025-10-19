@@ -5,10 +5,11 @@ import { validateRegisterCourseForm } from "../utils/validateRegisterCourseForm.
 import { submitRegisterCourseForm } from "../utils/submitRegisterCourseForm.js";
 import { submitEditCourseForm } from "../utils/submitEditCourseForm.js";
 import { setThumbnailPreview } from "../utils/setupThumbnailPreview.js";
+import { buildUrl } from "../utils/buildUrl.js";
 
 export function CourseModal() {
   this.init = () => {
-    fetch("../../../common/ui/courseModal.html")
+    fetch(buildUrl("/common/ui/courseModal.html"))
       .then((res) => res.text())
       .then((resText) => {
         $(".container").insertAdjacentHTML("afterbegin", resText);

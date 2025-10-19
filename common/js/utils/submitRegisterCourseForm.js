@@ -1,5 +1,6 @@
 import { $ } from "./dom.js";
 import { store } from "../store/localStorage.js";
+import { buildUrl } from "./buildUrl.js";
 
 // 썸네일 파일을 dataURL(Base64)로 읽기
 function readFileAsDataURL(file) {
@@ -81,7 +82,7 @@ export async function submitRegisterCourseForm() {
     const modal = $("#course-create");
     if (modal) modal.style.display = "none";
     // mypage 로 이동
-    window.location.replace("/mypage");
+    window.location.replace(buildUrl("/mypage"));
     return true;
     // 반환값이 false 일때 메세지
   } else {

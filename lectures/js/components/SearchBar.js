@@ -1,3 +1,4 @@
+import { buildUrl } from "../../../common/js/utils/buildUrl.js";
 import { $ } from "../../../common/js/utils/dom.js";
 import {
   createIcons,
@@ -8,7 +9,7 @@ export function SearchBar({ onSearchChange }) {
   this.keyword = "";
 
   this.init = () => {
-    fetch("../../../lectures/ui/searchBar.html")
+    fetch(buildUrl("/lectures/ui/searchBar.html"))
       .then((res) => res.text())
       .then((resText) => {
         $(".header-controls").insertAdjacentHTML("beforeend", resText);
