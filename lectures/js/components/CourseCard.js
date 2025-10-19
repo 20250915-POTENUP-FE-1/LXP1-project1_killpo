@@ -35,17 +35,19 @@ export function CourseCard(courseItem) {
        <!-- 강좌 상세 오버레이 -->
       <div class="course-card__hover-panel">
         <div class="course-card-detail">
-          <div class="course-card-detail__header">
-            <h3 class="course-card-detail__title"> ${courseItem.title} </h3>
-          </div>
-          <p class="course-card-detail__description">
-          ${courseItem.description}              
-          </p>
-          <div class="course-card-tags">
-            <ul> ${courseItem.tags
-              .map((tag) => `<li id="course-card-tag">${tag}</li>`)
-              .join("")}
-            </ul>
+          <div class="course-card-detail__container">
+            <div class="course-card-detail__header">
+              <h3 class="course-card-detail__title"> ${courseItem.title} </h3>
+              <p class="course-card-detail__description">${
+                courseItem.description
+              }</p>
+            </div>
+            <div class="course-card-detail__tags">
+              <ul> ${courseItem.tags
+                .map((tag) => `<li id="course-card-tag">${tag}</li>`)
+                .join("")}
+              </ul>
+            </div>
           </div>
           <div class="course-card-detail__actions">
              <a href="${buildUrl(
