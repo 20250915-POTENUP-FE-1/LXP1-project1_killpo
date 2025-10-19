@@ -298,33 +298,20 @@
 
 @media (max-width: 1280px) {
   .course-card__hover-panel {
-    left: 50%;
-    top: calc(100% + 16px);
-    transform: translate3d(-50%, 12px, 0);
   }
 
   .course-card:hover .course-card__hover-panel,
   .course-card:focus-within .course-card__hover-panel {
-    transform: translate3d(-50%, 0, 0);
   }
 }
 
 @media (max-width: 1024px) {
   .course-card__hover-panel {
-    position: static;
-    width: 100%;
-    opacity: 1;
-    transform: none;
-    pointer-events: auto;
-    margin-top: 0.75rem;
-    box-shadow: var(--shadow-muted);
   }
 }
 
 .course-card:hover .course-card__hover-panel,
 .course-card:focus-within .course-card__hover-panel {
-  opacity: 1;
-  transform: none;
 }
 
 @media (max-width: 768px) {
