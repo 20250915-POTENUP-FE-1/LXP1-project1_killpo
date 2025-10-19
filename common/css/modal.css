@@ -232,6 +232,7 @@ textarea.form-control {
 }
 
 #current-thumbnail-img {
+  display: none;
   width: 100%;
   object-fit: cover;
   object-position: center;

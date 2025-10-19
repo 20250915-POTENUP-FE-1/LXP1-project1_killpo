@@ -42,7 +42,7 @@ const bindEvents = () => {
 
     const ok = await submitHandler();
 
-    // 모달 HTML 요소 초기화
-    closeModal();
+    // 폼 제출 시 모달 HTML 요소 초기화
+    if (ok) closeModal(modalMode);
   });
 };
