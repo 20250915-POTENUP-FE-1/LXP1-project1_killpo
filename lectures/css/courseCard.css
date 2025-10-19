@@ -271,6 +271,9 @@
 }
 
 @media (max-width: 1024px) {
+  .course-card__media {
+    height: 40vh;
+  }
   .course-card__hover-panel {
     position: static;
     width: 100%;
@@ -289,6 +292,10 @@
 }
 
 @media (max-width: 768px) {
+  .course-card__media {
+    height: 60vh;
+  }
+
   .course-card {
     padding: 1rem;
   }
