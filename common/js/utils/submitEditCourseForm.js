@@ -79,17 +79,15 @@ export async function submitEditCourseForm() {
 
   courseList[selectedIndex] = updatedCourse;
   const updatedCourseList = courseList;
-  store.setLocalStorage("courseList", updatedCourseList);
-
-  alert("강의 수정이 완료되었습니다.");
-
-  // 강의 목록 최신 순으로 정렬 후 랜더링
   const sortedCourseList = sortCourseList(updatedCourseList, "최신 등록 순");
+  store.setLocalStorage("courseList", sortedCourseList);
 
   $(".mypage-content__total").innerHTML = sortedCourseList.length;
   $(".course-table__body").innerHTML = sortedCourseList
     .map((courseItem) => CourseItem(courseItem))
     .join("");
+
+  alert("강의 수정이 완료되었습니다.");
 
   return true;
 }

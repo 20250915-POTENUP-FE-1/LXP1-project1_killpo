@@ -25,14 +25,14 @@ export const deleteCourse = (target) => {
       const updatedCourseList = courseList.filter(
         (course) => course.id !== selectedId
       );
-      store.setLocalStorage("courseList", updatedCourseList);
-
-      // 강의 목록 최신 순으로 정렬 후 랜더링
+      // 강좌 목록 최신 순으로 정렬
       const sortedCourseList = sortCourseList(
         updatedCourseList,
         "최신 등록 순"
       );
+      store.setLocalStorage("courseList", sortedCourseList);
 
+      // 강의 목록 렌더링
       $(".mypage-content__total").innerHTML = sortedCourseList.length;
       $(".course-table__body").innerHTML = sortedCourseList
         .map((courseItem) => CourseItem(courseItem))
