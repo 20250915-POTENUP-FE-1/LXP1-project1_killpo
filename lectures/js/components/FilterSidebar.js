@@ -1,3 +1,4 @@
+import { buildUrl } from "../../../common/js/utils/buildUrl.js";
 import { $ } from "../../../common/js/utils/dom.js";
 import {
   CATEGORY,
@@ -25,12 +26,10 @@ export function FilterSidebar({ onFilterChange } = {}) {
    * @description 초기화 함수 — HTML 템플릿 로드, 아이콘 생성, 이벤트 바인딩 및 기본 상태 설정
    */
   this.init = () => {
-    fetch("../../../lectures/ui/filterSidebar.html")
+    fetch(buildUrl("/lectures/ui/filterSidebar.html"))
       .then((res) => res.text())
       .then((resText) => {
-        document
-          .querySelector(".course-dashboard")
-          .insertAdjacentHTML("afterbegin", resText);
+        $(".course-dashboard").insertAdjacentHTML("afterbegin", resText);
 
         // 아이콘 초기화
         createIcons({ icons });

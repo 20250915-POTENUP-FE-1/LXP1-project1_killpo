@@ -1,4 +1,4 @@
-import { store } from "../../../common/js/store/localStorage.js";
+import { store } from "../../common/js/store/localStorage.js";
 import { courseList as mockCourseList } from "../../lectures/js/mockData.js";
 import { Header } from "../../common/js/components/Header.js";
 import { CourseModal } from "../../common/js/components/CourseModal.js";
