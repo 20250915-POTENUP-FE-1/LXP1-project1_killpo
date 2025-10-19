@@ -80,12 +80,9 @@ export async function submitEditCourseForm() {
   const updatedList = courseList;
   store.setLocalStorage("courseList", updatedList);
 
-  $(".mypage-content__total").innerHTML = updatedList.length;
-  $(".course-table__body").innerHTML = updatedList
-    .map((courseItem) => CourseItem(courseItem))
-    .join("");
-
   alert("강의 수정이 완료되었습니다.");
+
+  window.location.reload();
 
   return true;
 }
