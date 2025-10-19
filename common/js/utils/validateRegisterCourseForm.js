@@ -4,7 +4,11 @@ export function validateRegisterCourseForm() {
   const title = $("#create-course-title").value;
   const description = $("#create-course-summary").value;
   const content = $("#create-course-description").value;
-  const thumbnail = $("#create-thumbnail-file").value;
+
+  // 썸네일 파일의 value가 아니면 미리보기 이미지의 src를 반환
+  const thumbnail =
+    $("#create-thumbnail-file").value || $("#current-thumbnail-img").src;
+
   const level = $("#create-course-difficulty").value;
 
   const firstCategory = $("#create-course-category-primary").value;

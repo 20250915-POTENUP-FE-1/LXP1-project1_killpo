@@ -5,7 +5,8 @@ export const courseList = [
     description: "React 기초부터 실전 프로젝트까지 한 번에!",
     content:
       "JSX, 컴포넌트, 상태관리, 라우팅 등 프론트엔드의 핵심을 단계별로 학습합니다.",
-    thumbnailUrl: "/images/course/react1.jpg",
+    thumbnailUrl:
+      "https://japaholic.kr/wp-content/uploads/2025/03/cover-9-1024x683.jpg",
     instructor: "김코딩",
     category: ["테크", "프로그래밍", "프론트엔드"],
     level: "입문",
@@ -20,7 +21,8 @@ export const courseList = [
     description: "UI/UX 기초부터 실무 디자인 시스템까지!",
     content:
       "Figma 툴 활용법, 컴포넌트 설계, UI 패턴, 협업 워크플로우를 배웁니다.",
-    thumbnailUrl: "/images/course/figma.jpg",
+    thumbnailUrl:
+      "https://i.namu.wiki/i/87pvpxfwzM6BAINqIzxGeCHernmwkuZoeDm7z88RcsmrlOaEdmHmz0DHbyBeC8QJ0TkIvJv5gF8cxn5sakK3gw.webp",
     instructor: "이디자인",
     category: ["테크", "디자인", "UX/UI 디자인"],
     level: "초급",

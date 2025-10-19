@@ -1,6 +1,7 @@
 import { $ } from "../../../common/js/utils/dom.js";
 import { CourseItem } from "../components/CourseItem.js";
-import { deleteCourse } from "../utils/DeleteCourse.js";
+import { deleteCourse } from "../utils/deleteCourse.js";
+import { editCourse } from "../utils/editCourse.js";
 
 /**
  * @param {Array<Object>} courseList 전체 강좌 목록
