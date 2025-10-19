@@ -61,3 +61,17 @@
   color: #fff;
   box-shadow: 0 18px 30px var(--color-brand-soft-strong);
 }
+
+@media (max-width: 768px) {
+  .pagination {
+    flex-direction: row;
+    gap: 0.75rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 540px) {
+  .pagination__control {
+    width: 100%;
+  }
+}
