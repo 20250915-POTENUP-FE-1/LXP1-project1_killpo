@@ -57,7 +57,7 @@
 }
 
 .pagination__page--active {
-  background: linear-gradient(135deg, var(--color-brand), var(--primary-300));
+  background: var(--color-brand);
   color: #fff;
   box-shadow: 0 18px 30px var(--color-brand-soft-strong);
 }

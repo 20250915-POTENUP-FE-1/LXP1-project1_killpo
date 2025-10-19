@@ -230,8 +230,8 @@
   border: none;
   padding: 0.75rem 1rem;
   border-radius: var(--dashboard-radius-sm);
-  background: linear-gradient(135deg, var(--color-brand), var(--primary-300));
-  color: #fff;
+  background: var(--primary-500);
+  color: var(--primary-200);
   font-weight: 700;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
