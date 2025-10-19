@@ -42,13 +42,14 @@ export function bindModalEvents() {
 
 export function closeModal(modalMode) {
   $(".modal").style.display = "none";
-  // 썸네일 미리보기 초기화 및 숨기기
-  $("#current-thumbnail-img").style.display = "none";
-  $("#current-thumbnail-img").src = "";
 
   // 수정 모달의 경우 form 초기화
   if (modalMode === "course-edit") {
     $("#course-create-form").reset();
+
+    // 썸네일 미리보기 초기화 및 숨기기
+    $("#current-thumbnail-img").style.display = "none";
+    $("#current-thumbnail-img").src = "";
   }
 
   $(".modal").dataset.mode = "";
