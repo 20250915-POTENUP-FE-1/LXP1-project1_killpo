@@ -366,7 +366,8 @@ body {
 }
 
 .button--primary {
-  background: linear-gradient(135deg, var(--color-brand), var(--primary-300));
+  /*background: linear-gradient(135deg, var(--color-brand), var(--primary-300));*/
+  background: var(--primary-500);
   color: #ffffff;
 }
 
