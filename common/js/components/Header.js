@@ -3,10 +3,11 @@ import {
   createIcons,
   icons,
 } from "https://cdn.jsdelivr.net/npm/lucide@latest/+esm";
+import { buildUrl } from "../utils/buildUrl.js";
 
 export function Header() {
   this.init = () => {
-    fetch("../../../common/ui/header.html")
+    return fetch(buildUrl("/common/ui/header.html"))
       .then((response) => response.text())
       .then((responseText) => {
         $(".container").insertAdjacentHTML("afterbegin", responseText);
@@ -18,6 +19,16 @@ export function Header() {
   };
 
   const bindEvent = () => {
-    // 모달, 프로필 사진 클릭 시 헤더 내 인터랙션 처리
+    // 로고 클릭 이벤트 바인딩
+    $(".logo a").addEventListener("click", (e) => {
+      e.preventDefault();
+      window.location.href = buildUrl("/lectures");
+    });
+
+    // 프로필 클릭 이벤트 바인딩
+    $(".avatar-button").addEventListener("click", (e) => {
+      e.preventDefault();
+      window.location.href = buildUrl("/mypage");
+    });
   };
 }

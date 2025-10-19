@@ -1,3 +1,4 @@
+import { buildUrl } from "../../../common/js/utils/buildUrl.js";
 import { $ } from "../../../common/js/utils/dom.js";
 import {
   START_PAGE,
@@ -11,7 +12,7 @@ export function Pagination({ onPageChange } = {}) {
   this.lastPage = START_PAGE;
 
   this.init = () => {
-    fetch("../../../lectures/ui/pagination.html")
+    fetch(buildUrl("/lectures/ui/pagination.html"))
       .then((res) => res.text())
       .then((resText) => {
         $(".course-section").insertAdjacentHTML("beforeend", resText);

@@ -1,3 +1,4 @@
+import { buildUrl } from "../../../common/js/utils/buildUrl.js";
 import { getAverageRating } from "../utils/getAverageRating.js";
 
 export function CourseCard(courseItem) {
@@ -45,9 +46,9 @@ export function CourseCard(courseItem) {
             </ul>
           </div>
           <div class="course-card-detail__actions">
-             <a href="./details/?id=${
-               courseItem.id
-             }" class="course-card-detail__cta">자세히 보기 </a>
+             <a href="${buildUrl(
+               `/lectures/details/?id=${courseItem.id}`
+             )}" class="course-card-detail__cta">자세히 보기 </a>
           </div>
         </div>
       </div>
