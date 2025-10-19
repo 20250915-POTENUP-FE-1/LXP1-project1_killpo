@@ -29,13 +29,13 @@ export function bindModalEvents() {
     // 닫기
     const closeBtn = e.target.closest(".modal-close, .cancel-btn");
     if (closeBtn) {
-      if (modal) closeModal(modal);
+      if (modal) closeModal(modal.dataset.mode);
       return;
     }
 
     // 배경 클릭 시 닫기
     if (e.target.classList.contains("modal")) {
-      closeModal(modal);
+      closeModal(modal.dataset.mode);
     }
   });
 }
