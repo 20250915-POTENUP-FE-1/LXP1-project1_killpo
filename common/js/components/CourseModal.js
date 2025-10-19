@@ -1,7 +1,7 @@
 import { $ } from "../utils/dom.js";
 import { bindModalEvents, closeModal } from "../utils/bindModalEvents.js";
 import { bindCategorySelect } from "../utils/bindCategorySelect.js";
-import { validateRegisterCourseForm } from "../utils/validateRegisterCourseForm.js";
+import { validateCourseForm } from "../utils/validateCourseForm.js";
 import { submitRegisterCourseForm } from "../utils/submitRegisterCourseForm.js";
 import { submitEditCourseForm } from "../utils/submitEditCourseForm.js";
 import { setThumbnailPreview } from "../utils/setupThumbnailPreview.js";
@@ -32,6 +32,8 @@ const bindEvents = () => {
 
   $("#course-create-form").addEventListener("submit", async (e) => {
     e.preventDefault();
+
+    if (!validateCourseForm()) return;
 
     const modalMode = $(".modal").dataset.mode;
 

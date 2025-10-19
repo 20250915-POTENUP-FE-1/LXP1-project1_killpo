@@ -1,7 +1,8 @@
 import { $ } from "./dom.js";
 import { store } from "../store/localStorage.js";
 import { courseList as mockCourseList } from "../../../lectures/js/mockData.js";
-import { validateEditCourseForm } from "./validateEditCourseForm.js";
+import { sortCourseList } from "../../../lectures/js/utils/sortCourseList.js";
+import { CourseItem } from "../../../mypage/js/components/CourseItem.js";
 
 // Convert a file input into a Base64 data URL
 function readFileAsDataURL(file) {
@@ -14,8 +15,6 @@ function readFileAsDataURL(file) {
 }
 
 export async function submitEditCourseForm() {
-  if (!validateEditCourseForm()) return false;
-
   // 1. 현재 목록에서 선택된 강의 정보 찾기
   const courseList = store.getLocalStorage("courseList") || mockCourseList;
 
@@ -84,7 +83,13 @@ export async function submitEditCourseForm() {
 
   alert("강의 수정이 완료되었습니다.");
 
-  window.location.reload();
+  // 강의 목록 최신 순으로 정렬 후 랜더링
+  const sortUpdatedCourse = sortCourseList(courseList, "최신 등록 순");
+
+  $(".mypage-content__total").innerHTML = sortUpdatedCourse.length;
+  $(".course-table__body").innerHTML = sortUpdatedCourse
+    .map((courseItem) => CourseItem(courseItem))
+    .join("");
 
   return true;
 }
