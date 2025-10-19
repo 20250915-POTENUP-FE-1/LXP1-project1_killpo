@@ -19,7 +19,8 @@
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #647eff, #8b5cff);
+  /*background: linear-gradient(135deg, #218e4e, #00cc55);*/
+  background: var(--primary-500);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -62,13 +63,13 @@
 }
 
 .asidebar__link:hover {
-  background: #eef2ff;
-  color: #4338ca;
+  /*background: #eef2ff;*/
+  color: var(--color-accent);
   transform: translateX(4px);
 }
 
 .asidebar__link--active {
-  background: linear-gradient(135deg, #f0f4ff, #e1e7ff);
-  color: #312e81;
+  /*background: linear-gradient(135deg, #f0f4ff, #e1e7ff);*/
+  color: var(--color-accent);
   font-weight: 600;
 }

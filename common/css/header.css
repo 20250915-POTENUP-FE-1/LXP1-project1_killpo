@@ -3,13 +3,9 @@
   top: 0;
   left: 0;
   width: 100%;
-  color: var(--color-text-primary);
+  color: #1a1a1a;
   padding: 1.1rem 4rem;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.96) 0%,
-    rgba(244, 247, 252, 0.92) 100%
-  );
+  background: var(--primary-bg);
   border-bottom: 1px solid rgba(210, 214, 220, 0.75);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
@@ -26,8 +22,8 @@
   background: linear-gradient(
     90deg,
     transparent 5%,
-    rgba(189, 197, 209, 0.55) 25%,
-    rgba(189, 197, 209, 0.8) 75%,
+    rgba(248, 248, 248, 0.55) 25%,
+    rgba(208, 208, 208, 0.8) 75%,
     transparent 95%
   );
   pointer-events: none;
@@ -47,10 +43,11 @@
   gap: 1rem;
   flex: 1;
   max-width: 640px;
+  justify-content: center;
 }
 
 .logo {
-  width: 20%;
+  width: 130px;
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--color-brand);
@@ -69,7 +66,7 @@
   background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0.95) 0%,
-    rgba(246, 248, 252, 0.95) 100%
+    rgba(247, 247, 247, 0.95) 100%
   );
   border-radius: 999px;
   border: 1px solid rgba(210, 214, 220, 0.65);
@@ -102,13 +99,13 @@
 }
 
 .nav-menu span {
-  color: #fff;
+  color: var(--primary-bg);
   text-decoration: none;
   cursor: pointer;
   font-weight: 600;
   padding: 0.5rem 1rem;
   border-radius: 999px;
-  background: linear-gradient(135deg, var(--color-brand), var(--primary-300));
+  background: #1a1a1a;
   border: 1px solid transparent;
   transition: background-color 0.2s ease, color 0.2s ease,
     border-color 0.2s ease, box-shadow 0.2s ease;
@@ -117,7 +114,7 @@
 .avatar-button,
 .menu-button {
   border: 1px solid rgba(210, 214, 220, 0.7);
-  background: rgba(248, 250, 255, 0.9);
+  background: rgba(244, 244, 244, 0.9);
   width: 40px;
   height: 40px;
   border-radius: 50%;

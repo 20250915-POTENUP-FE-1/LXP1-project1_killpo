@@ -13,7 +13,7 @@
 }
 
 .course-table thead tr {
-  background: #f8fafc;
+  background: #f1f1f153;
   text-align: left;
   border-bottom: 1px solid rgba(148, 163, 184, 0.24);
 }
@@ -39,11 +39,11 @@
 }
 
 .course-table tbody tr + tr {
-  border-top: 1px solid rgba(226, 232, 240, 0.9);
+  border-top: 1px solid rgba(242, 242, 242, 0.9);
 }
 
 .course-table tbody tr:hover {
-  background: rgba(248, 250, 252, 0.8);
+  background: rgba(249, 249, 249, 0.809);
 }
 
 .table-thumb {
