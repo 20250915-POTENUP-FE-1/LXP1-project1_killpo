@@ -25,10 +25,7 @@ export const deleteCourse = (target) => {
       store.setLocalStorage("courseList", newList);
 
       // 강좌 목록 렌더링
-      $(".mypage-content__total").innerHTML = newList.length;
-      $(".course-table__body").innerHTML = newList
-        .map((courseItem) => CourseItem(courseItem))
-        .join("");
+      window.location.reload();
     }
   }
 };
