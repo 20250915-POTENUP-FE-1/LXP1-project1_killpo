@@ -14,6 +14,15 @@ import { searchCourseList } from "./utils/searchCourseList.js";
 
 // 전역 상태
 const courseList = store.getLocalStorage("courseList") || mockCourseList;
+
+// LocalStorage에 값이 없을 경우만 초기화
+if (!store.getLocalStorage("courseList")) {
+  store.setLocalStorage("courseList", courseList);
+  console.log("✅ courseList 초기 데이터가 LocalStorage에 저장되었습니다.");
+} else {
+  console.log("ℹ️ courseList가 이미 LocalStorage에 존재합니다.");
+}
+
 let filter = { category: [], level: [] }; // 필터 상태
 let pageNumber = START_PAGE; // 현재 페이지 번호
 let sortOption = "최신 등록 순"; // 현재 정렬 옵션

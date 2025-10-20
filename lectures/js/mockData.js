@@ -1,3 +1,5 @@
+import { buildUrl } from "../../common/js/utils/buildUrl.js";
+
 export const courseList = [
   {
     id: "1",
@@ -5,7 +7,7 @@ export const courseList = [
     description: "프로크리에이트로 나만의 일러스트 그리기",
     content:
       "아이패드와 애플펜슬을 활용한 디지털 드로잉의 기초부터 배웁니다. 프로크리에이트 앱의 핵심 기능인 레이어 관리, 브러시 커스터마이징, 색감 조정 방법을 단계별로 학습하고, 간단한 아이콘부터 복잡한 풍경화까지 다양한 실습 예제를 통해 실력을 향상시킵니다. 디지털 드로잉이 처음이신 분들도 쉽게 따라올 수 있도록 구성했으며, 완성된 작품을 SNS에 업로드하는 방법까지 알려드립니다.",
-    thumbnailUrl: "/assets/images/killpo.jpg",
+    thumbnailUrl: buildUrl("/assets/images/killpo.jpg"),
     instructor: "김드로잉",
     category: ["크리에이티브", "디지털 드로잉", "아이패드 드로잉"],
     level: "입문",
@@ -20,7 +22,7 @@ export const courseList = [
     description: "전문가처럼 그리는 프로크리에이트 활용법",
     content:
       "프로크리에이트의 고급 기능을 활용하여 전문가 수준의 일러스트를 완성하는 방법을 배웁니다. 커스텀 브러시 제작, 애니메이션 기능 활용, 타임랩스 영상 제작까지 다룹니다. 실무에서 바로 활용 가능한 작업 워크플로우를 익히고, 클라이언트 작업을 위한 파일 관리와 내보내기 방법도 상세히 설명합니다. 포트폴리오 제작을 위한 고퀄리티 작품을 완성할 수 있도록 지도합니다.",
-    thumbnailUrl: "/assets/images/killpo.jpg",
+    thumbnailUrl: buildUrl("/assets/images/killpo.jpg"),
     instructor: "이프로",
     category: ["크리에이티브", "디지털 드로잉", "프로크리에이트"],
     level: "중급",
@@ -35,7 +37,7 @@ export const courseList = [
     description: "나만의 캐릭터 만들기",
     content:
       "귀여운 캐릭터부터 개성 넘치는 일러스트까지, 나만의 캐릭터를 디자인하는 방법을 배웁니다. 얼굴 비율, 표정 연출, 포즈 잡기 등 캐릭터 디자인의 핵심 원리를 이해하고, 다양한 스타일의 캐릭터를 그려봅니다. 색감 조합과 명암 표현으로 생동감 있는 캐릭터를 완성하며, SNS용 이모티콘이나 굿즈 디자인에 활용할 수 있는 실전 팁도 제공합니다.",
-    thumbnailUrl: "/assets/images/killpo.jpg",
+    thumbnailUrl: buildUrl("/assets/images/killpo.jpg"),
     instructor: "박캐릭터",
     category: ["크리에이티브", "디지털 드로잉", "캐릭터 일러스트"],
     level: "초급",
@@ -50,7 +52,7 @@ export const courseList = [
     description: "물감으로 표현하는 감성 그림",
     content:
       "수채화의 기본 기법인 번지기, 겹칠하기, 마스킹 등을 익히고 아름다운 풍경화를 완성합니다. 물 조절 방법, 색 혼합 기술, 붓 터치 연습을 통해 수채화만의 부드럽고 투명한 질감을 표현하는 법을 배웁니다. 간단한 정물화부터 시작해 계절별 풍경, 도시 스케치까지 다양한 주제로 실습하며, 수채화 특유의 감성적인 분위기를 담아내는 방법을 익힙니다. 재료 선택과 관리법도 상세히 안내합니다.",
-    thumbnailUrl: "/assets/images/killpo.jpg",
+    thumbnailUrl: buildUrl("/assets/images/killpo.jpg"),
     instructor: "최수채",
     category: ["크리에이티브", "드로잉", "수채화"],
     level: "입문",
@@ -65,7 +67,7 @@ export const courseList = [
     description: "사람의 얼굴과 몸을 그리는 비법",
     content:
       "인물화의 기초인 얼굴 비율과 구조를 이해하고, 다양한 각도에서 인물을 그리는 방법을 배웁니다. 눈, 코, 입 등 각 부위의 특징을 정확하게 표현하는 연습을 하고, 명암을 통해 입체감을 살리는 기술을 익힙니다. 전신 인물화를 위한 인체 비율과 동세 표현도 다루며, 연필, 목탄, 콩테 등 다양한 재료로 실습합니다. 사진 자료를 활용한 크로키 연습으로 빠른 스케치 능력도 기릅니다.",
-    thumbnailUrl: "/assets/images/killpo.jpg",
+    thumbnailUrl: buildUrl("/assets/images/killpo.jpg"),
     instructor: "정인물",
     category: ["크리에이티브", "드로잉", "인물화"],
     level: "중급",
@@ -80,7 +82,7 @@ export const courseList = [
     description: "손으로 빚는 나만의 그릇",
     content:
       "물레 없이 손으로 만드는 핸드빌딩 기법을 배워 나만의 도자기를 제작합니다. 흙의 종류와 특성, 판작업과 코일 기법 등 기초 성형 방법을 익히고, 접시, 컵, 화분 등 실용적인 작품을 만들어봅니다. 초벌과 재벌 소성 과정을 이해하고, 유약 선택과 장식 기법도 배웁니다. 작품의 완성도를 높이는 마무리 작업까지 전 과정을 실습하며, 작업실 안전수칙과 도구 관리법도 함께 안내합니다.",
-    thumbnailUrl: "/assets/images/killpo.jpg",
+    thumbnailUrl: buildUrl("/assets/images/killpo.jpg"),
     instructor: "한도예",
     category: ["크리에이티브", "공예", "도예"],
     level: "입문",
@@ -95,7 +97,7 @@ export const courseList = [
     description: "천연 가죽으로 만드는 나만의 지갑과 카드케이스",
     content:
       "가죽 재단부터 염색, 바느질까지 가죽공예의 전 과정을 배웁니다. 가죽의 종류와 특성을 이해하고, 기본 공구 사용법과 재단 기술을 익힙니다. 손바느질과 재봉틀 사용법을 모두 다루며, 카드 케이스, 키홀더, 지갑 등 실용적인 소품을 직접 제작합니다. 엣지 코트 마무리, 금속 부자재 달기 등 디테일한 마감 기술도 배우고, 각인과 염색으로 개성을 더하는 방법까지 알려드립니다.",
-    thumbnailUrl: "/assets/images/killpo.jpg",
+    thumbnailUrl: buildUrl("/assets/images/killpo.jpg"),
     instructor: "김가죽",
     category: ["크리에이티브", "공예", "가죽공예"],
     level: "초급",
@@ -110,7 +112,7 @@ export const courseList = [
     description: "바늘 하나로 완성하는 힐링 공예",
     content:
       "프랑스 자수의 기본 스티치부터 입체 자수까지 배우고, 코바늘과 대바늘 뜨개질 기법을 익힙니다. 꽃 자수 액자, 자수 파우치, 뜨개 코스터 등 일상에서 사용할 수 있는 감성 소품을 만들어봅니다. 실과 바늘 선택 방법, 도안 읽는 법, 색 조합 팁 등 실용적인 정보를 제공하며, 나만의 패턴을 디자인하는 방법도 배웁니다. 완성된 작품으로 선물하거나 판매할 수 있는 퀄리티를 목표로 합니다.",
-    thumbnailUrl: "/assets/images/killpo.jpg",
+    thumbnailUrl: buildUrl("/assets/images/killpo.jpg"),
     instructor: "이자수",
     category: ["크리에이티브", "공예", "자수·뜨개"],
     level: "입문",
@@ -125,7 +127,7 @@ export const courseList = [
     description: "향기로운 수제 캔들과 비누 클래스",
     content:
       "대두 왁스와 천연 에센셜 오일로 건강한 캔들을 만들고, CP 비누와 MP 비누 제작 방법을 배웁니다. 왁스의 종류와 특성, 심지 선택, 향료 배합 비율 등 캔들 제작의 기초 이론을 익히고, 컨테이너 캔들, 필라 캔들 등 다양한 형태를 실습합니다. 비누는 글리세린 베이스를 활용한 간단한 방법부터 콜드 프로세스 기법까지 다루며, 천연 재료로 피부에 좋은 비누를 만드는 레시피를 배웁니다.",
-    thumbnailUrl: "/assets/images/killpo.jpg",
+    thumbnailUrl: buildUrl("/assets/images/killpo.jpg"),
     instructor: "박캔들",
     category: ["크리에이티브", "공예", "캔들·비누"],
     level: "초급",
@@ -140,7 +142,7 @@ export const courseList = [
     description: "기본 양념부터 반찬까지",
     content:
       "된장, 간장, 고추장 등 기본 양념 만들기부터 시작해 김치, 나물, 찌개 등 한식의 기초를 배웁니다. 식재료 손질법, 불 조절, 간 맞추기 등 요리의 기본기를 탄탄히 다지고, 계절별 제철 재료를 활용한 건강한 반찬 레시피를 익힙니다. 밥상 차림의 원칙과 음식 간의 균형을 맞추는 방법도 배우며, 가족들의 건강을 생각한 저염식 조리법과 영양 관리 팁도 제공합니다.",
-    thumbnailUrl: "/assets/images/killpo.jpg",
+    thumbnailUrl: buildUrl("/assets/images/killpo.jpg"),
     instructor: "최한식",
     category: ["크리에이티브", "요리·음료", "한식"],
     level: "입문",
@@ -155,7 +157,7 @@ export const courseList = [
     description: "쿠키부터 케이크까지 완벽 정복",
     content:
       "제과 제빵의 기본 원리를 이해하고, 쿠키, 마들렌, 파운드케이크, 시트케이크 등 다양한 베이킹을 마스터합니다. 버터 크림과 생크림 다루기, 시트 굽기와 샌딩, 데코레이션 기술까지 배우며, 실패 없는 레시피와 함께 재료 계량의 중요성을 강조합니다. 오븐 온도 조절, 반죽 상태 판단, 보관 방법 등 실전 팁을 제공하고, 특별한 날을 위한 케이크 데코 아이디어도 공유합니다.",
-    thumbnailUrl: "/assets/images/killpo.jpg",
+    thumbnailUrl: buildUrl("/assets/images/killpo.jpg"),
     instructor: "정베이킹",
     category: ["크리에이티브", "요리·음료", "베이킹"],
     level: "초급",
@@ -170,7 +172,7 @@ export const courseList = [
     description: "집에서 즐기는 카페 퀄리티 커피",
     content:
       "에스프레소 추출의 기본 원리와 우유 스티밍 기술을 배워 라떼 아트까지 완성합니다. 커피 원두의 종류와 특성, 그라인더 세팅, 추출 변수 조절 등 이론을 학습하고, 아메리카노, 카페라떼, 카푸치노 등 기본 메뉴를 실습합니다. 하트, 로제타 등 라떼 아트 패턴을 연습하고, 홈카페를 위한 장비 추천과 관리 방법도 안내합니다. 커피 맛을 좌우하는 요소들을 이해하고 나만의 레시피를 개발할 수 있습니다.",
-    thumbnailUrl: "/assets/images/killpo.jpg",
+    thumbnailUrl: buildUrl("/assets/images/killpo.jpg"),
     instructor: "한바리스타",
     category: ["크리에이티브", "요리·음료", "커피·디저트"],
     level: "입문",
@@ -185,7 +187,7 @@ export const courseList = [
     description: "홈파티를 빛낼 시그니처 음료 만들기",
     content:
       "클래식 칵테일부터 논알콜 음료까지 다양한 레시피를 배웁니다. 베이스 술의 종류와 특성, 믹싱 기법, 가니쉬 장식 등 칵테일 제조의 기본을 익히고, 모히토, 마가리타, 진토닉 등 인기 메뉴를 실습합니다. 시럽과 퓨레 만들기, 얼음 활용법, 잔 선택 등 세부적인 스킬도 배우며, 홈파티나 특별한 날을 위한 시그니처 음료를 개발하는 방법도 알려드립니다.",
-    thumbnailUrl: "/assets/images/killpo.jpg",
+    thumbnailUrl: buildUrl("/assets/images/killpo.jpg"),
     instructor: "김칵테일",
     category: ["크리에이티브", "요리·음료", "음료·칵테일"],
     level: "초급",
@@ -200,7 +202,7 @@ export const courseList = [
     description: "노래 잘하는 발성의 비밀",
     content:
       "올바른 호흡법과 발성 연습으로 노래 실력을 향상시킵니다. 복식호흡의 원리를 이해하고, 성대 건강을 지키면서 안정적으로 소리를 내는 방법을 배웁니다. 음역대 확장, 비브라토 연습, 감정 표현 등 노래의 완성도를 높이는 다양한 테크닉을 익히고, 마이크 사용법과 노래방에서 잘 부르는 팁도 제공합니다. 자신의 음역대에 맞는 곡 선정 방법과 효율적인 연습 루틴도 안내합니다.",
-    thumbnailUrl: "/assets/images/killpo.jpg",
+    thumbnailUrl: buildUrl("/assets/images/killpo.jpg"),
     instructor: "이보컬",
     category: ["크리에이티브", "음악", "보컬"],
     level: "입문",
@@ -215,7 +217,7 @@ export const courseList = [
     description: "기초 코드부터 핑거스타일까지",
     content:
       "기타 잡는 법과 튜닝부터 시작해 기본 코드를 배우고 반주할 수 있는 수준까지 성장합니다. C, G, Am, F 등 기초 코드를 익히고, 스트로크 패턴과 아르페지오 주법을 연습합니다. 코드 전환을 부드럽게 하는 연습 방법과 리듬감을 기르는 훈련을 통해 좋아하는 노래를 연주할 수 있게 됩니다. 기타 관리법과 연습 효율을 높이는 팁도 제공하며, 간단한 핑거스타일 연주까지 도전해봅니다.",
-    thumbnailUrl: "/assets/images/killpo.jpg",
+    thumbnailUrl: buildUrl("/assets/images/killpo.jpg"),
     instructor: "박기타",
     category: ["크리에이티브", "음악", "기타"],
     level: "입문",
@@ -230,7 +232,7 @@ export const courseList = [
     description: "악보 읽기부터 연주까지",
     content:
       "피아노 건반 구조와 악보 읽는 법을 배우고, 양손 연주를 위한 기초를 다집니다. 손가락 번호와 자세, 스케일 연습, 기본 리듬 패턴을 익히고, 간단한 동요부터 클래식 명곡, 팝송까지 단계별로 연주합니다. 페달 사용법과 다이나믹 표현, 프레이징 등 표현력을 높이는 방법도 배우며, 효율적인 연습 스케줄과 암보 방법도 제시합니다. 전자피아노와 어쿠스틱 피아노의 차이점도 설명합니다.",
-    thumbnailUrl: "/assets/images/killpo.jpg",
+    thumbnailUrl: buildUrl("/assets/images/killpo.jpg"),
     instructor: "최피아노",
     category: ["크리에이티브", "음악", "피아노"],
     level: "초급",
@@ -245,7 +247,7 @@ export const courseList = [
     description: "나만의 음악 만들기",
     content:
       "DAW 프로그램 사용법을 배우고 멜로디와 화성, 리듬을 결합해 완성된 곡을 만듭니다. Logic Pro 또는 Ableton Live를 활용한 미디 입력, 가상 악기 사용, 믹싱과 마스터링 기초를 익힙니다. 코드 진행의 원리와 멜로디 작법, 편곡 기술을 배우고, 장르별 특징을 이해합니다. 샘플링과 신디사이저 활용법도 다루며, 완성된 곡을 음원 사이트에 배포하는 과정까지 안내합니다.",
-    thumbnailUrl: "/assets/images/killpo.jpg",
+    thumbnailUrl: buildUrl("/assets/images/killpo.jpg"),
     instructor: "정작곡",
     category: ["크리에이티브", "음악", "작곡·미디"],
     level: "중급",
@@ -260,7 +262,7 @@ export const courseList = [
     description: "카메라 조작부터 구도까지",
     content:
       "DSLR 카메라의 구조와 작동 원리를 이해하고, 조리개, 셔터스피드, ISO의 삼각관계를 배웁니다. 노출과 화이트밸런스 조절, 초점 맞추기 등 기본 촬영 기술을 익히고, 인물, 풍경, 정물 등 다양한 피사체를 촬영하며 구도와 빛의 중요성을 경험합니다. RAW 파일 촬영과 라이트룸 기초 보정까지 다루며, 좋은 사진을 만드는 시각적 감각을 기릅니다.",
-    thumbnailUrl: "/assets/images/killpo.jpg",
+    thumbnailUrl: buildUrl("/assets/images/killpo.jpg"),
     instructor: "한사진",
     category: ["크리에이티브", "사진·영상", "사진 촬영"],
     level: "입문",
@@ -275,7 +277,7 @@ export const courseList = [
     description: "유튜브 영상부터 브이로그까지",
     content:
       "Adobe Premiere Pro를 활용한 영상 편집의 전 과정을 배웁니다. 프로젝트 세팅, 타임라인 구성, 컷 편집, 트랜지션, 자막 삽입, 색보정 등 기본 기능을 익히고, 유튜브와 SNS용 영상을 완성합니다. 오디오 믹싱과 배경음악 삽입, 효과음 활용법도 배우며, 내보내기 설정과 플랫폼별 최적 포맷을 이해합니다. 편집 효율을 높이는 단축키와 워크플로우 팁도 제공합니다.",
-    thumbnailUrl: "/assets/images/killpo.jpg",
+    thumbnailUrl: buildUrl("/assets/images/killpo.jpg"),
     instructor: "김편집",
     category: ["크리에이티브", "사진·영상", "영상 편집"],
     level: "초급",
@@ -290,7 +292,7 @@ export const courseList = [
     description: "기획부터 촬영, 편집, 업로드까지",
     content:
       "성공하는 유튜브 채널을 만들기 위한 전략을 배웁니다. 채널 컨셉 잡기, 타겟 설정, 콘텐츠 기획 방법을 익히고, 스마트폰과 간단한 장비로 촬영하는 법을 배웁니다. 썸네일 제작, 제목과 태그 최적화, SEO 전략 등 조회수를 높이는 팁을 제공하며, 편집 기초와 업로드 과정을 실습합니다. 구독자 소통 방법과 수익화 조건, 애드센스 설정까지 다룹니다.",
-    thumbnailUrl: "/assets/images/killpo.jpg",
+    thumbnailUrl: buildUrl("/assets/images/killpo.jpg"),
     instructor: "이유튜버",
     category: ["크리에이티브", "사진·영상", "유튜브 촬영·운영"],
     level: "입문",
@@ -305,7 +307,7 @@ export const courseList = [
     description: "안전하고 효율적인 자산 증식",
     content:
       "ETF의 개념과 장점을 이해하고, 국내외 주요 ETF 상품을 비교 분석합니다. S&P500, NASDAQ, 배당 ETF 등 다양한 상품의 특징과 투자 전략을 배우며, 분산 투자와 리밸런싱의 중요성을 익힙니다. 증권 계좌 개설부터 매수·매도 방법, 수수료 구조, 세금 처리까지 실전에 필요한 모든 정보를 제공합니다. 나만의 포트폴리오를 구성하는 방법과 장기 투자 마인드셋을 기르며, 시장 변동성에 대응하는 전략도 배웁니다.",
-    thumbnailUrl: "/assets/images/killpo.jpg",
+    thumbnailUrl: buildUrl("/assets/images/killpo.jpg"),
     instructor: "박투자",
     category: ["커리어", "금융·재테크", "주식·ETF"],
     level: "입문",
@@ -320,7 +322,7 @@ export const courseList = [
     description: "내 집 마련부터 투자까지",
     content:
       "부동산 시장의 흐름을 읽고 투자 기회를 찾는 방법을 배웁니다. 아파트, 빌라, 오피스텔 등 주거용 부동산의 특징과 입지 분석, 실거래가 확인 방법을 익힙니다. 대출 종류와 조건, DTI와 DSR 계산, 취득세와 재산세 등 세금 구조를 이해하고, 전세와 월세의 장단점을 비교합니다. 청약 제도와 분양권 전매, 갭투자 등 다양한 투자 방법을 소개하며, 리스크 관리 전략도 함께 다룹니다.",
-    thumbnailUrl: "/assets/images/killpo.jpg",
+    thumbnailUrl: buildUrl("/assets/images/killpo.jpg"),
     instructor: "최부동산",
     category: ["커리어", "금융·재테크", "부동산"],
     level: "초급",
@@ -335,7 +337,7 @@ export const courseList = [
     description: "돈이 모이는 소비 습관 만들기",
     content:
       "체계적인 가계부 작성으로 지출을 분석하고 저축을 늘리는 방법을 배웁니다. 고정비와 변동비를 구분하고, 불필요한 지출을 줄이는 전략을 세웁니다. 예산 관리 원칙과 비상금 마련, 목돈 만들기 프로젝트를 실천하며, 엑셀과 앱을 활용한 효율적인 가계부 작성법을 익힙니다. 소득 대비 적정 저축률과 지출 비율을 계산하고, 재무 목표를 설정해 실행 계획을 수립합니다.",
-    thumbnailUrl: "/assets/images/killpo.jpg",
+    thumbnailUrl: buildUrl("/assets/images/killpo.jpg"),
     instructor: "정가계부",
     category: ["커리어", "금융·재테크", "가계부·예산관리"],
     level: "입문",
@@ -350,7 +352,7 @@ export const courseList = [
     description: "세금 아끼는 똑똑한 방법",
     content:
       "소득세 구조를 이해하고 합법적으로 세금을 줄이는 방법을 배웁니다. 연말정산 공제 항목을 꼼꼼히 확인하고, 신용카드와 체크카드 사용 전략, 의료비와 교육비 공제 활용법을 익힙니다. IRP와 연금저축, 주택청약종합저축 등 세액공제 상품을 비교하고, 개인사업자의 경우 필요경비 처리와 종합소득세 신고 방법도 다룹니다. 13월의 월급을 만드는 절세 노하우를 실전 사례와 함께 제공합니다.",
-    thumbnailUrl: "/assets/images/killpo.jpg",
+    thumbnailUrl: buildUrl("/assets/images/killpo.jpg"),
     instructor: "한세무",
     category: ["커리어", "금융·재테크", "세금·절세"],
     level: "중급",
@@ -365,7 +367,7 @@ export const courseList = [
     description: "제로부터 시작하는 온라인 쇼핑몰",
     content:
       "네이버 스마트스토어 개설부터 상품 소싱, 판매 전략까지 전 과정을 배웁니다. 수익성 높은 아이템 선정 방법과 소싱처 발굴, 상세페이지 제작 노하우를 익힙니다. 검색 최적화를 위한 키워드 전략과 광고 운영, 고객 응대와 CS 처리 방법을 다루며, 포장과 배송 프로세스도 실습합니다. 매출 분석과 재구매 유도 전략, 스마트스토어 알고리즘 이해를 통해 안정적인 온라인 사업을 구축하는 방법을 배웁니다.",
-    thumbnailUrl: "/assets/images/killpo.jpg",
+    thumbnailUrl: buildUrl("/assets/images/killpo.jpg"),
     instructor: "김스토어",
     category: ["커리어", "창업·부업", "스마트스토어"],
     level: "입문",
@@ -380,7 +382,7 @@ export const courseList = [
     description: "블로그와 SNS로 부수입 창출",
     content:
       "쿠팡파트너스 가입부터 수익 발생까지의 전략을 배웁니다. 수익률 높은 상품 선정 기준과 리뷰 작성 방법, 블로그 최적화 전략을 익힙니다. 네이버 블로그와 티스토리 활용법, 키워드 리서치와 SEO 최적화, 유입 경로 분석 방법을 다루며, 인스타그램과 유튜브를 연계한 마케팅 전략도 배웁니다. 클릭률을 높이는 썸네일 제작과 제목 작성법, 지속 가능한 수익 모델 구축 방법을 실전 사례와 함께 제공합니다.",
-    thumbnailUrl: "/assets/images/killpo.jpg",
+    thumbnailUrl: buildUrl("/assets/images/killpo.jpg"),
     instructor: "이파트너",
     category: ["커리어", "창업·부업", "쿠팡파트너스"],
     level: "초급",
@@ -395,7 +397,7 @@ export const courseList = [
     description: "SNS 마케팅으로 나를 알리기",
     content:
       "개인 브랜드를 구축하고 SNS로 팔로워를 확보하는 전략을 배웁니다. 브랜드 아이덴티티 설정과 타겟 고객 분석, 콘텐츠 기획 방법을 익힙니다. 인스타그램, 유튜브, 블로그 등 플랫폼별 특성을 이해하고, 일관된 톤앤매너로 브랜딩하는 법을 배웁니다. 해시태그 전략, 협업과 제휴 방법, 수익화 모델 구축까지 다루며, 팔로워 소통과 커뮤니티 관리 노하우도 제공합니다.",
-    thumbnailUrl: "/assets/images/killpo.jpg",
+    thumbnailUrl: buildUrl("/assets/images/killpo.jpg"),
     instructor: "박브랜드",
     category: ["커리어", "창업·부업", "브랜딩·SNS 마케팅"],
     level: "중급",
@@ -410,7 +412,7 @@ export const courseList = [
     description: "성장하는 사람들의 7가지 습관",
     content:
       "목표 설정과 실행력을 키우는 자기계발 원칙을 배웁니다. 명확한 비전 수립과 장단기 목표 설정, 우선순위 관리 방법을 익힙니다. 아침 루틴과 저녁 루틴 만들기, 독서와 학습 습관 형성, 멘탈 관리와 스트레스 대응법을 다룹니다. 실패를 성장의 기회로 바꾸는 마인드셋과 지속 가능한 변화를 만드는 전략을 배우며, 자신만의 성장 로드맵을 설계합니다. 성공한 사람들의 사례와 실천 가능한 액션 플랜을 제공합니다.",
-    thumbnailUrl: "/assets/images/killpo.jpg",
+    thumbnailUrl: buildUrl("/assets/images/killpo.jpg"),
     instructor: "최성장",
     category: ["커리어", "성공 마인드", "자기계발"],
     level: "입문",
@@ -425,7 +427,7 @@ export const courseList = [
     description: "하루 24시간을 48시간처럼 쓰는 법",
     content:
       "효율적인 시간 활용으로 생산성을 극대화하는 방법을 배웁니다. 시간 사용 패턴을 분석하고, 시간 낭비 요소를 제거하는 전략을 수립합니다. 투두리스트 작성법, 포모도로 기법, 타임블로킹 등 검증된 시간관리 기술을 익히고, 업무와 개인 생활의 균형을 맞추는 방법을 배웁니다. 미루는 습관을 극복하고 집중력을 높이는 훈련을 하며, 디지털 도구를 활용한 스케줄 관리 시스템을 구축합니다.",
-    thumbnailUrl: "/assets/images/killpo.jpg",
+    thumbnailUrl: buildUrl("/assets/images/killpo.jpg"),
     instructor: "정시간",
     category: ["커리어", "성공 마인드", "시간관리"],
     level: "초급",
@@ -440,7 +442,7 @@ export const courseList = [
     description: "일 잘하는 사람들의 워크 해킹",
     content:
       "업무 프로세스를 개선하고 생산성을 높이는 실전 스킬을 배웁니다. 효율적인 이메일 관리, 회의 시간 단축, 문서 작성 템플릿 활용 등 시간을 절약하는 방법을 익힙니다. 엑셀 자동화, 단축키 활용, 클라우드 협업 도구 사용법을 배우며, 반복 업무를 줄이고 핵심 업무에 집중하는 전략을 수립합니다. 멀티태스킹 대신 싱글태스킹의 효과와 에너지 관리 방법도 다룹니다.",
-    thumbnailUrl: "/assets/images/killpo.jpg",
+    thumbnailUrl: buildUrl("/assets/images/killpo.jpg"),
     instructor: "한효율",
     category: ["커리어", "성공 마인드", "업무 효율화"],
     level: "중급",
@@ -455,7 +457,7 @@ export const courseList = [
     description: "업무를 10배 빠르게 하는 AI 활용법",
     content:
       "ChatGPT의 기능을 이해하고 업무에 효과적으로 활용하는 방법을 배웁니다. 효과적인 프롬프트 작성법, 답변 품질을 높이는 질문 기법, 다양한 업무 시나리오별 활용 사례를 익힙니다. 문서 작성, 이메일 초안, 아이디어 브레인스토밍, 데이터 분석, 코드 작성 등 실전 예제를 통해 실습하며, ChatGPT의 한계와 주의사항도 함께 다룹니다. 맞춤형 프롬프트 라이브러리를 구축하는 방법도 제공합니다.",
-    thumbnailUrl: "/assets/images/killpo.jpg",
+    thumbnailUrl: buildUrl("/assets/images/killpo.jpg"),
     instructor: "김AI",
     category: ["테크", "AI 스킬업", "ChatGPT"],
     level: "입문",
@@ -470,7 +472,7 @@ export const courseList = [
     description: "Midjourney, Stable Diffusion으로 이미지 생성",
     content:
       "AI 이미지 생성 도구를 활용해 창의적인 비주얼 콘텐츠를 만드는 방법을 배웁니다. Midjourney와 Stable Diffusion의 특징과 차이점을 이해하고, 원하는 스타일의 이미지를 생성하는 프롬프트 작성 기술을 익힙니다. 이미지 품질을 조절하는 파라미터 설정, 스타일 참조와 시드 값 활용, 인페인팅과 아웃페인팅 기법을 배우며, 상업적 활용을 위한 저작권 이슈와 윤리적 고려사항도 다룹니다.",
-    thumbnailUrl: "/assets/images/killpo.jpg",
+    thumbnailUrl: buildUrl("/assets/images/killpo.jpg"),
     instructor: "이생성",
     category: ["테크", "AI 스킬업", "생성형 AI"],
     level: "초급",
@@ -485,7 +487,7 @@ export const courseList = [
     description: "Zapier와 Make로 워크플로우 자동화",
     content:
       "반복적인 업무를 AI와 자동화 도구로 효율화하는 방법을 배웁니다. Zapier와 Make(Integromat)의 사용법을 익히고, 구글 스프레드시트, 이메일, 슬랙, 노션 등 다양한 앱을 연동하는 워크플로우를 구축합니다. 트리거와 액션 설정, 조건부 로직, 데이터 변환 등 자동화의 핵심 개념을 이해하고, 실무에서 바로 사용할 수 있는 자동화 시나리오를 설계합니다. AI API를 연동한 고급 자동화 기법도 소개합니다.",
-    thumbnailUrl: "/assets/images/killpo.jpg",
+    thumbnailUrl: buildUrl("/assets/images/killpo.jpg"),
     instructor: "박자동화",
     category: ["테크", "AI 스킬업", "AI 자동화"],
     level: "중급",
@@ -500,7 +502,7 @@ export const courseList = [
     description: "HTML부터 데이터베이스까지",
     content:
       "프론트엔드와 백엔드를 모두 다루는 풀스택 개발의 기초를 배웁니다. HTML, CSS, JavaScript로 웹페이지를 만들고, Node.js와 Express로 서버를 구축합니다. REST API 설계와 데이터베이스 연동, 사용자 인증 구현을 실습하며, Git을 이용한 버전 관리와 협업 방법도 익힙니다. 간단한 웹 애플리케이션을 처음부터 끝까지 만들어보며, 배포와 호스팅 과정까지 경험합니다. 개발 환경 설정과 디버깅 방법도 다룹니다.",
-    thumbnailUrl: "/assets/images/killpo.jpg",
+    thumbnailUrl: buildUrl("/assets/images/killpo.jpg"),
     instructor: "최풀스택",
     category: ["테크", "프로그래밍", "웹개발"],
     level: "입문",
@@ -515,7 +517,7 @@ export const courseList = [
     description: "고급 React 패턴과 성능 개선",
     content:
       "React의 고급 개념과 실무 패턴을 마스터합니다. Redux와 Recoil을 이용한 전역 상태관리, Context API 활용, Custom Hooks 제작 방법을 배웁니다. useMemo와 useCallback을 이용한 성능 최적화, 코드 스플리팅과 lazy loading, React.memo를 활용한 리렌더링 최적화 기법을 익힙니다. 테스트 코드 작성, TypeScript 통합, Next.js로의 확장까지 다루며, 대규모 프로젝트를 위한 아키텍처 설계 원칙도 배웁니다.",
-    thumbnailUrl: "/assets/images/killpo.jpg",
+    thumbnailUrl: buildUrl("/assets/images/killpo.jpg"),
     instructor: "정리액트",
     category: ["테크", "프로그래밍", "프론트엔드"],
     level: "고급",
@@ -530,7 +532,7 @@ export const courseList = [
     description: "Node.js와 Express로 RESTful API 구축",
     content:
       "확장 가능한 백엔드 API 서버를 설계하고 구현하는 방법을 배웁니다. Express 미들웨어, 라우팅, 에러 핸들링, 유효성 검증을 익히고, MongoDB 또는 PostgreSQL과 연동하여 CRUD 작업을 구현합니다. JWT 기반 인증과 권한 관리, 파일 업로드, 페이지네이션, 검색 기능을 개발하며, API 문서화와 테스트 작성 방법도 다룹니다. Docker를 이용한 컨테이너화와 AWS 배포 실습까지 진행합니다.",
-    thumbnailUrl: "/assets/images/killpo.jpg",
+    thumbnailUrl: buildUrl("/assets/images/killpo.jpg"),
     instructor: "한백엔드",
     category: ["테크", "프로그래밍", "백엔드"],
     level: "중급",
@@ -545,7 +547,7 @@ export const courseList = [
     description: "하나의 코드로 iOS와 Android 동시 개발",
     content:
       "Flutter 프레임워크를 활용해 모바일 앱을 개발하는 전 과정을 배웁니다. Dart 언어 기초, 위젯 시스템, 상태관리(Provider, Riverpod), 내비게이션과 라우팅을 익힙니다. REST API 연동, 로컬 저장소 사용, 푸시 알림 구현, 카메라와 위치 서비스 활용 등 실전 기능을 개발하며, 앱 스토어와 플레이 스토어 배포 과정까지 실습합니다. 반응형 디자인과 다국어 지원 방법도 다룹니다.",
-    thumbnailUrl: "/assets/images/killpo.jpg",
+    thumbnailUrl: buildUrl("/assets/images/killpo.jpg"),
     instructor: "김플러터",
     category: ["테크", "프로그래밍", "모바일 앱"],
     level: "중급",
@@ -560,7 +562,7 @@ export const courseList = [
     description: "코딩 테스트 합격을 위한 필수 개념",
     content:
       "코딩 테스트에 자주 출제되는 알고리즘과 자료구조를 체계적으로 학습합니다. 배열, 링크드 리스트, 스택, 큐, 트리, 그래프 등 기본 자료구조를 이해하고, 정렬, 탐색, 동적 프로그래밍, 그리디, DFS/BFS 등 핵심 알고리즘을 마스터합니다. 시간복잡도와 공간복잡도를 분석하는 능력을 키우고, 백준과 프로그래머스 문제를 풀며 실전 감각을 익힙니다. 문제 해결 패턴과 디버깅 전략도 배웁니다.",
-    thumbnailUrl: "/assets/images/killpo.jpg",
+    thumbnailUrl: buildUrl("/assets/images/killpo.jpg"),
     instructor: "이알고",
     category: ["테크", "프로그래밍", "알고리즘·자료구조"],
     level: "중급",
@@ -575,7 +577,7 @@ export const courseList = [
     description: "Pandas와 Numpy로 데이터 다루기",
     content:
       "Python을 활용한 데이터 분석의 기초부터 실전까지 배웁니다. Pandas로 데이터를 불러오고 정제하며, 결측치와 이상치 처리, 데이터 변환과 집계 작업을 수행합니다. Numpy를 이용한 수치 연산과 Matplotlib, Seaborn으로 시각화하는 방법을 익힙니다. 실제 데이터셋을 활용해 탐색적 데이터 분석(EDA)을 진행하고, 인사이트를 도출하는 과정을 실습합니다. Jupyter Notebook 활용법과 분석 리포트 작성 방법도 다룹니다.",
-    thumbnailUrl: "/assets/images/killpo.jpg",
+    thumbnailUrl: buildUrl("/assets/images/killpo.jpg"),
     instructor: "박데이터",
     category: ["테크", "데이터사이언스", "데이터 분석"],
     level: "초급",
@@ -590,7 +592,7 @@ export const courseList = [
     description: "Scikit-learn으로 시작하는 ML",
     content:
       "머신러닝의 기본 개념과 주요 알고리즘을 배웁니다. 지도학습과 비지도학습의 차이, 회귀와 분류 문제를 이해하고, 선형회귀, 로지스틱 회귀, 결정트리, 랜덤포레스트 등 핵심 알고리즘을 Scikit-learn으로 구현합니다. 데이터 전처리, 피처 엔지니어링, 모델 학습과 평가, 하이퍼파라미터 튜닝을 실습하며, 과적합 방지 기법과 교차 검증 방법도 배웁니다. 실제 데이터셋으로 예측 모델을 만들어봅니다.",
-    thumbnailUrl: "/assets/images/killpo.jpg",
+    thumbnailUrl: buildUrl("/assets/images/killpo.jpg"),
     instructor: "최머신",
     category: ["테크", "데이터사이언스", "머신러닝"],
     level: "중급",
@@ -605,7 +607,7 @@ export const courseList = [
     description: "TensorFlow와 Keras로 시작하는 딥러닝",
     content:
       "인공신경망의 원리를 이해하고 딥러닝 모델을 구축하는 방법을 배웁니다. TensorFlow와 Keras를 사용해 다층 퍼셉트론, CNN, RNN 모델을 만들고, 이미지 분류와 자연어 처리 프로젝트를 수행합니다. 역전파와 경사하강법, 활성화 함수, 손실 함수의 역할을 이해하고, 드롭아웃과 배치 정규화로 모델 성능을 개선합니다. GPU 활용과 모델 저장·로드, 전이학습 기법까지 다루며, 실전 딥러닝 프로젝트를 완성합니다.",
-    thumbnailUrl: "/assets/images/killpo.jpg",
+    thumbnailUrl: buildUrl("/assets/images/killpo.jpg"),
     instructor: "정딥러닝",
     category: ["테크", "데이터사이언스", "딥러닝"],
     level: "고급",
@@ -620,7 +622,7 @@ export const courseList = [
     description: "사용자 중심 서비스 설계하기",
     content:
       "사용자 경험을 분석하고 최적의 서비스를 설계하는 UX 기획 방법론을 배웁니다. 사용자 리서치 기법, 페르소나 설정, 고객 여정 맵 작성을 익히고, 정보 구조 설계와 와이어프레임 제작을 실습합니다. 사용성 테스트 진행과 피드백 분석, 개선안 도출 과정을 경험하며, 실제 서비스 케이스를 분석합니다. 프로토타이핑 도구 활용법과 개발자·디자이너와의 협업 커뮤니케이션 방법도 다룹니다.",
-    thumbnailUrl: "/assets/images/killpo.jpg",
+    thumbnailUrl: buildUrl("/assets/images/killpo.jpg"),
     instructor: "한UX",
     category: ["테크", "제품 기획", "UX 기획"],
     level: "초급",
@@ -635,7 +637,7 @@ export const courseList = [
     description: "아이디어를 실제 서비스로 만들기",
     content:
       "서비스 기획의 전 과정을 경험하며 실행 가능한 기획서를 작성하는 방법을 배웁니다. 시장 조사와 경쟁사 분석, 타겟 고객 정의, 핵심 가치 제안 수립을 진행하고, 기능 명세서와 화면 설계서를 작성합니다. MVP 개념을 이해하고 우선순위를 설정하며, 요구사항 정의서와 프로젝트 일정표를 만듭니다. 이해관계자 설득을 위한 프레젠테이션 기법과 기획서 작성 템플릿도 제공합니다.",
-    thumbnailUrl: "/assets/images/killpo.jpg",
+    thumbnailUrl: buildUrl("/assets/images/killpo.jpg"),
     instructor: "김기획",
     category: ["테크", "제품 기획", "서비스 기획"],
     level: "중급",
@@ -650,7 +652,7 @@ export const courseList = [
     description: "PM이 알아야 할 모든 것",
     content:
       "프로덕트 매니저의 역할과 책임을 이해하고 제품 관리 전략을 배웁니다. 제품 비전 수립, 로드맵 작성, 백로그 관리, 스프린트 기획을 익히고, 데이터 기반 의사결정 방법을 배웁니다. OKR 설정과 KPI 관리, A/B 테스트 설계와 분석, 제품 출시 전략 수립을 실습합니다. 개발팀, 디자인팀, 마케팅팀과의 협업 방법과 이해관계자 관리 기술도 다루며, 성공적인 제품을 만드는 PM의 사고방식을 배웁니다.",
-    thumbnailUrl: "/assets/images/killpo.jpg",
+    thumbnailUrl: buildUrl("/assets/images/killpo.jpg"),
     instructor: "이PM",
     category: ["테크", "제품 기획", "프로덕트 매니지먼트"],
     level: "고급",
@@ -665,7 +667,7 @@ export const courseList = [
     description: "스크럼과 칸반으로 팀 생산성 높이기",
     content:
       "애자일 방법론을 이해하고 프로젝트를 효율적으로 관리하는 방법을 배웁니다. 스크럼의 역할과 이벤트, 칸반 보드 활용법을 익히고, 스프린트 계획과 데일리 스탠드업, 회고 미팅을 진행하는 방법을 배웁니다. 사용자 스토리 작성과 스토리 포인트 추정, 번다운 차트 분석을 실습하며, Jira와 Trello 등 협업 도구를 활용합니다. 팀의 속도를 측정하고 지속적으로 개선하는 전략을 배웁니다.",
-    thumbnailUrl: "/assets/images/killpo.jpg",
+    thumbnailUrl: buildUrl("/assets/images/killpo.jpg"),
     instructor: "박애자일",
     category: ["테크", "비즈니스", "프로젝트 관리"],
     level: "중급",
@@ -680,7 +682,7 @@ export const courseList = [
     description: "아이디어에서 스케일업까지",
     content:
       "스타트업을 창업하고 성장시키는 전략을 배웁니다. 비즈니스 모델 캔버스 작성, 시장 검증, 린 스타트업 방법론을 익히고, 투자 유치를 위한 피칭 덱 제작과 IR 전략을 배웁니다. 팀 빌딩과 조직 문화 형성, 초기 고객 확보와 제품-시장 적합성 찾기를 실습합니다. 법인 설립과 지분 구조, 투자 계약 이해, 정부 지원 사업 활용 방법도 다루며, 실패 사례와 성공 사례를 통해 인사이트를 얻습니다.",
-    thumbnailUrl: "/assets/images/killpo.jpg",
+    thumbnailUrl: buildUrl("/assets/images/killpo.jpg"),
     instructor: "최스타트업",
     category: ["테크", "비즈니스", "스타트업 운영"],
     level: "중급",
@@ -695,7 +697,7 @@ export const courseList = [
     description: "목표 설정부터 평가까지",
     content:
       "OKR 프레임워크를 이해하고 조직의 목표를 효과적으로 관리하는 방법을 배웅니다. 야심찬 목표 설정, 핵심 결과 지표 정의, 분기별 OKR 수립과 검토 프로세스를 익힙니다. 개인 OKR과 팀 OKR의 정렬, 진행 상황 추적과 체크인 미팅 운영 방법을 배우며, KPI와 OKR의 차이점을 이해합니다. 실제 기업 사례를 분석하고, 성과 평가와 피드백 문화 구축 전략도 다룹니다.",
-    thumbnailUrl: "/assets/images/killpo.jpg",
+    thumbnailUrl: buildUrl("/assets/images/killpo.jpg"),
     instructor: "정성과",
     category: ["테크", "비즈니스", "OKR·성과 관리"],
     level: "중급",
@@ -710,7 +712,7 @@ export const courseList = [
     description: "생산성을 극대화하는 노션 활용법",
     content:
       "노션의 다양한 기능을 활용해 개인과 팀의 업무 시스템을 구축합니다. 데이터베이스 생성과 관리, 템플릿 활용, 관계형 데이터베이스 연동을 배우고, 프로젝트 관리, 회의록, 문서 작성, 위키 구축 등 실무 활용 사례를 익힙니다. 필터와 정렬, 공식 활용으로 자동화를 구현하고, 팀원과의 협업 설정과 권한 관리 방법도 배웁니다. 생산성을 높이는 노션 위젯과 통합 도구 활용법도 소개합니다.",
-    thumbnailUrl: "/assets/images/killpo.jpg",
+    thumbnailUrl: buildUrl("/assets/images/killpo.jpg"),
     instructor: "한노션",
     category: ["테크", "생산성", "노션·툴 활용"],
     level: "초급",
@@ -725,7 +727,7 @@ export const courseList = [
     description: "VBA로 반복 작업 자동화하기",
     content:
       "엑셀 매크로와 VBA를 활용해 반복 업무를 자동화하는 방법을 배웁니다. 매크로 기록과 편집, VBA 기초 문법과 변수, 조건문과 반복문을 익히고, 셀 조작과 워크시트 제어 방법을 배웁니다. 데이터 정리 자동화, 보고서 생성, 이메일 자동 발송 등 실무 예제를 만들어보며, 사용자 정의 함수 작성과 폼 컨트롤 활용법도 다룹니다. 디버깅 방법과 코드 최적화 팁도 제공합니다.",
-    thumbnailUrl: "/assets/images/killpo.jpg",
+    thumbnailUrl: buildUrl("/assets/images/killpo.jpg"),
     instructor: "김엑셀",
     category: ["테크", "생산성", "자동화·매크로"],
     level: "중급",
@@ -740,7 +742,7 @@ export const courseList = [
     description: "기초 영어로 자신감 있게 말하기",
     content:
       "일상생활에서 자주 사용하는 영어 표현을 배우고 말하기 연습을 합니다. 기본 문법과 필수 단어를 익히고, 인사, 소개, 날씨, 음식 주문 등 실생활 상황별 대화를 연습합니다. 발음 교정과 억양 훈련을 통해 자연스러운 영어를 구사하고, 듣기 능력을 향상시키는 방법을 배웁니다. 영어로 생각하는 습관을 기르고, 실수를 두려워하지 않는 마인드셋을 형성합니다. 매일 사용할 수 있는 표현 100개를 완벽히 마스터합니다.",
-    thumbnailUrl: "/assets/images/killpo.jpg",
+    thumbnailUrl: buildUrl("/assets/images/killpo.jpg"),
     instructor: "이영어",
     category: ["언어", "영어", "회화"],
     level: "입문",
@@ -755,7 +757,7 @@ export const courseList = [
     description: "Composition API로 시작하는 모던 Vue",
     content:
       "Vue.js 3의 Composition API를 중심으로 현대적인 프론트엔드 개발을 배웁니다. setup 함수, ref와 reactive, computed와 watch 사용법을 익히고, 컴포넌트 설계와 props/emit 패턴을 마스터합니다. Vue Router를 이용한 SPA 구현, Pinia를 활용한 상태관리, 그리고 실시간 데이터 바인딩 기법을 실습합니다. Vite 기반 개발 환경 구축부터 프로덕션 배포까지 전 과정을 다루며, TypeScript 통합과 단위 테스트 작성 방법도 배웁니다.",
-    thumbnailUrl: "/assets/images/killpo.jpg",
+    thumbnailUrl: buildUrl("/assets/images/killpo.jpg"),
     instructor: "박Vue",
     category: ["테크", "프로그래밍", "프론트엔드"],
     level: "중급",
@@ -770,7 +772,7 @@ export const courseList = [
     description: "SSR, SSG, ISR을 활용한 최적화된 웹앱",
     content:
       "Next.js의 강력한 기능들을 활용해 성능 최적화된 풀스택 애플리케이션을 개발합니다. App Router와 Server Components, 서버 사이드 렌더링과 정적 사이트 생성의 차이점을 이해하고 적절히 활용합니다. API Routes로 백엔드 로직을 구현하고, 이미지 최적화와 폰트 최적화, SEO 설정을 배웁니다. Prisma와 데이터베이스 연동, NextAuth를 이용한 인증 구현, Vercel 배포와 성능 모니터링까지 실무 프로젝트를 완성합니다.",
-    thumbnailUrl: "/assets/images/killpo.jpg",
+    thumbnailUrl: buildUrl("/assets/images/killpo.jpg"),
     instructor: "최Next",
     category: ["테크", "프로그래밍", "프론트엔드"],
     level: "고급",
@@ -785,7 +787,7 @@ export const courseList = [
     description: "타입 안정성으로 더 나은 코드 작성하기",
     content:
       "TypeScript의 타입 시스템을 깊이 있게 이해하고 실무에 적용하는 방법을 배웁니다. 기본 타입, 인터페이스, 제네릭, 유틸리티 타입을 마스터하고, 고급 타입 패턴과 조건부 타입을 활용합니다. React와 TypeScript의 결합, 타입 가드와 타입 단언, 모듈 시스템을 익히며, 대규모 프로젝트에서의 타입 설계 전략을 배웁니다. ESLint와 Prettier 설정, tsconfig 최적화, 점진적 마이그레이션 전략도 다룹니다.",
-    thumbnailUrl: "/assets/images/killpo.jpg",
+    thumbnailUrl: buildUrl("/assets/images/killpo.jpg"),
     instructor: "정타입",
     category: ["테크", "프로그래밍", "프론트엔드"],
     level: "중급",
@@ -800,7 +802,7 @@ export const courseList = [
     description: "유틸리티 퍼스트로 빠르게 디자인하기",
     content:
       "Tailwind CSS를 활용해 효율적이고 일관된 UI를 구축하는 방법을 배웁니다. 유틸리티 클래스의 개념과 장점을 이해하고, 반응형 디자인과 다크모드 구현을 실습합니다. 커스텀 테마 설정, 플러그인 활용, JIT 모드 최적화를 익히고, 재사용 가능한 컴포넌트 패턴을 개발합니다. Headless UI와의 결합, 애니메이션 구현, 프로덕션 빌드 최적화까지 다루며, 실제 프로젝트에서 Tailwind를 효과적으로 사용하는 베스트 프랙티스를 배웁니다.",
-    thumbnailUrl: "/assets/images/killpo.jpg",
+    thumbnailUrl: buildUrl("/assets/images/killpo.jpg"),
     instructor: "한Tailwind",
     category: ["테크", "프로그래밍", "프론트엔드"],
     level: "초급",
@@ -815,7 +817,7 @@ export const courseList = [
     description: "모두를 위한, 빠른 웹사이트 만들기",
     content:
       "웹 접근성 표준을 준수하고 성능을 극대화하는 프론트엔드 개발 기법을 배웁니다. WCAG 가이드라인 이해, 시맨틱 HTML 작성, ARIA 속성 활용, 키보드 네비게이션 구현을 실습합니다. Lighthouse 점수 개선, Core Web Vitals 최적화, 이미지 lazy loading, 코드 스플리팅 전략을 배우며, 번들 사이즈 분석과 트리 쉐이킹, 캐싱 전략을 통해 로딩 속도를 향상시킵니다. 실제 사이트 감사와 개선 프로젝트를 진행합니다.",
-    thumbnailUrl: "/assets/images/killpo.jpg",
+    thumbnailUrl: buildUrl("/assets/images/killpo.jpg"),
     instructor: "김웹접근성",
     category: ["테크", "프로그래밍", "프론트엔드"],
     level: "중급",
@@ -830,7 +832,7 @@ export const courseList = [
     description: "Java로 구축하는 엔터프라이즈급 백엔드",
     content:
       "Spring Boot를 활용해 확장 가능한 RESTful API를 개발하는 방법을 배웁니다. Spring의 핵심 개념인 IoC와 DI, AOP를 이해하고, JPA와 Hibernate로 데이터베이스를 연동합니다. REST 컨트롤러 작성, DTO 패턴, 예외 처리, 유효성 검증을 구현하고, Spring Security로 JWT 기반 인증을 구축합니다. 트랜잭션 관리, 로깅, 테스트 코드 작성을 익히며, Docker 컨테이너화와 AWS 배포까지 실습합니다.",
-    thumbnailUrl: "/assets/images/killpo.jpg",
+    thumbnailUrl: buildUrl("/assets/images/killpo.jpg"),
     instructor: "이Spring",
     category: ["테크", "프로그래밍", "백엔드"],
     level: "중급",
@@ -845,7 +847,7 @@ export const courseList = [
     description: "Python 프레임워크로 빠른 개발",
     content:
       "Django의 MVT 패턴을 이해하고 완성도 높은 웹 서비스를 개발합니다. 모델 설계와 마이그레이션, 뷰와 템플릿 작성, URL 라우팅을 배우고, Django ORM으로 복잡한 쿼리를 다룹니다. 사용자 인증과 권한 관리, 폼 처리와 유효성 검증, 미들웨어 활용을 익히며, Django REST Framework로 API를 구축합니다. 정적 파일 관리, 관리자 페이지 커스터마이징, Celery를 이용한 비동기 작업 처리까지 실무 프로젝트를 완성합니다.",
-    thumbnailUrl: "/assets/images/killpo.jpg",
+    thumbnailUrl: buildUrl("/assets/images/killpo.jpg"),
     instructor: "박Django",
     category: ["테크", "프로그래밍", "백엔드"],
     level: "중급",
@@ -860,7 +862,7 @@ export const courseList = [
     description: "동시성과 효율성을 갖춘 백엔드",
     content:
       "Go 언어의 강력한 동시성 기능을 활용해 고성능 API 서버를 구축합니다. Go의 기본 문법과 고루틴, 채널을 이해하고, Gin 또는 Echo 프레임워크로 REST API를 개발합니다. 미들웨어 패턴, 에러 핸들링, 데이터베이스 연동을 배우며, 컨텍스트를 이용한 요청 관리와 그레이스풀 셧다운을 구현합니다. 테스트 코드 작성, 벤치마킹, 프로파일링을 통해 성능을 최적화하고, 마이크로서비스 아키텍처 패턴도 소개합니다.",
-    thumbnailUrl: "/assets/images/killpo.jpg",
+    thumbnailUrl: buildUrl("/assets/images/killpo.jpg"),
     instructor: "최Go",
     category: ["테크", "프로그래밍", "백엔드"],
     level: "고급",
@@ -875,7 +877,7 @@ export const courseList = [
     description: "REST를 넘어 효율적인 데이터 페칭",
     content:
       "GraphQL의 개념을 이해하고 유연한 API를 설계하는 방법을 배웁니다. 스키마 정의, 쿼리와 뮤테이션 작성, 리졸버 구현을 익히고, Apollo Server 또는 GraphQL Yoga로 서버를 구축합니다. DataLoader를 이용한 N+1 문제 해결, 인증과 권한 처리, 구독을 통한 실시간 업데이트를 구현합니다. GraphQL과 REST의 비교, 캐싱 전략, 에러 핸들링, 성능 최적화를 다루며, 실전 프로젝트에 GraphQL을 도입하는 전략을 배웁니다.",
-    thumbnailUrl: "/assets/images/killpo.jpg",
+    thumbnailUrl: buildUrl("/assets/images/killpo.jpg"),
     instructor: "정GraphQL",
     category: ["테크", "프로그래밍", "백엔드"],
     level: "중급",
@@ -890,7 +892,7 @@ export const courseList = [
     description: "확장 가능한 분산 시스템 설계",
     content:
       "마이크로서비스 아키텍처의 원칙과 패턴을 배우고 실제 시스템을 구축합니다. 서비스 분리 전략, API 게이트웨이, 서비스 디스커버리, 로드 밸런싱을 이해하고 구현합니다. Docker와 Kubernetes를 이용한 컨테이너 오케스트레이션, 서비스 메시와 사이드카 패턴을 배웁니다. 분산 트랜잭션, 이벤트 드리븐 아키텍처, 서킷 브레이커 패턴을 적용하고, 모니터링과 로깅, 분산 추적을 설정합니다. 모놀리식에서 마이크로서비스로의 전환 전략도 다룹니다.",
-    thumbnailUrl: "/assets/images/killpo.jpg",
+    thumbnailUrl: buildUrl("/assets/images/killpo.jpg"),
     instructor: "한마이크로",
     category: ["테크", "프로그래밍", "백엔드"],
     level: "고급",
