@@ -16,7 +16,8 @@ function readFileAsDataURL(file) {
 
 export async function submitEditCourseForm() {
   // 1. 현재 목록에서 선택된 강의 정보 찾기
-  const courseList = store.getLocalStorage("courseList") || mockCourseList;
+  const courseList =
+    (await store.getLocalStorage("courseList")) || mockCourseList;
 
   // course 객체의 id를 변수 선언
   const selectedId = $("#course-create-form").dataset.courseId;

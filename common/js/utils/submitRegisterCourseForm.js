@@ -43,7 +43,7 @@ export async function submitRegisterCourseForm() {
   }
 
   // 4) 새 강좌 생성
-  const courseList = store.getLocalStorage("courseList") || [];
+  const courseList = (await store.getLocalStorage("courseList")) || [];
   // 강좌 id를 생성일시를 추가해 유니크하게 만들기
   const createdAt = new Date().toISOString();
   const newId = `${Date.now()}-${createdAt.replace(/[:.]/g, "-")}`;

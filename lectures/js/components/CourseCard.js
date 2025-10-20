@@ -20,7 +20,7 @@ export function CourseCard(courseItem) {
             <span class="course-card__rating">
               <span class="course-card__rating-icon">★</span>${averageRating}
               <span class="course-card__rating-count">(${
-                courseItem.reviews.length
+                courseItem.reviews?.length
               })
               </span>
             </span>

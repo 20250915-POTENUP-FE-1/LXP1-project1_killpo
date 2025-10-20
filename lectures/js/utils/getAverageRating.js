@@ -5,7 +5,8 @@
  */
 
 export const getAverageRating = (reviews) => {
-  if (reviews.length === 0) {
+  if (!reviews) return null;
+  if (reviews.length) {
     return "--";
   }
 
