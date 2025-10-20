@@ -24,13 +24,10 @@
 
 .course-section__header {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-between;
+  text-align: center;
   gap: 1.5rem;
-}
-
-.course-section__path {
-  height: 40px;
 }
 
 .course-section__actions {
@@ -177,8 +174,8 @@
   }
 
   .course-section__header {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
   }
 
   .course-section__meta {
@@ -188,13 +185,13 @@
   }
 
   .course-grid {
-    grid-template-columns: repeat(3, minmax(220px, 1fr));
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
   }
 }
 
 @media (max-width: 768px) {
   .course-grid {
-    grid-template-columns: repeat(2, minmax(220px, 1fr));
+    grid-template-columns: repeat(1, minmax(220px, 1fr));
     gap: 1.1rem;
   }
 
@@ -204,12 +201,6 @@
 
   .filter-sidebar {
     padding: 1.5rem;
-  }
-
-  .pagination {
-    flex-direction: column;
-    gap: 0.75rem;
-    text-align: center;
   }
 }
 
@@ -227,10 +218,6 @@
   }
 
   .course-section__search {
-    width: 100%;
-  }
-
-  .pagination__control {
     width: 100%;
   }
 }

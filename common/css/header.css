@@ -47,7 +47,7 @@
 }
 
 .logo {
-  width: 130px;
+  width: 140px;
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--color-brand);
@@ -364,8 +364,13 @@
   .header-content {
     flex-wrap: wrap;
     gap: 1rem;
+    display: flex;
+    justify-content: space-between;
   }
 
+  .logo {
+    margin-right: 60px;
+  }
   .header-controls {
     width: 100%;
     max-width: none;
@@ -388,6 +393,13 @@
   .header-mega {
     grid-template-columns: repeat(2, minmax(160px, 1fr));
     gap: 1.25rem;
+  }
+  .nav-menu {
+    justify-self: flex-end;
+    order: 2;
+  }
+  .header-controls {
+    order: 3;
   }
 }
 

@@ -11,9 +11,10 @@ function readFileAsDataURL(file) {
 }
 
 export async function setThumbnailPreview() {
-  // 썸네일 미리보기 이미지 display.none
-
   $("#create-thumbnail-file").addEventListener("change", async (e) => {
+    // 썸네일 미리보기 display 초기화
+    $("#current-thumbnail-img").style.display = "block";
+
     const thumbnailFile = $("#create-thumbnail-file")?.files?.[0];
 
     // 썸네일 주소 초기화

@@ -1,4 +1,5 @@
 import { $ } from "../../../common/js/utils/dom.js";
+import { sortCourseList } from "../../../lectures/js/utils/sortCourseList.js";
 import { CourseItem } from "../components/CourseItem.js";
 import { deleteCourse } from "../utils/deleteCourse.js";
 import { editCourse } from "../utils/editCourse.js";
@@ -20,7 +21,10 @@ export function renderMypage(courseList) {
       </tr>
     `;
   } else {
-    $(".course-table__body").innerHTML = courseList
+    // 마이페이지 강좌 리스트 최신 등록 순으로 정렬
+    const sortedCourseList = sortCourseList(courseList, "최신 등록 순");
+
+    $(".course-table__body").innerHTML = sortedCourseList
       .map((courseItem) => CourseItem(courseItem))
       .join("");
     bindEvents();

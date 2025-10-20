@@ -1,7 +1,8 @@
 import { $ } from "./dom.js";
 import { store } from "../store/localStorage.js";
-import { CourseItem } from "../../../mypage/js/components/CourseItem.js";
 import { courseList as mockCourseList } from "../../../lectures/js/mockData.js";
+import { sortCourseList } from "../../../lectures/js/utils/sortCourseList.js";
+import { CourseItem } from "../../../mypage/js/components/CourseItem.js";
 
 // Convert a file input into a Base64 data URL
 function readFileAsDataURL(file) {
@@ -77,11 +78,12 @@ export async function submitEditCourseForm() {
   };
 
   courseList[selectedIndex] = updatedCourse;
-  const updatedList = courseList;
-  store.setLocalStorage("courseList", updatedList);
+  const updatedCourseList = courseList;
+  const sortedCourseList = sortCourseList(updatedCourseList, "최신 등록 순");
+  store.setLocalStorage("courseList", sortedCourseList);
 
-  $(".mypage-content__total").innerHTML = updatedList.length;
-  $(".course-table__body").innerHTML = updatedList
+  $(".mypage-content__total").innerHTML = sortedCourseList.length;
+  $(".course-table__body").innerHTML = sortedCourseList
     .map((courseItem) => CourseItem(courseItem))
     .join("");
 

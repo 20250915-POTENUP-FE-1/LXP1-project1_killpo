@@ -29,26 +29,27 @@ export function bindModalEvents() {
     // 닫기
     const closeBtn = e.target.closest(".modal-close, .cancel-btn");
     if (closeBtn) {
-      if (modal) closeModal(modal);
+      if (modal) closeModal(modal.dataset.mode);
       return;
     }
 
     // 배경 클릭 시 닫기
     if (e.target.classList.contains("modal")) {
-      closeModal(modal);
+      closeModal(modal.dataset.mode);
     }
   });
 }
 
 export function closeModal(modalMode) {
   $(".modal").style.display = "none";
-  // 썸네일 미리보기 초기화 및 숨기기
-  $("#current-thumbnail-img").style.display = "none";
-  $("#current-thumbnail-img").src = "";
 
   // 수정 모달의 경우 form 초기화
   if (modalMode === "course-edit") {
     $("#course-create-form").reset();
+
+    // 썸네일 미리보기 초기화 및 숨기기
+    $("#current-thumbnail-img").style.display = "none";
+    $("#current-thumbnail-img").src = "";
   }
 
   $(".modal").dataset.mode = "";

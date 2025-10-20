@@ -177,7 +177,7 @@
 }
 
 .filter-sidebar__category-path {
-  color: var(--primary-500);
+  color: var(--color-accent);
   cursor: pointer;
 }
 

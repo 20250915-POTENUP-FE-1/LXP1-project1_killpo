@@ -11,24 +11,18 @@ export function Header() {
       .then((response) => response.text())
       .then((responseText) => {
         $(".container").insertAdjacentHTML("afterbegin", responseText);
-        // 아이콘 로드
         createIcons({ icons });
 
-        bindEvent();
+        applyBaseUrl();
       });
   };
 
-  const bindEvent = () => {
-    // 로고 클릭 이벤트 바인딩
-    $(".logo a").addEventListener("click", (e) => {
-      e.preventDefault();
-      window.location.href = buildUrl("/lectures");
-    });
+  const applyBaseUrl = () => {
+    // 로고
+    $(".logo a").href = buildUrl("/lectures");
+    $(".logo img").src = buildUrl("/assets/svg/killpo.svg");
 
-    // 프로필 클릭 이벤트 바인딩
-    $(".avatar-button").addEventListener("click", (e) => {
-      e.preventDefault();
-      window.location.href = buildUrl("/mypage");
-    });
+    // 프로필
+    $(".avatar-button").href = buildUrl("/mypage");
   };
 }

@@ -1,6 +1,7 @@
 import { store } from "../../../common/js/store/localStorage.js";
 import { $ } from "../../../common/js/utils/dom.js";
 import { courseList as mockCourseList } from "../../../lectures/js/mockData.js";
+import { sortCourseList } from "../../../lectures/js/utils/sortCourseList.js";
 import { CourseItem } from "../components/CourseItem.js";
 
 export const deleteCourse = (target) => {
@@ -21,12 +22,19 @@ export const deleteCourse = (target) => {
       )
     ) {
       // 강좌 목록 업데이트
-      const newList = courseList.filter((course) => course.id !== selectedId);
-      store.setLocalStorage("courseList", newList);
+      const updatedCourseList = courseList.filter(
+        (course) => course.id !== selectedId
+      );
+      // 강좌 목록 최신 순으로 정렬
+      const sortedCourseList = sortCourseList(
+        updatedCourseList,
+        "최신 등록 순"
+      );
+      store.setLocalStorage("courseList", sortedCourseList);
 
-      // 강좌 목록 렌더링
-      $(".mypage-content__total").innerHTML = newList.length;
-      $(".course-table__body").innerHTML = newList
+      // 강의 목록 렌더링
+      $(".mypage-content__total").innerHTML = sortedCourseList.length;
+      $(".course-table__body").innerHTML = sortedCourseList
         .map((courseItem) => CourseItem(courseItem))
         .join("");
     }

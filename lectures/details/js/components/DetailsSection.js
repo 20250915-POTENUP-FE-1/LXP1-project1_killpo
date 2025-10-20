@@ -66,7 +66,9 @@ export function detailsSection(courseItem) {
                 }</strong></li>
                 <li>
                   <span>카테고리</span
-                  ><strong>${courseItem.category.join(" / ")}</strong>
+                  ><strong purchase-card__info-category>${courseItem.category.join(
+                    " / "
+                  )}</strong>
                 </li>
               </ul>
               <button type="button" class="purchase-card__cta">
