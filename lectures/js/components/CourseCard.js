@@ -25,7 +25,7 @@ export function CourseCard(courseItem) {
               </span>
             </span>
             <span class="course-card__students"> 
-            <i data-lucide="users" class="course-card__students-icon"></i> 
+            <img class="course-card__students-icon" src="../../assets/icons/users.png">
             <span class="course-card__students-count"> ${
               courseItem.studentCount
             }</span></span>
