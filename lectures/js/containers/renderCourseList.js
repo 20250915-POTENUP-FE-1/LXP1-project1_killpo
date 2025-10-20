@@ -1,3 +1,4 @@
+import { buildUrl } from "../../../common/js/utils/buildUrl.js";
 import { $ } from "../../../common/js/utils/dom.js";
 import { CourseCard } from "../components/CourseCard.js";
 import { COURSE_PAGE_SIZE } from "../constants/pagination.js";
@@ -35,5 +36,9 @@ export function renderCourseList(courseList, filter, pageNumber, sortOption) {
     container.innerHTML = paginatedCourseList
       .map((courseItem) => CourseCard(courseItem))
       .join("");
+
+    document.querySelectorAll(".course-card__students-icon").forEach((el) => {
+      el.src = buildUrl("/assets/icons/users.png");
+    });
   }
 }
