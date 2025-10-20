@@ -61,8 +61,6 @@
   line-height: 1.5;
 
   /* 줄바꿈 */
-  -webkit-box-orient: vertical; /* 세로 방향 정렬 */
-  -webkit-line-clamp: 2; /* 표시할 줄 수 */
   word-break: break-all; /* 긴 단어 줄바꿈 허용 */
   white-space: normal; /* 영역을 벗어나면 자동 줄바꿈 */
 }
@@ -177,8 +175,6 @@
   font-weight: 700;
   color: var(--color-text-primary);
   /* 줄바꿈 */
-  -webkit-box-orient: vertical; /* 세로 방향 정렬 */
-  -webkit-line-clamp: 2; /* 표시할 줄 수 */
   word-break: break-all; /* 긴 단어 줄바꿈 허용 */
   white-space: normal; /* 영역을 벗어나면 자동 줄바꿈 */
 }
@@ -198,8 +194,6 @@
   line-height: 1.6;
   color: var(--color-text-secondary);
   /* 줄바꿈 */
-  -webkit-box-orient: vertical; /* 세로 방향 정렬 */
-  -webkit-line-clamp: 3; /* 표시할 줄 수 */
   word-break: break-all; /* 긴 단어 줄바꿈 허용 */
   white-space: normal;
 }
