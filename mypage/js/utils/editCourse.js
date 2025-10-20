@@ -7,10 +7,11 @@ import {
 } from "../../../common/js/utils/getCategoryList.js";
 import { courseList as mockCourseList } from "../../../lectures/js/mockData.js";
 
-export const editCourse = (target) => {
+export const editCourse = async (target) => {
   if (target.classList.contains("edit-course-btn")) {
     // 1. 현재 목록에서 선택된 강의 정보 찾기
-    const courseList = store.getLocalStorage("courseList") || mockCourseList;
+    const courseList =
+      (await store.getLocalStorage("courseList")) || mockCourseList;
     const courseRow = target.closest(".course-row");
     const selectedId = courseRow.dataset.courseId;
 

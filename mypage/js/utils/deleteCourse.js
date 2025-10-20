@@ -4,9 +4,10 @@ import { courseList as mockCourseList } from "../../../lectures/js/mockData.js";
 import { sortCourseList } from "../../../lectures/js/utils/sortCourseList.js";
 import { CourseItem } from "../components/CourseItem.js";
 
-export const deleteCourse = (target) => {
+export const deleteCourse = async (target) => {
   if (target.classList.contains("delete-course-btn")) {
-    const courseList = store.getLocalStorage("courseList") || mockCourseList; // []
+    const courseList =
+      (await store.getLocalStorage("courseList")) || mockCourseList; // []
 
     // 삭제하기 로직 구현 후 유틸 함수로 분리 예정
     const courseRow = target.closest(".course-row");
